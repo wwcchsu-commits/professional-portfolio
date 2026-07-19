@@ -1,828 +1,195 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wei-Chieh Hsu — Professional Portfolio</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        :root {
-            --text-primary: #1d1d1f;
-            --text-secondary: #6e6e73;
-            --text-tertiary: #86868b;
-            --accent: #0071e3;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f5f5f7;
-            --bg-dark: #1d1d1f;
-            --border: #e8e8ed;
-            --card-shadow: 0 2px 12px rgba(0,0,0,0.08);
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
-            color: var(--text-primary);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: var(--bg-secondary);
-            padding: 120px 40px 80px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 12px;
-        }
-
-        .hero .subtitle {
-            font-size: 1.4rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-            margin-bottom: 24px;
-        }
-
-        .hero .contact {
-            font-size: 0.95rem;
-            color: var(--text-tertiary);
-        }
-
-        .hero .contact a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .hero .contact a:hover {
-            text-decoration: underline;
-        }
-
-        /* Section Container */
-        .section {
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 80px 40px;
-        }
-
-        .section-dark {
-            background: var(--bg-dark);
-            color: #fff;
-            max-width: 100%;
-            padding: 80px 40px;
-        }
-
-        .section-dark .inner {
-            max-width: 980px;
-            margin: 0 auto;
-        }
-
-        .section-gray {
-            background: var(--bg-secondary);
-            max-width: 100%;
-            padding: 80px 40px;
-        }
-
-        .section-gray .inner {
-            max-width: 980px;
-            margin: 0 auto;
-        }
-
-        /* Section Headers */
-        .section-label {
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin-bottom: 8px;
-        }
-
-        .section h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 16px;
-        }
-
-        .section-dark h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 16px;
-        }
-
-        .section-desc {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 48px;
-            max-width: 680px;
-        }
-
-        .section-dark .section-desc {
-            color: #a1a1a6;
-        }
-
-        /* Background Grid */
-        .bg-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            margin-top: 40px;
-        }
-
-        .bg-card {
-            background: var(--bg-secondary);
-            border-radius: 16px;
-            padding: 32px;
-        }
-
-        .bg-card h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .bg-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .bg-card ul li {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            padding: 6px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .bg-card ul li:last-child {
-            border-bottom: none;
-        }
-
-        .timeline {
-            list-style: none;
-            padding: 0;
-        }
-
-        .timeline li {
-            display: flex;
-            gap: 16px;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border);
-            align-items: baseline;
-        }
-
-        .timeline li:last-child {
-            border-bottom: none;
-        }
-
-        .timeline .year {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-tertiary);
-            min-width: 100px;
-        }
-
-        .timeline .role {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .timeline .company {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-top: 2px;
-        }
-
-        /* Theme Overview Cards */
-        .themes-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .theme-card {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
-            padding: 28px 24px;
-            text-align: left;
-        }
-
-        .theme-card .num {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 12px;
-        }
-
-        .theme-card h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #fff;
-        }
-
-        .theme-card p {
-            font-size: 0.85rem;
-            color: #a1a1a6;
-            line-height: 1.5;
-        }
-
-        /* Case Studies */
-        .case-study {
-            background: var(--bg-primary);
-            border-radius: 20px;
-            padding: 48px;
-            margin-bottom: 32px;
-            box-shadow: var(--card-shadow);
-            border: 1px solid var(--border);
-        }
-
-        .case-header {
-            margin-bottom: 32px;
-        }
-
-        .case-theme-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin-bottom: 8px;
-        }
-
-        .case-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .metrics-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-bottom: 36px;
-            padding-bottom: 36px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .metric {
-            text-align: center;
-        }
-
-        .metric .value {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 4px;
-        }
-
-        .metric .label {
-            font-size: 0.8rem;
-            color: var(--text-tertiary);
-        }
-
-        .case-section {
-            margin-bottom: 24px;
-        }
-
-        .case-section h4 {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin-bottom: 10px;
-        }
-
-        .case-section p {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .case-section ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .case-section ul li {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            padding: 6px 0;
-            padding-left: 16px;
-            position: relative;
-            line-height: 1.6;
-        }
-
-        .case-section ul li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 14px;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
-        }
-
-        .why-matters {
-            background: var(--bg-secondary);
-            border-radius: 12px;
-            padding: 20px 24px;
-            margin-top: 24px;
-        }
-
-        .why-matters h4 {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin-bottom: 8px;
-        }
-
-        .why-matters p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            font-style: italic;
-        }
-
-        /* Theme Divider */
-        .theme-divider {
-            background: var(--bg-dark);
-            color: #fff;
-            padding: 60px 40px;
-            margin: 60px 0;
-            border-radius: 20px;
-            text-align: center;
-        }
-
-        .theme-divider .num {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 8px;
-        }
-
-        .theme-divider h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .theme-divider p {
-            font-size: 1rem;
-            color: #a1a1a6;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 80px 40px;
-            background: var(--bg-secondary);
-        }
-
-        .footer h2 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-        }
-
-        .footer .contact-info {
-            font-size: 1rem;
-            color: var(--text-secondary);
-        }
-
-        .footer .contact-info a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero .subtitle { font-size: 1.1rem; }
-            .bg-grid { grid-template-columns: 1fr; }
-            .themes-grid { grid-template-columns: 1fr 1fr; }
-            .metrics-row { grid-template-columns: 1fr; gap: 16px; }
-            .case-study { padding: 32px 24px; }
-            .section { padding: 60px 24px; }
-        }
-
-        @media (max-width: 480px) {
-            .themes-grid { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
-
-<!-- Hero -->
-<section class="hero">
-    <h1>Wei-Chieh, Hsu</h1>
-    <p class="subtitle">Digital Marketing Strategy & Partner Enablement</p>
-    <p class="contact">
-        📞 080-5804-8723 · ✉️ wwcchsu@gmail.com · <a href="https://www.linkedin.com/in/jill-h-ab445556/" target="_blank">LinkedIn</a>
-    </p>
-</section>
-
-<!-- Background -->
-<section class="section">
-    <div class="section-label">Background</div>
-    <h2>At a Glance</h2>
-    <p class="section-desc">Programmatic Solutions Consultant at Amazon Ads Japan · 2022 – Present</p>
-
-    <div class="bg-grid">
-        <div class="bg-card">
-            <h3>Current Role</h3>
-            <ul>
-                <li>Own a $17.5M+ portfolio across 8+ agency and enterprise partners</li>
-                <li>Diagnose partner performance issues and rebuild strategy from the ground up</li>
-                <li>Partner directly with data science and engineering on technical optimization</li>
-                <li>Own new product rollouts from closed beta through general availability</li>
-                <li>Design enablement frameworks and mentor teams across regions</li>
-            </ul>
-        </div>
-        <div class="bg-card">
-            <h3>Career</h3>
-            <ul class="timeline">
-                <li>
-                    <span class="year">2022 – Now</span>
-                    <div><div class="role">Programmatic Solutions Consultant</div><div class="company">Amazon Ads Japan</div></div>
-                </li>
-                <li>
-                    <span class="year">2021</span>
-                    <div><div class="role">Client Solutions Manager</div><div class="company">Meta</div></div>
-                </li>
-                <li>
-                    <span class="year">2016 – 2021</span>
-                    <div><div class="role">Senior Marketing Consultant</div><div class="company">Dentsu / Havas Group</div></div>
-                </li>
-                <li>
-                    <span class="year">2014 – 2015</span>
-                    <div><div class="role">Digital Advertising Planner</div><div class="company">Business Media Publisher</div></div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<!-- Themes Overview -->
-<section class="section-dark">
-    <div class="inner">
-        <div class="section-label" style="color: var(--accent);">Case Studies</div>
-        <h2>Four areas of expertise,<br>demonstrated through real projects</h2>
-        <p class="section-desc">Eight verified projects organized into four themes.</p>
-
-        <div class="themes-grid">
-            <div class="theme-card">
-                <div class="num">01</div>
-                <h3>Partner Business Strategy</h3>
-                <p>Diagnosing partner needs and rebuilding strategy to drive sustained growth</p>
-            </div>
-            <div class="theme-card">
-                <div class="num">02</div>
-                <h3>Product Enablement & GTM</h3>
-                <p>Driving adoption of new products and capabilities through partners</p>
-            </div>
-            <div class="theme-card">
-                <div class="num">03</div>
-                <h3>Cross-functional & Global-to-Local</h3>
-                <p>Operating across teams, markets, and functions without direct authority</p>
-            </div>
-            <div class="theme-card">
-                <div class="num">04</div>
-                <h3>Agency Capability Building</h3>
-                <p>Enabling partners to succeed independently through structured enablement</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Theme 01 -->
-<section class="section-gray">
-    <div class="inner">
-        <div class="theme-divider">
-            <div class="num">THEME 01</div>
-            <h3>Partner Business Strategy</h3>
-            <p>Diagnosing partner needs and rebuilding strategy from the ground up to drive sustained growth.</p>
-        </div>
-
-        <!-- Case 1 -->
-        <div class="case-study">
-            <div class="case-header">
-                <div class="case-theme-label">Partner Business Strategy · Case 1</div>
-                <div class="case-title">Turnaround for a Streaming Enterprise</div>
-            </div>
-            <div class="metrics-row">
-                <div class="metric"><div class="value">$135K → $2.3M</div><div class="label">Annual Investment Growth</div></div>
-                <div class="metric"><div class="value">16x</div><div class="label">Revenue Multiple</div></div>
-                <div class="metric"><div class="value">Top 2</div><div class="label">Advertiser Ranking in Japan DSP Revenue</div></div>
-            </div>
-            <div class="case-section">
-                <h4>The Situation</h4>
-                <p>A major streaming entertainment platform had fully paused its advertising investment in Japan. The partner's internal narrative was that the platform simply wasn't delivering — the relationship had stalled with no clear path forward.</p>
-            </div>
-            <div class="case-section">
-                <h4>The Approach</h4>
-                <ul>
-                    <li>Ran a structured diagnostic across the partner's setup, measurement methodology, and execution rather than accepting their framing</li>
-                    <li>Found the real issue was measurement and execution misalignment — not platform performance</li>
-                    <li>Rebuilt the audience and creative strategy from the ground up</li>
-                    <li>Guided the partner through a transition to more accurate performance reporting</li>
-                </ul>
-            </div>
-            <div class="case-section">
-                <h4>The Outcome</h4>
-                <p>The account grew from $135K to $2.3MM, becoming one of Japan's top two advertisers. The relationship shifted from adversarial to collaborative.</p>
-            </div>
-            <div class="why-matters">
-                <h4>Why This Matters</h4>
-                <p>Direct proof of the ability to delve deeply into a partner's business and challenges to find the opportunity everyone else had missed — then rebuild trust and momentum from there.</p>
-            </div>
-        </div>
-
-        <!-- Case 2 -->
-        <div class="case-study">
-            <div class="case-header">
-                <div class="case-theme-label">Partner Business Strategy · Case 2</div>
-                <div class="case-title">CN Agency Upper-Funnel Strategy</div>
-            </div>
-            <div class="metrics-row">
-                <div class="metric"><div class="value">17%</div><div class="label">Brand Awareness Lift (Ecovacs)</div></div>
-                <div class="metric"><div class="value">$85K</div><div class="label">New Budget Secured (Jackery)</div></div>
-                <div class="metric"><div class="value">3+</div><div class="label">Advertisers Shifted to Upper-Funnel</div></div>
-            </div>
-            <div class="case-section">
-                <h4>The Situation</h4>
-                <p>A China-based agency managing Japan campaigns needed upper-funnel solutions to build brand awareness for Chinese brands entering the Japanese market, but had focused exclusively on lower-funnel tactics with no experience in premium video inventory.</p>
-            </div>
-            <div class="case-section">
-                <h4>The Approach</h4>
-                <ul>
-                    <li>Identified the opportunity when a key advertiser reduced budgets — reframed the moment as a chance to shift strategy toward upper-funnel activation</li>
-                    <li>Proposed Japan-exclusive preferred deals (Abema, TVer) and leveraged prior Prime Day success to demonstrate premium video value</li>
-                    <li>Educated agency traders through dedicated office hours on deal features, optimization logic, and measurement expectations</li>
-                    <li>Applied differentiated strategies per advertiser context (Jackery: video deals; Bluetti: Fire Tablet; Ecovacs: CTV repositioning)</li>
-                </ul>
-            </div>
-            <div class="case-section">
-                <h4>The Outcome</h4>
-                <p>Jackery secured $85K in new premium video budget. Ecovacs achieved 17% brand awareness lift via CTV. The agency gained confidence to deploy upper-funnel solutions across its broader portfolio.</p>
-            </div>
-            <div class="why-matters">
-                <h4>Why This Matters</h4>
-                <p>Shows the ability to deeply understand a partner's business context, identify the right moment to shift strategy, and deliver customized solutions that raise the creative and strategic bar — across multiple advertisers within one agency relationship.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Theme 02 -->
-<section class="section">
-    <div class="theme-divider">
-        <div class="num">THEME 02</div>
-        <h3>Product Enablement & GTM</h3>
-        <p>Driving adoption of new products and capabilities through partners — from beta to scale.</p>
-    </div>
-
-    <div class="case-study">
-        <div class="case-header">
-            <div class="case-theme-label">Product Enablement & GTM · Case 1</div>
-            <div class="case-title">New Product Beta-to-GA Scaling</div>
-        </div>
-        <div class="metrics-row">
-            <div class="metric"><div class="value">Beta → GA</div><div class="label">Full Product Lifecycle Ownership</div></div>
-            <div class="metric"><div class="value">35</div><div class="label">Accounts Adopted (60% vs. 14% global)</div></div>
-            <div class="metric"><div class="value">SME Lead</div><div class="label">Enablement, Case Studies, Training & PM Feedback</div></div>
-        </div>
-        <div class="case-section">
-            <h4>The Situation</h4>
-            <p>A new AI-driven ad product needed to scale from closed beta to general availability in Japan. Agencies had no reason to trust an unproven, technically complex product. Six months post-GA, adoption remained below expectations — no Japan-market case studies existed and audience size restrictions blocked some advertisers.</p>
-        </div>
-        <div class="case-section">
-            <h4>The Approach</h4>
-            <ul>
-                <li>Recruited early-adopter advertisers during closed beta; supported launches and developed Japan-based case studies</li>
-                <li>Built the business case for adoption grounded in early performance data; delivered trainings and provided ongoing PM feedback</li>
-                <li>When adoption stalled post-GA, took ownership: collected case studies from daily operations, partnered with ATAE to synthesize into shareable deck</li>
-                <li>Mentored other consultants to produce case studies; delivered two-phase internal enablement program to drive broader team adoption</li>
-            </ul>
-        </div>
-        <div class="case-section">
-            <h4>The Outcome</h4>
-            <p>Grew adoption from 5 to 35 accounts with 60% adoption rate (vs. 14% global average). Established a repeatable enablement model that improved execution quality and long-term scalability across the organization.</p>
-        </div>
-        <div class="why-matters">
-            <h4>Why This Matters</h4>
-            <p>Shows the ability to own a product's full go-to-market journey — from recruiting early adopters through building enablement and scaling adoption — the same arc required for shaping how new capabilities show up in partner environments.</p>
-        </div>
-    </div>
-
-    <div class="case-study">
-        <div class="case-header">
-            <div class="case-theme-label">Product Enablement & GTM · Case 2</div>
-            <div class="case-title">Prove-with-One, Scale-to-Many Adoption</div>
-        </div>
-        <div class="metrics-row">
-            <div class="metric"><div class="value">3 → 12</div><div class="label">P&G Brands (from 3 to 12 in 2 years)</div></div>
-            <div class="metric"><div class="value">$66K</div><div class="label">First 3P Deal Test Budget Secured</div></div>
-            <div class="metric"><div class="value">5+</div><div class="label">Additional Advertisers Adopted</div></div>
-        </div>
-        <div class="case-section">
-            <h4>The Situation</h4>
-            <p>A Tier-1 agency was historically reluctant to adopt new ad products. Broad agency-wide pushes had limited impact — a more targeted approach was needed to raise adoption across the portfolio.</p>
-        </div>
-        <div class="case-section">
-            <h4>The Approach</h4>
-            <ul>
-                <li>Selected P&G as the proof-of-concept advertiser — highest probability of success given close working relationship with the internal account team</li>
-                <li>Joined weekly account team calls (originally optional) to bridge knowledge gaps and align strategy across internal and agency teams</li>
-                <li>Drove 3P deal and AMC audience adoption with P&G first, using their success to build agency confidence for broader rollout</li>
-                <li>Reframed training for agency sales team (not just traders) — positioning new products around business value rather than operational complexity</li>
-            </ul>
-        </div>
-        <div class="case-section">
-            <h4>The Outcome</h4>
-            <p>P&G grew from 3 brands ($685K) to 12 brands ($1.09M). Secured $66K 3P deal test, followed by Kao and Kose ($24K in Q4 2025). AMC audience adoption spread to 4+ additional advertisers. Collaboration model shared internally as best practice.</p>
-        </div>
-        <div class="why-matters">
-            <h4>Why This Matters</h4>
-            <p>Demonstrates the strategic approach of proving value with one partner then scaling across many — a core pattern for driving product adoption through channel partners at scale.</p>
-        </div>
-    </div>
-</section>
-
-<!-- Theme 03 -->
-<section class="section-gray">
-    <div class="inner">
-        <div class="theme-divider">
-            <div class="num">THEME 03</div>
-            <h3>Cross-functional & Global-to-Local Execution</h3>
-            <p>Operating across teams, markets, and functions to deliver outcomes without direct authority.</p>
-        </div>
-
-        <div class="case-study">
-            <div class="case-header">
-                <div class="case-theme-label">Cross-functional & Global-to-Local · Case 1</div>
-                <div class="case-title">Cross-Border Data Science Collaboration</div>
-            </div>
-            <div class="metrics-row">
-                <div class="metric"><div class="value">110%</div><div class="label">ROAS Improvement Across 4 Accounts</div></div>
-                <div class="metric"><div class="value">1</div><div class="label">Playbook Adopted Company-wide</div></div>
-                <div class="metric"><div class="value">APAC</div><div class="label">Control Tower Meeting Established</div></div>
-            </div>
-            <div class="case-section">
-                <h4>The Situation</h4>
-                <p>A major agency's largest advertisers were experiencing unstable delivery and efficiency issues despite repeated optimization. Standard troubleshooting wasn't identifying the root cause — the issue required data science-level analysis from a US-based team.</p>
-            </div>
-            <div class="case-section">
-                <h4>The Approach</h4>
-                <ul>
-                    <li>Partnered directly with US-based data scientists on a technical deep-dive into the agency's largest campaigns</li>
-                    <li>Acted as the bridge between technical analysis and business context — collecting advertiser-specific questions, validating findings, translating into actionable guidance</li>
-                    <li>Facilitated Q&A sessions between the data science team and agency traders to ensure full understanding</li>
-                    <li>Consolidated learnings into an optimization playbook; shared externally with agencies and internally with global team</li>
-                </ul>
-            </div>
-            <div class="case-section">
-                <h4>The Outcome</h4>
-                <p>Achieved up to 110% ROAS improvement across four major accounts. Playbook adopted by teams outside Japan. The ongoing engagement led to the data science team launching a dedicated APAC Control Tower consulting channel in 2026 — proving the value of cross-functional market collaboration.</p>
-            </div>
-            <div class="why-matters">
-                <h4>Why This Matters</h4>
-                <p>A verified example of knitting together disparate technical sources into a succinct, actionable strategic narrative — and building a sustained cross-functional relationship that scaled from one market to a regional mechanism.</p>
-            </div>
-        </div>
-
-        <div class="case-study">
-            <div class="case-header">
-                <div class="case-theme-label">Cross-functional & Global-to-Local · Case 2</div>
-                <div class="case-title">Cross-Market Partnership Program (JP/CN/AU)</div>
-            </div>
-            <div class="metrics-row">
-                <div class="metric"><div class="value">226</div><div class="label">Active Accounts (from 5 at pilot)</div></div>
-                <div class="metric"><div class="value">3</div><div class="label">Markets Aligned (JP, CN, AU)</div></div>
-                <div class="metric"><div class="value">80%</div><div class="label">Adoption Rate (vs. 14% WW average)</div></div>
-            </div>
-            <div class="case-section">
-                <h4>The Situation</h4>
-                <p>The global operating model for scaling campaign optimization was fragmented — no standardized processes, no quality controls, and teams across Japan, China, and Australia operating with very different cultures and working styles.</p>
-            </div>
-            <div class="case-section">
-                <h4>The Approach</h4>
-                <ul>
-                    <li>Designed the operating model from scratch — account-selection criteria, communication frameworks, and quality mechanisms</li>
-                    <li>Negotiated with offshore team leadership to secure agency-level coverage — a structural change other regions failed to obtain</li>
-                    <li>Established monthly reviews, office hours, and feedback loops across all three markets</li>
-                    <li>When quality issues surfaced, led diagnosis, intervention, and coaching — without direct authority over the offshore team</li>
-                </ul>
-            </div>
-            <div class="case-section">
-                <h4>The Outcome</h4>
-                <p>Scaled from 5 to 226 active accounts with 80% adoption rate (vs. 14% WW average). Model recognized by global teams as blueprint for scaling. Framework documented and adopted by other APAC markets.</p>
-            </div>
-            <div class="why-matters">
-                <h4>Why This Matters</h4>
-                <p>Demonstrates the ability to drive alignment across global, cross-functional teams without direct authority — defining shared mechanisms, earning trust across cultures, and delivering outcomes at scale.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Theme 04 -->
-<section class="section">
-    <div class="theme-divider">
-        <div class="num">THEME 04</div>
-        <h3>Agency Capability Building</h3>
-        <p>Enabling partners to succeed independently through structured, customized enablement.</p>
-    </div>
-
-    <div class="case-study">
-        <div class="case-header">
-            <div class="case-theme-label">Agency Capability Building · Case 1</div>
-            <div class="case-title">Agency Training Program Design</div>
-        </div>
-        <div class="metrics-row">
-            <div class="metric"><div class="value">7</div><div class="label">New Traders Trained to Independence</div></div>
-            <div class="metric"><div class="value">3</div><div class="label">Sessions Designed & Delivered in 2 Weeks</div></div>
-            <div class="metric"><div class="value">100%</div><div class="label">Setup Accuracy — Zero Errors</div></div>
-        </div>
-        <div class="case-section">
-            <h4>The Situation</h4>
-            <p>A Tier-1 agency ($8.5M+ annual spend) had 7 new traders joining who needed to run large campaigns from day one. The agency's internal onboarding lacked operational depth — new hires relied heavily on external support.</p>
-        </div>
-        <div class="case-section">
-            <h4>The Approach</h4>
-            <ul>
-                <li>Designed a three-session training program tailored to the agency's specific challenges rather than generic product education</li>
-                <li>Embedded the agency's real challenges into curriculum — covering optimization logic, AAT workflows, and priority solutions</li>
-                <li>Aligned training content with the agency's growth strategy so traders could apply learnings to live campaigns immediately</li>
-                <li>Actively monitored campaign progress post-training and provided ongoing optimization recommendations during ramp-up</li>
-            </ul>
-        </div>
-        <div class="case-section">
-            <h4>The Outcome</h4>
-            <p>All 7 new traders became capable of independently setting up and QA-ing campaigns with 100% accuracy and zero errors. 3 existing traders transitioned to team leader roles, freeing them to focus on optimization and planning.</p>
-        </div>
-        <div class="why-matters">
-            <h4>Why This Matters</h4>
-            <p>Demonstrates the ability to develop positive relationships with partners and inspire them about what's possible — through structured, customized enablement that builds lasting capability rather than one-off support.</p>
-        </div>
-    </div>
-
-    <div class="case-study">
-        <div class="case-header">
-            <div class="case-theme-label">Agency Capability Building · Case 2</div>
-            <div class="case-title">Cross-Agency Enablement for New Products</div>
-        </div>
-        <div class="metrics-row">
-            <div class="metric"><div class="value">3</div><div class="label">Sessions Delivered in 2 Weeks</div></div>
-            <div class="metric"><div class="value">$347K</div><div class="label">Revenue Enabled via New Product Adoption</div></div>
-            <div class="metric"><div class="value">5</div><div class="label">New Traders Independently Launching</div></div>
-        </div>
-        <div class="case-section">
-            <h4>The Situation</h4>
-            <p>A major agency focused solely on e-commerce media had limited ability to run upper-funnel video campaigns. With 5 new traders joining and an opportunity to unlock additional budget requiring premium video expertise, structured enablement was critical.</p>
-        </div>
-        <div class="case-section">
-            <h4>The Approach</h4>
-            <ul>
-                <li>Planned and delivered three onboarding sessions within two weeks, designed around the agency's past pain points</li>
-                <li>Collaborated with the partner's account team to understand advertiser needs for streaming video inventory</li>
-                <li>Rebuilt the training curriculum around 3P deal fundamentals, campaign planning, and execution best practices tailored to upper-funnel objectives</li>
-                <li>Structured content around Japan-specific open internet inventory (Abema, TVer) to match advertiser priorities</li>
-            </ul>
-        </div>
-        <div class="case-section">
-            <h4>The Outcome</h4>
-            <p>Traders made confident investment decisions and independently launched new 3P deal campaigns after the training, successfully delivering $347K in revenue in Q4 2025.</p>
-        </div>
-        <div class="why-matters">
-            <h4>Why This Matters</h4>
-            <p>Shows the ability to delve deeply into a partner's business, understand their challenges, find opportunities, and deliver enablement that produces immediate commercial results.</p>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<section class="footer">
-    <h2>Thank you</h2>
-    <p class="contact-info">
-        <strong>Wei-Chieh Hsu (Jill)</strong><br>
-        📞 080-5804-8723 · ✉️ wwcchsu@gmail.com · <a href="https://www.linkedin.com/in/jill-h-ab445556/" target="_blank">LinkedIn</a>
-    </p>
-</section>
-
-</body>
-</html>
+Wei-Chieh, Hsu
+Digital Marketing Strategy & Partner Enablement
+📞 080-5804-8723 · ✉️ wwcchsu@gmail.com · LinkedIn
+BACKGROUND
+At a Glance
+Senior Programmatic Solutions Consultant at Amazon Ads Japan · 2022 – Present
+CURRENT ROLE
+	•	Own a $17.5M+ portfolio across 8+ agency and enterprise partners
+	•	Diagnose partner performance issues and rebuild strategy from the ground up
+	•	Partner directly with data science and engineering on technical optimization
+	•	Own new product rollouts from closed beta through general availability
+	•	Design enablement frameworks and mentor teams across regions
+CAREER
+	•	2022 – Now Senior Programmatic Solutions Consultant Amazon Ads Japan  2021 Client Solutions Manager Meta  2016 – 2021 Senior Marketing Consultant Global Media Agencies (iProspect & Havas Media)  2014 – 2015 Digital Advertising Planner Businessweekly Magazine 
+CASE STUDIES
+Four areas of expertise, demonstrated through real projects
+Eight verified projects organized into four themes.
+01
+Partner Business Strategy
+Diagnosing partner needs and rebuilding strategy to drive sustained growth
+02
+Product Enablement & GTM
+Driving adoption of new products and capabilities through partners
+03
+Cross-functional & Global-to-Local
+Operating across teams, markets, and functions without direct authority
+04
+Agency Capability Building
+Enabling partners to succeed independently through structured enablement
+THEME 01
+Partner Business Strategy
+Diagnosing partner needs and rebuilding strategy from the ground up to drive sustained growth.
+PARTNER BUSINESS STRATEGY · CASE 1
+Turnaround for a Streaming Enterprise
+$135K → $2.3M
+Annual Investment Growth
+16x
+Revenue Multiple
+Top 2
+Advertiser Ranking in Japan DSP Revenue
+THE SITUATION
+A major streaming entertainment platform had fully paused its advertising investment in Japan. The partner's internal narrative was that the platform simply wasn't delivering — the relationship had stalled with no clear path forward.
+THE APPROACH
+	•	Ran a structured diagnostic across the partner's setup, measurement methodology, and execution rather than accepting their framing
+	•	Found the real issue was measurement and execution misalignment — not platform performance
+	•	Rebuilt the audience and creative strategy from the ground up
+	•	Guided the partner through a transition to more accurate performance reporting
+THE OUTCOME
+The account grew from $135K to $2.3MM, becoming one of Japan's top two advertisers. The relationship shifted from adversarial to collaborative.
+WHY THIS MATTERS
+Direct proof of the ability to delve deeply into a partner's business and challenges to find the opportunity everyone else had missed — then rebuild trust and momentum from there.
+PARTNER BUSINESS STRATEGY · CASE 2
+CN Agency Upper-Funnel Strategy
+17%
+Brand Awareness Lift (Ecovacs)
+$85K
+New Budget Secured (Jackery)
+3+
+Advertisers Shifted to Upper-Funnel
+THE SITUATION
+A China-based agency managing Japan campaigns needed upper-funnel solutions to build brand awareness for Chinese brands entering the Japanese market, but had focused exclusively on lower-funnel tactics with no experience in premium video inventory.
+THE APPROACH
+	•	Identified the opportunity when a key advertiser reduced budgets — reframed the moment as a chance to shift strategy toward upper-funnel activation
+	•	Proposed Japan-exclusive preferred deals (Abema, TVer) and leveraged prior Prime Day success to demonstrate premium video value
+	•	Educated agency traders through dedicated office hours on deal features, optimization logic, and measurement expectations
+	•	Applied differentiated strategies per advertiser context (Jackery: video deals; Bluetti: Fire Tablet; Ecovacs: CTV repositioning)
+THE OUTCOME
+Jackery secured $85K in new premium video budget. Ecovacs achieved 17% brand awareness lift via CTV. The agency gained confidence to deploy upper-funnel solutions across its broader portfolio.
+WHY THIS MATTERS
+Shows the ability to deeply understand a partner's business context, identify the right moment to shift strategy, and deliver customized solutions that raise the creative and strategic bar — across multiple advertisers within one agency relationship.
+THEME 02
+Product Enablement & GTM
+Driving adoption of new products and capabilities through partners — from beta to scale.
+PRODUCT ENABLEMENT & GTM · CASE 1
+New Product Beta-to-GA Scaling
+Beta → GA
+Full Product Lifecycle Ownership
+35
+Accounts Adopted (60% vs. 14% global)
+SME Lead
+Enablement, Case Studies, Training & PM Feedback
+THE SITUATION
+A new AI-driven ad product needed to scale from closed beta to general availability in Japan. Agencies had no reason to trust an unproven, technically complex product. Six months post-GA, adoption remained below expectations — no Japan-market case studies existed and audience size restrictions blocked some advertisers.
+THE APPROACH
+	•	Recruited early-adopter advertisers during closed beta; supported launches and developed Japan-based case studies
+	•	Built the business case for adoption grounded in early performance data; delivered trainings and provided ongoing PM feedback
+	•	When adoption stalled post-GA, took ownership: collected case studies from daily operations, partnered with ATAE to synthesize into shareable deck
+	•	Mentored other consultants to produce case studies; delivered two-phase internal enablement program to drive broader team adoption
+THE OUTCOME
+Grew adoption from 5 to 35 accounts with 60% adoption rate (vs. 14% global average). Established a repeatable enablement model that improved execution quality and long-term scalability across the organization.
+WHY THIS MATTERS
+Shows the ability to own a product's full go-to-market journey — from recruiting early adopters through building enablement and scaling adoption — the same arc required for shaping how new capabilities show up in partner environments.
+PRODUCT ENABLEMENT & GTM · CASE 2
+Prove-with-One, Scale-to-Many Adoption
+3 → 12
+P&G Brands (from 3 to 12 in 2 years)
+$66K
+First 3P Deal Test Budget Secured
+5+
+Additional Advertisers Adopted
+THE SITUATION
+A Tier-1 agency was historically reluctant to adopt new ad products. Broad agency-wide pushes had limited impact — a more targeted approach was needed to raise adoption across the portfolio.
+THE APPROACH
+	•	Selected P&G as the proof-of-concept advertiser — highest probability of success given close working relationship with the internal account team
+	•	Joined weekly account team calls (originally optional) to bridge knowledge gaps and align strategy across internal and agency teams
+	•	Drove 3P deal and AMC audience adoption with P&G first, using their success to build agency confidence for broader rollout
+	•	Reframed training for agency sales team (not just traders) — positioning new products around business value rather than operational complexity
+THE OUTCOME
+P&G grew from 3 brands ($685K) to 12 brands ($1.09M). Secured $66K 3P deal test, followed by Kao and Kose ($24K in Q4 2025). AMC audience adoption spread to 4+ additional advertisers. Collaboration model shared internally as best practice.
+WHY THIS MATTERS
+Demonstrates the strategic approach of proving value with one partner then scaling across many — a core pattern for driving product adoption through channel partners at scale.
+THEME 03
+Cross-functional & Global-to-Local Execution
+Operating across teams, markets, and functions to deliver outcomes without direct authority.
+CROSS-FUNCTIONAL & GLOBAL-TO-LOCAL · CASE 1
+Cross-Border Data Science Collaboration
+110%
+ROAS Improvement Across 4 Accounts
+1
+Playbook Adopted Company-wide
+APAC
+Control Tower Meeting Established
+THE SITUATION
+A major agency's largest advertisers were experiencing unstable delivery and efficiency issues despite repeated optimization. Standard troubleshooting wasn't identifying the root cause — the issue required data science-level analysis from a US-based team.
+THE APPROACH
+	•	Partnered directly with US-based data scientists on a technical deep-dive into the agency's largest campaigns
+	•	Acted as the bridge between technical analysis and business context — collecting advertiser-specific questions, validating findings, translating into actionable guidance
+	•	Facilitated Q&A sessions between the data science team and agency traders to ensure full understanding
+	•	Consolidated learnings into an optimization playbook; shared externally with agencies and internally with global team
+THE OUTCOME
+Achieved up to 110% ROAS improvement across four major accounts. Playbook adopted by teams outside Japan. The ongoing engagement led to the data science team launching a dedicated APAC Control Tower consulting channel in 2026 — proving the value of cross-functional market collaboration.
+WHY THIS MATTERS
+A verified example of knitting together disparate technical sources into a succinct, actionable strategic narrative — and building a sustained cross-functional relationship that scaled from one market to a regional mechanism.
+CROSS-FUNCTIONAL & GLOBAL-TO-LOCAL · CASE 2
+Cross-Market Partnership Program (JP/CN/AU)
+226
+Active Accounts (from 5 at pilot)
+3
+Markets Aligned (JP, CN, AU)
+80%
+Adoption Rate (vs. 14% WW average)
+THE SITUATION
+The global operating model for scaling campaign optimization was fragmented — no standardized processes, no quality controls, and teams across Japan, China, and Australia operating with very different cultures and working styles.
+THE APPROACH
+	•	Designed the operating model from scratch — account-selection criteria, communication frameworks, and quality mechanisms
+	•	Negotiated with offshore team leadership to secure agency-level coverage — a structural change other regions failed to obtain
+	•	Established monthly reviews, office hours, and feedback loops across all three markets
+	•	When quality issues surfaced, led diagnosis, intervention, and coaching — without direct authority over the offshore team
+THE OUTCOME
+Scaled from 5 to 226 active accounts with 80% adoption rate (vs. 14% WW average). Model recognized by global teams as blueprint for scaling. Framework documented and adopted by other APAC markets.
+WHY THIS MATTERS
+Demonstrates the ability to drive alignment across global, cross-functional teams without direct authority — defining shared mechanisms, earning trust across cultures, and delivering outcomes at scale.
+THEME 04
+Agency Capability Building
+Enabling partners to succeed independently through structured, customized enablement.
+AGENCY CAPABILITY BUILDING · CASE 1
+Agency Training Program Design
+7
+New Traders Trained to Independence
+3
+Sessions Designed & Delivered in 2 Weeks
+100%
+Setup Accuracy — Zero Errors
+THE SITUATION
+A Tier-1 agency ($8.5M+ annual spend) had 7 new traders joining who needed to run large campaigns from day one. The agency's internal onboarding lacked operational depth — new hires relied heavily on external support.
+THE APPROACH
+	•	Designed a three-session training program tailored to the agency's specific challenges rather than generic product education
+	•	Embedded the agency's real challenges into curriculum — covering optimization logic, AAT workflows, and priority solutions
+	•	Aligned training content with the agency's growth strategy so traders could apply learnings to live campaigns immediately
+	•	Actively monitored campaign progress post-training and provided ongoing optimization recommendations during ramp-up
+THE OUTCOME
+All 7 new traders became capable of independently setting up and QA-ing campaigns with 100% accuracy and zero errors. 3 existing traders transitioned to team leader roles, freeing them to focus on optimization and planning.
+WHY THIS MATTERS
+Demonstrates the ability to develop positive relationships with partners and inspire them about what's possible — through structured, customized enablement that builds lasting capability rather than one-off support.
+AGENCY CAPABILITY BUILDING · CASE 2
+Cross-Agency Enablement for New Products
+3
+Sessions Delivered in 2 Weeks
+$347K
+Revenue Enabled via New Product Adoption
+5
+New Traders Independently Launching
+THE SITUATION
+A major agency focused solely on e-commerce media had limited ability to run upper-funnel video campaigns. With 5 new traders joining and an opportunity to unlock additional budget requiring premium video expertise, structured enablement was critical.
+THE APPROACH
+	•	Planned and delivered three onboarding sessions within two weeks, designed around the agency's past pain points
+	•	Collaborated with the partner's account team to understand advertiser needs for streaming video inventory
+	•	Rebuilt the training curriculum around 3P deal fundamentals, campaign planning, and execution best practices tailored to upper-funnel objectives
+	•	Structured content around Japan-specific open internet inventory (Abema, TVer) to match advertiser priorities
+THE OUTCOME
+Traders made confident investment decisions and independently launched new 3P deal campaigns after the training, successfully delivering $347K in revenue in Q4 2025.
+WHY THIS MATTERS
+Shows the ability to delve deeply into a partner's business, understand their challenges, find opportunities, and deliver enablement that produces immediate commercial results.
+Thank you
+Wei-Chieh Hsu (Jill) 📞 080-5804-8723 · ✉️ wwcchsu@gmail.com · LinkedIn
