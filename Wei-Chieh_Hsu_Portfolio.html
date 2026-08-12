@@ -281,6 +281,165 @@ section h2 {
   }
 }
 
+
+/* Further reduced heading scale */
+.hero-word {
+  font-size: clamp(42px, 6vw, 72px) !important;
+  line-height: .98 !important;
+}
+section h2 {
+  font-size: clamp(26px, 3.2vw, 38px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.025em !important;
+}
+@media (max-width: 680px) {
+  .hero-word {
+    font-size: clamp(38px, 9vw, 52px) !important;
+  }
+  section h2 {
+    font-size: clamp(25px, 6.5vw, 32px) !important;
+  }
+}
+
+
+/* Final hero typography refinement */
+.hero-name {
+  font-size: clamp(36px, 4.8vw, 58px) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.035em !important;
+}
+.hero-word {
+  font-size: clamp(34px, 4.6vw, 54px) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.035em !important;
+}
+@media (max-width: 680px) {
+  .hero-name {
+    font-size: clamp(32px, 8vw, 44px) !important;
+  }
+  .hero-word {
+    font-size: clamp(30px, 7.5vw, 40px) !important;
+  }
+}
+
+
+/* Smaller hero positioning statement */
+.hero-positioning {
+  font-size: clamp(15px, 1.45vw, 19px) !important;
+  line-height: 1.5 !important;
+  max-width: 800px !important;
+}
+@media (max-width: 680px) {
+  .hero-positioning {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+
+/* Match the two primary section heading sizes */
+.matched-section-heading {
+  font-size: clamp(26px, 3.2vw, 38px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.025em !important;
+}
+@media (max-width: 680px) {
+  .matched-section-heading {
+    font-size: clamp(25px, 6.5vw, 32px) !important;
+  }
+}
+
+
+/* Refine hero supporting statement */
+.hero-positioning {
+  font-size: clamp(13px, 1.15vw, 16px) !important;
+  line-height: 1.55 !important;
+  max-width: 780px !important;
+}
+@media (max-width: 680px) {
+  .hero-positioning {
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+  }
+}
+
+
+/* Hero positioning — compact subtitle */
+.hero-positioning {
+  font-size: 12px !important;
+  line-height: 1.55 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  max-width: 760px !important;
+}
+@media (max-width: 680px) {
+  .hero-positioning {
+    font-size: 12px !important;
+  }
+}
+
+
+/* Exact hero subtitle override */
+.hero-small-subtitle {
+  display: block !important;
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  max-width: 760px !important;
+  margin: 12px 0 16px !important;
+}
+@media (max-width: 680px) {
+  .hero-small-subtitle {
+    font-size: 13px !important;
+  }
+}
+
+
+/* Hero subtitle size adjustment */
+.hero-small-subtitle {
+  font-size: 20px !important;
+  line-height: 1.5 !important;
+}
+@media (max-width: 680px) {
+  .hero-small-subtitle {
+    font-size: 17px !important;
+  }
+}
+
+
+/* Hero subtitle — 30px test */
+.hero-small-subtitle {
+  font-size: 30px !important;
+  line-height: 1.35 !important;
+}
+@media (max-width: 680px) {
+  .hero-small-subtitle {
+    font-size: 22px !important;
+    line-height: 1.4 !important;
+  }
+}
+
+
+/* Hero subtitle exactly matches "What I bring to Anthropic Customer Success" */
+.hero-small-subtitle {
+  font-size: clamp(26px, 3.2vw, 38px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.025em !important;
+  font-weight: inherit !important;
+}
+@media (max-width: 680px) {
+  .hero-small-subtitle {
+    font-size: clamp(25px, 6.5vw, 32px) !important;
+  }
+}
+
+
+.hero-matched-heading {
+  margin: 14px 0 18px !important;
+  max-width: 900px !important;
+}
+
 </style>
 </head>
 <body><div class="wrap"><div class="hero-contact">
@@ -288,22 +447,22 @@ section h2 {
 <a class="hero-contact-link" href="https://www.linkedin.com/in/jill-h-ab445556/" target="_blank" rel="noopener"><svg class="hero-contact-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 10v7M8 7.5v.01M12 17v-4.1c0-1.7 1-2.9 2.5-2.9s2.5 1 2.5 3v4M12 10v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>LinkedIn</span></a>
 </div></div>
 <nav class="nav"><div class="wrap navin"><div class="brand"><span class="hero-name">Wei-Chieh Hsu</span></div><div class="links"><a href="#fit">Role Fit</a><a href="#cases">Case Studies</a><a href="#approach">CS Approach</a><a href="#experience">Experience</a></div></div></nav>
-<header class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Portfolio · Customer Success Manager, Tokyo</div><h1>10+ years helping enterprise customers adopt technology, unlock growth, and turn new capabilities into measurable business outcomes across Japan &amp; APAC.</h1><p class="lead">Customer-facing growth and technology adoption leader with 10+ years across Amazon Japan, Meta, and global agencies. I work at the intersection of customer objectives, product capabilities, enablement, and measurable business outcomes.</p><div class="chips"><span class="chip">Enterprise Customer Success</span><span class="chip">Technology Adoption</span><span class="chip">Japan Market</span><span class="chip">Executive Engagement</span><span class="chip">Cross-functional Leadership</span><span class="chip">Enablement & Change</span></div></div><div class="meta"><b>Current</b><span>Amazon Japan · Programmatic Solutions Consultant & Growth Lead</span><b>Markets</b><span>Japan · Taiwan · APAC collaboration</span><b>Languages</b><span>Mandarin · Japanese (JLPT N1) · English</span><b>Focus</b><span>Enterprise adoption, strategic growth, customer transformation</span></div></div></header>
-<div class="wrap stats"><div class="stat"><div class="num">10+ yrs</div><div class="label">Customer-facing & marketing technology experience</div></div><div class="stat"><div class="num">277%</div><div class="label">YoY portfolio growth in a strategic Amazon scope</div></div><div class="stat"><div class="num">$135K→$2.3M</div><div class="label">Disney+ Japan portfolio expansion</div></div><div class="stat"><div class="num">35+</div><div class="label">Strategic accounts reached by a scaled operating model</div></div></div>
-<section id="fit"><div class="wrap"><div class="eyebrow">01 · Role Fit</div><div class="education-school">What I bring to Anthropic Customer Success</div><p class="sub">My direct background is in advertising technology rather than enterprise AI software. The transferable strength is a repeated pattern: understand customer goals, translate complex technology into value, enable adoption, build feedback loops, and scale what works.</p><div class="grid3"><div class="card"><div class="kicker">Trusted Advisor</div><div class="education-school">Strategic customer partnership</div><p>Long-term engagement with enterprise advertisers and major agency partners, connecting business priorities with technology capabilities and growth plans.</p></div><div class="card"><div class="kicker">Adoption</div><div class="education-school">From launch to usage</div><p>Supported new product introduction through UAT, localization, customer feedback, education, and adoption programs—not just launch communications.</p></div><div class="card"><div class="kicker">Voice of Customer</div><div class="education-school">Customer → Product feedback</div><p>Worked across customer-facing and Product teams to surface market needs, validate readiness, and improve how new capabilities land in Japan.</p></div><div class="card"><div class="kicker">Enablement</div><div class="education-school">Workshops & partner readiness</div><p>Designed and delivered product education, strategic workshops, and agency enablement to improve confidence and adoption of new capabilities.</p></div><div class="card"><div class="kicker">Scale</div><div class="education-school">Repeatable operating models</div><p>Co-developed a cross-functional engagement model that expanded from a pilot to 35+ strategic accounts, creating more scalable customer coverage.</p></div><div class="card"><div class="kicker">Japan</div><div class="education-school">Local context & trust</div><p>Years of customer-facing experience in Japan, with practical understanding of stakeholder alignment, consensus building, local proof, and long-term relationships.</p></div></div></div></section>
+<header class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Portfolio · Customer Success Manager, Tokyo</div><h2 class="matched-section-heading hero-matched-heading">10+ years helping enterprise customers adopt technology, unlock growth, and turn new capabilities into measurable business outcomes across Japan &amp; APAC.</h2><p class="lead">Customer-facing growth and technology adoption leader with 10+ years across Amazon Japan, Meta, and global agencies. I work at the intersection of customer objectives, product capabilities, enablement, and measurable business outcomes.</p><div class="chips"><span class="chip">Enterprise Customer Success</span><span class="chip">Technology Adoption</span><span class="chip">Japan Market</span><span class="chip">Executive Engagement</span><span class="chip">Cross-functional Leadership</span><span class="chip">Enablement & Change</span></div></div><div class="meta"><b>Current</b><span>Amazon Japan · Programmatic Solutions Consultant & Growth Lead</span><b>Markets</b><span>Japan · Taiwan · APAC collaboration</span><b>Languages</b><span>Mandarin · Japanese (JLPT N1) · English</span><b>Focus</b><span>Enterprise adoption, strategic growth, customer transformation</span></div></div></header>
+<div class="wrap stats"><div class="stat"><div class="num">10+ yrs</div><div class="label">Customer-facing & marketing technology experience</div></div><div class="stat"><div class="num">277%</div><div class="label">YoY portfolio growth in a strategic Amazon scope</div></div><div class="stat"><div class="num">+1,604%</div><div class="label">Streaming & entertainment client portfolio growth</div></div><div class="stat"><div class="num">35+</div><div class="label">Strategic accounts reached by a scaled operating model</div></div></div>
+<section id="fit"><div class="wrap"><div class="eyebrow">01 · Role Fit</div><h2 class="matched-section-heading">What I bring to Anthropic Customer Success</h2><p class="sub">My direct background is in advertising technology rather than enterprise AI software. The transferable strength is a repeated pattern: understand customer goals, translate complex technology into value, enable adoption, build feedback loops, and scale what works.</p><div class="grid3"><div class="card"><div class="kicker">Trusted Advisor</div><div class="education-school">Strategic customer partnership</div><p>Long-term engagement with enterprise advertisers and major agency partners, connecting business priorities with technology capabilities and growth plans.</p></div><div class="card"><div class="kicker">Adoption</div><div class="education-school">From launch to usage</div><p>Supported new product introduction through UAT, localization, customer feedback, education, and adoption programs—not just launch communications.</p></div><div class="card"><div class="kicker">Voice of Customer</div><div class="education-school">Customer → Product feedback</div><p>Worked across customer-facing and Product teams to surface market needs, validate readiness, and improve how new capabilities land in Japan.</p></div><div class="card"><div class="kicker">Enablement</div><div class="education-school">Workshops & partner readiness</div><p>Designed and delivered product education, strategic workshops, and agency enablement to improve confidence and adoption of new capabilities.</p></div><div class="card"><div class="kicker">Scale</div><div class="education-school">Repeatable operating models</div><p>Co-developed a cross-functional engagement model that expanded from a pilot to 35+ strategic accounts, creating more scalable customer coverage.</p></div><div class="card"><div class="kicker">Japan</div><div class="education-school">Local context & trust</div><p>Years of customer-facing experience in Japan, with practical understanding of stakeholder alignment, consensus building, local proof, and long-term relationships.</p></div></div></div></section>
 <section id="impact"><div class="wrap">
   <div class="eyebrow">Selected Impact</div>
   <div class="impact-strip">
     <div class="impact-card"><div class="impact-num">277%</div><div class="impact-label">YoY portfolio growth through localized growth and adoption strategy.</div></div>
-    <div class="impact-card"><div class="impact-num">$135K → $2.3M</div><div class="impact-label">Disney+ Japan portfolio expansion through strategic recommendations and adoption.</div></div>
+    <div class="impact-card"><div class="impact-num">+1,604%</div><div class="impact-label">Streaming & entertainment client portfolio growth through strategic recommendations and adoption.</div></div>
     <div class="impact-card"><div class="impact-num">35+</div><div class="impact-label">Strategic accounts supported after scaling a cross-functional operating model.</div></div>
     <div class="impact-card"><div class="impact-num">10+ yrs</div><div class="impact-label">Customer-facing growth, technology adoption, and strategy across APAC.</div></div>
   </div>
 </div></section>
 
-<section id="cases"><div class="wrap"><div class="eyebrow">02 · Selected Case Studies</div><h2>Evidence of adoption, growth, and scale</h2><p class="sub">Selected examples are framed around the capabilities most relevant to enterprise Customer Success: adoption, stakeholder alignment, enablement, customer insight, and measurable value.</p>
+<section id="cases"><div class="wrap"><div class="eyebrow">02 · Selected Case Studies</div><h2 class="matched-section-heading">Evidence of adoption, growth, and scale</h2><p class="sub">Selected examples are framed around the capabilities most relevant to enterprise Customer Success: adoption, stakeholder alignment, enablement, customer insight, and measurable value.</p>
 <div class="case"><div><div class="kicker">Case 01</div><div class="result">Beta → Adoption</div></div><div><h3>AI-powered product introduction in Japan</h3><p><b>Context:</b> New AI-powered advertising capabilities required local validation and customer readiness before broader adoption.</p><ul><li>Supported product testing and UAT for Japan.</li><li>Collected customer and partner feedback and shared market requirements with Product/GTM teams.</li><li>Supported localization, product education, and partner enablement as capabilities moved toward broader availability.</li></ul><p><b>CS relevance:</b> A practical example of bridging product capability, customer context, enablement, and adoption without overstating technical ownership.</p></div></div>
-<div class="case"><div><div class="kicker">Case 02</div><div class="result">$135K → $2.3M</div></div><div><h3>Disney+ Japan: strategic growth through customer value</h3><p><b>Challenge:</b> Unlock significantly greater value from an existing strategic customer relationship.</p><ul><li>Developed a localized growth strategy aligned with the customer's business priorities.</li><li>Connected product capabilities, measurement, and strategic recommendations into a clearer growth roadmap.</li><li>Worked across stakeholders to build confidence and expand adoption/investment over time.</li></ul><p><b>Outcome:</b> Portfolio investment grew from $135K to $2.3M.</p></div></div>
+<div class="case"><div><div class="kicker">Case 02</div><div class="result">+1,604%</div></div><div><h3>Leading Streaming & Entertainment Client: strategic growth through customer value</h3><p><b>Challenge:</b> Unlock significantly greater value from an existing strategic customer relationship.</p><ul><li>Developed a localized growth strategy aligned with the customer's business priorities.</li><li>Connected product capabilities, measurement, and strategic recommendations into a clearer growth roadmap.</li><li>Worked across stakeholders to build confidence and expand adoption/investment over time.</li></ul><p><b>Outcome:</b> Portfolio investment increased by approximately 1,604%.</p></div></div>
 <div class="case"><div><div class="kicker">Case 03</div><div class="result">Pilot → 35+</div></div><div><h3>Scaling a cross-functional customer engagement model</h3><p><b>Challenge:</b> Extend strategic support to more accounts without relying solely on one-to-one specialist coverage.</p><ul><li>Co-developed a working model between Programmatic Solutions Consultants and Account Strategy Teams.</li><li>Clarified collaboration and knowledge-sharing mechanisms across customer-facing teams.</li><li>Expanded the model from an initial pilot to more than 35 strategic accounts.</li></ul><p><b>CS relevance:</b> Demonstrates the ability to turn high-touch expertise into a more repeatable operating model and playbook.</p></div></div>
 <div class="case"><div><div class="kicker">Case 04</div><div class="result">277% YoY</div></div><div><h3>Strategic portfolio growth</h3><p>Led customer-facing growth initiatives across strategic advertisers and agency partners in Japan, combining account insight, product adoption, cross-functional execution, and data-driven recommendations to deliver 277% year-over-year portfolio growth.</p><p><b>CS relevance:</b> Focus on measurable customer/business outcomes rather than activity alone.</p></div></div>
 </div></section>
