@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wei-Chieh Hsu — Customer Enablement Manager Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --canvas: #FAFAF8;
+    --canvas-alt: #F1F0EC;
+    --ink: #14141C;
+    --ink-soft: #55555F;
+    --ink-faint: #62626B;
+    --line: #DEDDD6;
+    --accent: #E4572E;
+    --accent-text: #B33A20;      /* warm coral-red — deliberate single accent, distinct from Figma's own brand marks */
+    --accent-soft: #FBEAE3;
+    --white: #FFFFFF;
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'Inter', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+    --radius: 3px;
+    /* Readability: accent-text and ink-faint meet stronger contrast targets on light surfaces. */
+  }
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+  body{
+    background: var(--canvas);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a{ color: inherit; text-decoration: none; }
+  ::selection{ background: var(--accent-text); color: var(--white); }
+
+  /* Frame-mark signature: corner brackets that suggest a selected object on a design canvas */
+  .frame{
+    position: relative;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  .frame::before, .frame::after,
+  .frame .fc-tl, .frame .fc-br{
+    content:'';
+    position:absolute;
+    width:9px; height:9px;
+    border: 1.5px solid var(--accent);
+    opacity: 0;
+    transition: opacity .25s ease, transform .25s ease;
+  }
+  .frame::before{ top:-1px; left:-1px; border-right:none; border-bottom:none; }
+  .frame::after{ bottom:-1px; right:-1px; border-left:none; border-top:none; }
+  .frame:hover::before, .frame:hover::after{ opacity:1; }
+  .frame:hover::before{ transform: translate(-2px,-2px); }
+  .frame:hover::after{ transform: translate(2px,2px); }
+
+  /* ---------- Top nav ---------- */
+  header{
+    position: sticky; top:0; z-index: 50;
+    background: rgba(250,250,248,0.88);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner{
+    max-width: 1120px; margin: 0 auto;
+    padding: 18px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+    gap: 24px;
+  }
+  .brand{ font-family: var(--display); font-weight:600; font-size: 17px; letter-spacing: -0.01em; }
+  .brand span{ color: var(--accent-text); }
+  .brand .brand-role{ color: var(--ink-soft); font-family: var(--body); font-size: 12.5px; font-weight:500; margin-left:10px; letter-spacing:0; white-space:nowrap; }
+  nav.links{ display:flex; gap: 28px; }
+  nav.links a{
+    font-size: 13.5px; color: var(--ink-soft); font-weight: 500;
+    transition: color .15s ease;
+  }
+  nav.links a:hover{ color: var(--ink); }
+  .nav-contact{ display:flex; gap:14px; align-items:center; font-size: 13px; }
+  .nav-contact a{
+    padding: 7px 14px; border: 1px solid var(--line); border-radius: 20px;
+    color: var(--ink-soft); font-weight:500; transition: all .15s ease;
+  }
+  .nav-contact a:hover{ border-color: var(--accent-text); color: var(--accent-text); }
+  .nav-contact a.primary{ background: var(--ink); color: var(--white); border-color: var(--ink); }
+  .nav-contact a.primary:hover{ background: var(--accent); border-color: var(--accent); color: var(--white); }
+
+  @media (max-width: 760px){
+    nav.links{ display:none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    max-width: 1120px; margin: 0 auto;
+    padding: 88px 32px 64px;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family: var(--mono); font-size: 12px; color: var(--accent-text);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 22px;
+  }
+  .eyebrow::before{
+    content:''; width:6px; height:6px; background: var(--accent); border-radius:1px;
+  }
+  h1{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(32px, 4.4vw, 52px);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    max-width: 880px;
+    margin-bottom: 26px;
+  }
+  h1 em{ font-style: normal; color: var(--accent-text); }
+  .hero-sub{
+    font-size: 17px; color: var(--ink-soft); max-width: 640px; margin-bottom: 34px;
+  }
+  .tag-row{ display:flex; flex-wrap:wrap; gap:9px; margin-bottom: 48px; }
+  .tag{
+    font-family: var(--mono); font-size: 11.5px; color: var(--ink-soft);
+    border: 1px solid var(--line); border-radius: 20px;
+    padding: 6px 13px; background: var(--white);
+  }
+
+  .hero-meta{
+    display:grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .hero-meta div{
+    padding: 18px 20px 0; border-left: 1px solid var(--line);
+  }
+  .hero-meta div:first-child{ border-left:none; padding-left:0; }
+  .hm-label{ font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); text-transform: uppercase; letter-spacing:0.06em; margin-bottom:6px; }
+  .hm-value{ font-size: 14px; font-weight: 500; color: var(--ink); }
+
+  @media (max-width: 700px){
+    .hero-meta{ grid-template-columns: repeat(2, 1fr); }
+    .hero-meta div{ border-left:none; border-top:1px solid var(--line); padding: 14px 0 0; }
+    .hero-meta div:nth-child(odd){ padding-right: 14px; }
+  }
+
+  /* ---------- Stat strip ---------- */
+  .stat-strip{
+    background: var(--ink); color: var(--white);
+    padding: 46px 32px;
+  }
+  .stat-inner{
+    max-width: 1120px; margin:0 auto;
+    display:grid; grid-template-columns: repeat(4,1fr); gap: 28px;
+  }
+  .stat-num{ font-family: var(--display); font-size: clamp(28px,3vw,38px); font-weight:600; color: var(--accent); margin-bottom: 6px; letter-spacing:-0.01em; }
+  .stat-label{ font-size: 12.5px; color: #B8B8C0; line-height:1.5; max-width: 220px; }
+  @media (max-width: 700px){ .stat-inner{ grid-template-columns: repeat(2,1fr); row-gap: 30px; } }
+
+  /* ---------- Section shell ---------- */
+  section{ max-width: 1120px; margin: 0 auto; padding: 96px 32px; }
+  section.alt{ background: var(--canvas-alt); max-width: none; }
+  section.alt > .inner{ max-width: 1120px; margin: 0 auto; padding: 96px 32px; }
+  .sec-head{ margin-bottom: 52px; max-width: 700px; }
+  .sec-eyebrow{
+    font-family: var(--mono); font-size: 12px; color: var(--accent-text);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .sec-eyebrow::after{ content:''; height:1px; width:36px; background: var(--line); }
+  h2{
+    font-family: var(--display); font-weight: 600; font-size: clamp(24px,3vw,34px);
+    letter-spacing:-0.015em; line-height:1.2; margin-bottom: 14px;
+  }
+  .sec-desc{ font-size: 15.5px; color: var(--ink-soft); max-width: 620px; }
+
+  /* ---------- Role fit grid ---------- */
+  .fit-note{
+    background: var(--white); border-left: 3px solid var(--accent);
+    padding: 20px 24px; margin-bottom: 44px; font-size: 14.5px; color: var(--ink-soft);
+    max-width: 760px; border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .fit-note strong{ color: var(--ink); }
+  .fit-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+  .fit-card{ padding: 26px 24px; }
+  .fit-mark{ font-family: var(--mono); font-size: 11px; color: var(--accent-text); margin-bottom: 14px; }
+  .fit-card h3{ font-family: var(--display); font-size: 16.5px; font-weight: 600; margin-bottom: 10px; letter-spacing:-0.01em; }
+  .fit-card p{ font-size: 13.5px; color: var(--ink-soft); line-height:1.55; }
+  @media (max-width: 860px){ .fit-grid{ grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 560px){ .fit-grid{ grid-template-columns: 1fr; } }
+
+  /* ---------- Case studies ---------- */
+  .case{
+    padding: 36px; margin-bottom: 20px;
+    display:grid; grid-template-columns: 200px 1fr; gap: 36px;
+  }
+  .case:last-child{ margin-bottom:0; }
+  .case-meta{ display:flex; flex-direction:column; gap:14px; }
+  .case-num{ font-family: var(--mono); font-size: 12px; color: var(--ink-faint); }
+  .case-metric{ font-family: var(--display); font-size: 30px; font-weight:600; color: var(--accent-text); letter-spacing:-0.01em; line-height:1; }
+  .case-metric-label{ font-size: 11.5px; color: var(--ink-soft); margin-top:6px; line-height:1.4; }
+  .case-body h3{ font-family: var(--display); font-size: 20px; font-weight:600; margin-bottom:8px; letter-spacing:-0.01em; }
+  .case-context{ font-size: 13.5px; color: var(--ink-soft); margin-bottom: 18px; line-height:1.6; }
+  .case-context strong{ color:var(--ink); font-weight:600; }
+  .case-list{ list-style:none; margin-bottom:18px; }
+  .case-list li{
+    font-size: 13.5px; color: var(--ink-soft); padding-left: 16px; position:relative; margin-bottom:8px; line-height:1.55;
+  }
+  .case-list li::before{ content:'—'; position:absolute; left:0; color: var(--ink-faint); }
+  .case-tag{
+    display:inline-block; font-family: var(--mono); font-size: 11px; color: var(--accent-text);
+    background: var(--accent-soft); padding: 5px 11px; border-radius: 3px;
+  }
+  @media (max-width: 760px){
+    .case{ grid-template-columns: 1fr; gap: 18px; }
+    .case-meta{ flex-direction:row; align-items:baseline; gap: 16px; }
+  }
+
+  /* ---------- Approach loop ---------- */
+  .loop{ display:grid; grid-template-columns: repeat(4,1fr); gap: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow:hidden; }
+  .loop-step{ padding: 30px 26px; background: var(--white); border-left: 1px solid var(--line); }
+  .loop-step:first-child{ border-left:none; }
+  .loop-idx{ font-family: var(--mono); font-size: 11px; color: var(--accent-text); margin-bottom: 16px; }
+  .loop-step h3{ font-family: var(--display); font-size: 16px; font-weight:600; margin-bottom:8px; }
+  .loop-step p{ font-size: 13px; color: var(--ink-soft); line-height:1.55; }
+  @media (max-width: 860px){
+    .loop{ grid-template-columns: repeat(2,1fr); }
+    .loop-step{ border-left:none; border-top:1px solid var(--line); }
+    .loop-step:nth-child(odd){ border-right: 1px solid var(--line); }
+    .loop-step:nth-child(1), .loop-step:nth-child(2){ border-top:none; }
+  }
+  @media (max-width: 560px){
+    .loop{ grid-template-columns: 1fr; }
+    .loop-step{ border-right:none !important; }
+    .loop-step:nth-child(1){ border-top:none; }
+  }
+
+  /* ---------- Experience ---------- */
+  .exp-row{
+    display:grid; grid-template-columns: 160px 1fr; gap: 28px;
+    padding: 26px 0; border-top: 1px solid var(--line);
+  }
+  .exp-row:last-of-type{ border-bottom: 1px solid var(--line); }
+  .exp-period{ font-family: var(--mono); font-size: 12.5px; color: var(--ink-faint); padding-top:2px; }
+  .exp-role{ font-family: var(--display); font-size: 16.5px; font-weight:600; margin-bottom:4px; }
+  .exp-co{ font-size: 13px; color: var(--accent-text); font-weight:500; margin-bottom:10px; }
+  .exp-desc{ font-size: 13.5px; color: var(--ink-soft); line-height:1.6; max-width: 620px; }
+  @media (max-width: 620px){ .exp-row{ grid-template-columns: 1fr; gap:6px; } }
+
+  .edu-block{ margin-top: 8px; padding-top: 28px; font-size: 13.5px; color: var(--ink-soft); }
+  .edu-block strong{ color: var(--ink); font-weight:600; }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background: var(--ink); color: var(--white);
+    padding: 56px 32px 40px;
+  }
+  .footer-inner{ max-width: 1120px; margin:0 auto; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px; }
+  .footer-name{ font-family: var(--display); font-weight:600; font-size: 20px; margin-bottom:8px; }
+  .footer-sub{ font-size: 13px; color: #9A9AA2; }
+  .footer-links{ display:flex; gap:16px; }
+  .footer-links a{
+    font-size: 13px; padding: 9px 16px; border:1px solid #33333D; border-radius:20px;
+    color:#D8D8DC; transition: all .15s ease;
+  }
+  .footer-links a:hover{ border-color: var(--accent); color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="brand">Wei-Chieh Hsu (Jill) <span class="brand-role">Customer Enablement Manager</span></div>
+    <nav class="links">
+      <a href="#fit">Role Fit</a>
+      <a href="#cases">Case Studies</a>
+      <a href="#approach">Enablement Approach</a>
+      <a href="#experience">Experience</a>
+    </nav>
+    <div class="nav-contact">
+      <a href="https://www.linkedin.com/in/jill-h-ab445556/">LinkedIn</a>
+      <a class="primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=wwcchsu@gmail.com" target="_blank" rel="noopener">Email</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">Portfolio · Customer Enablement Manager, Tokyo</div>
+  <h1>10+ years helping enterprise customers <em>adopt technology, unlock growth</em>, and turn new capabilities into measurable business outcomes across Japan &amp; APAC.</h1>
+  <p class="hero-sub">Customer-facing growth and technology adoption leader with 10+ years across Amazon Japan, Meta, and global agencies. I work at the intersection of customer objectives, product capabilities, enablement, and measurable business outcomes.</p>
+  <div class="tag-row">
+    <span class="tag">Customer Enablement</span>
+    <span class="tag">Adoption Strategy</span>
+    <span class="tag">Japan Market</span>
+    <span class="tag">Cross-functional Partnership</span>
+    <span class="tag">Account Growth</span>
+    <span class="tag">Workshop &amp; Training Design</span>
+  </div>
+  <div class="hero-meta">
+    <div><div class="hm-label">Current</div><div class="hm-value">Amazon Japan · Programmatic Solutions Consultant, Amazon Ads</div></div>
+    <div><div class="hm-label">Markets</div><div class="hm-value">Japan · Taiwan · APAC</div></div>
+    <div><div class="hm-label">Languages</div><div class="hm-value">Mandarin · Japanese (N1) · English</div></div>
+    <div><div class="hm-label">Focus</div><div class="hm-value">Adoption, enablement, account growth</div></div>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="stat-inner">
+    <div><div class="stat-num">10+ yrs</div><div class="stat-label">Customer-facing enablement &amp; growth experience</div></div>
+    <div><div class="stat-num">$17.5M+</div><div class="stat-label">Managed portfolio across 8+ strategic accounts (2024)</div></div>
+    <div><div class="stat-num">277%</div><div class="stat-label">YoY growth on a flagship enterprise account</div></div>
+    <div><div class="stat-num">16x</div><div class="stat-label">Investment growth after rebuilding an at-risk account</div></div>
+  </div>
+</div>
+
+<section id="fit">
+  <div class="sec-head">
+    <div class="sec-eyebrow">01 · Role Fit</div>
+    <h2>What I'd bring to Figma's Customer Enablement team</h2>
+    <p class="sec-desc">My direct background is in advertising technology rather than design tools. The transferable strength is a repeated pattern: understand what a team is actually trying to do, connect that to product depth, design the enablement that closes the gap, and make the value visible enough to protect the renewal.</p>
+  </div>
+
+  <div class="fit-note">
+    <strong>On the gap, directly:</strong> I haven't worked inside Figma or a design/collaboration tool day-to-day. What I bring instead is a track record of getting fast at a new product's depth quickly enough to teach it — proven across an AI-adjacent ad product I took from closed beta to general availability, and a track record of turning adoption into renewal-protecting outcomes.
+  </div>
+
+  <div class="fit-grid">
+    <div class="frame fit-card">
+      <div class="fit-mark">01 — TRUSTED ADVISOR</div>
+      <h3>Strategic account partnership</h3>
+      <p>Long-term engagement with enterprise advertisers and major agency partners — connecting stakeholder goals to product capability and a growth plan they actually own.</p>
+    </div>
+    <div class="frame fit-card">
+      <div class="fit-mark">02 — ADOPTION DESIGN</div>
+      <h3>From onboarding to habit</h3>
+      <p>Took a new product from closed beta through general availability — building the enablement materials, training sessions, and business case that moved usage from trial to default.</p>
+    </div>
+    <div class="frame fit-card">
+      <div class="fit-mark">03 — ACCOUNT REVIEWS</div>
+      <h3>Expansion &amp; renewal risk</h3>
+      <p>Diagnosed a fully paused, at-risk enterprise account, rebuilt the strategy from the data up, and turned it into a top-tier account — the same diagnostic instinct account reviews call for.</p>
+    </div>
+    <div class="frame fit-card">
+      <div class="fit-mark">04 — WORKSHOP DESIGN</div>
+      <h3>Live &amp; scalable training</h3>
+      <p>Designed and delivered enablement programs tailored to each partner's actual maturity level, not a generic deck — the difference between a session people attend and one they use.</p>
+    </div>
+    <div class="frame fit-card">
+      <div class="fit-mark">05 — CROSS-FUNCTIONAL</div>
+      <h3>Built for matrixed teams</h3>
+      <p>Partnered directly with data science and engineering to translate technical findings into business outcomes — practiced at the handoffs this role runs through daily.</p>
+    </div>
+    <div class="frame fit-card">
+      <div class="fit-mark">06 — JAPAN CONTEXT</div>
+      <h3>Local trust &amp; consensus</h3>
+      <p>Years of customer-facing experience in Japan — practical fluency in stakeholder alignment, consensus-building, and the kind of proof that actually moves a decision here.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="cases">
+  <div class="inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">02 · Selected Case Studies</div>
+      <h2>Evidence of adoption, growth, and scale</h2>
+      <p class="sec-desc">Framed around what this role actually measures: usage that sticks, accounts that expand, and enablement that scales past one-to-one coverage.</p>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 01</div>
+        <div class="case-metric">Beta&nbsp;→&nbsp;GA</div>
+        <div class="case-metric-label">Full product lifecycle ownership, closed beta to general availability</div>
+      </div>
+      <div class="case-body">
+        <h3>Taking a new product from pilot to default usage</h3>
+        <p class="case-context"><strong>Context:</strong> A new, technically complex ad product needed to move from closed beta to broad adoption — but partners had no built-in reason to trust or invest time in an unproven tool.</p>
+        <ul class="case-list">
+          <li>Recruited early-adopter partners willing to pilot before there was a track record to point to</li>
+          <li>Built the business case for adoption from early performance data, not just product claims</li>
+          <li>Designed enablement materials that translated technical capability into what a partner actually needed to know to use it well</li>
+        </ul>
+        <span class="case-tag">Enablement relevance: adoption design without an existing playbook</span>
+      </div>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 02</div>
+        <div class="case-metric">16×</div>
+        <div class="case-metric-label">Investment growth, $135K → $2.3M</div>
+      </div>
+      <div class="case-body">
+        <h3>Diagnosing an at-risk account before it became a lost one</h3>
+        <p class="case-context"><strong>Challenge:</strong> A major enterprise account had gone fully paused. The account's own narrative was that the product wasn't delivering — the relationship had stalled with no clear next step.</p>
+        <ul class="case-list">
+          <li>Ran a structured diagnostic instead of accepting the account's framing at face value</li>
+          <li>Found the real issue was measurement and execution misalignment — not product performance</li>
+          <li>Rebuilt the strategy and guided the account to accurate reporting, restoring trust in the numbers</li>
+        </ul>
+        <span class="case-tag">Enablement relevance: the diagnostic instinct behind every good account review</span>
+      </div>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 03</div>
+        <div class="case-metric">0&nbsp;→&nbsp;1</div>
+        <div class="case-metric-label">Enablement curriculum built from zero, reused across regions</div>
+      </div>
+      <div class="case-body">
+        <h3>Turning one-to-one expertise into a repeatable model</h3>
+        <p class="case-context"><strong>Challenge:</strong> A newly formed international team had no onboarding framework. Meanwhile, 8+ agency partners each needed enablement tailored to very different starting points.</p>
+        <ul class="case-list">
+          <li>Designed a structured onboarding curriculum from scratch rather than adapting an unrelated template</li>
+          <li>Built partner-specific enablement programs calibrated to each partner's actual maturity level</li>
+          <li>Iterated based on real onboarding outcomes — the framework was later reused as the reference model elsewhere</li>
+        </ul>
+        <span class="case-tag">Enablement relevance: scaling past high-touch, one-off coverage</span>
+      </div>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 04</div>
+        <div class="case-metric">277%</div>
+        <div class="case-metric-label">YoY growth, flagship account</div>
+      </div>
+      <div class="case-body">
+        <h3>Strategic account growth through usage, not just relationship</h3>
+        <p class="case-context">Owned a portfolio of strategic advertisers and agency partners, combining account insight, product adoption, and cross-functional execution to grow one flagship relationship 277% year-over-year.</p>
+        <ul class="case-list">
+          <li>Built account plans grounded in what the customer was actually trying to accomplish, not a generic renewal checklist</li>
+          <li>Partnered with internal teams to keep product feedback flowing both directions</li>
+        </ul>
+        <span class="case-tag">Enablement relevance: growth as a byproduct of real usage, not activity</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="sec-head">
+    <div class="sec-eyebrow">03 · Enablement Approach</div>
+    <h2>How I turn a new tool into a kept habit</h2>
+    <p class="sec-desc">A practical loop, not a framework for its own sake — built around what actually determines whether a customer keeps using something after the first session.</p>
+  </div>
+  <div class="loop">
+    <div class="loop-step">
+      <div class="loop-idx">01 — DISCOVER</div>
+      <h3>Start with outcomes</h3>
+      <p>Align stakeholders on the actual goal, workflow, and blocker — not the feature list. What does "working" look like to them?</p>
+    </div>
+    <div class="loop-step">
+      <div class="loop-idx">02 — ENABLE</div>
+      <h3>Build real confidence</h3>
+      <p>Workshops, champions, and feedback loops calibrated to where the team actually is — not a one-size deck.</p>
+    </div>
+    <div class="loop-step">
+      <div class="loop-idx">03 — PROVE</div>
+      <h3>Make value visible</h3>
+      <p>Track adoption against the outcome that mattered at the start. Surface blockers early, before they become renewal risk.</p>
+    </div>
+    <div class="loop-step">
+      <div class="loop-idx">04 — SCALE</div>
+      <h3>Expand what works</h3>
+      <p>Turn a working pattern into a reusable playbook — and feed what's learned back to product and account teams.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="experience">
+  <div class="inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">04 · Experience</div>
+      <h2>Career Experience</h2>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-period">2022 — Present<br>Tokyo</div>
+      <div>
+        <div class="exp-role">Programmatic Solutions Consultant, Amazon Ads</div>
+        <div class="exp-co">Amazon Japan</div>
+        <p class="exp-desc">Own a $17.5M+ portfolio across 8+ agency and enterprise accounts. Diagnose account performance issues, design partner enablement programs, and partner cross-functionally with data science and product teams to turn technical findings into adoption and growth.</p>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-period">2021<br>Taipei</div>
+      <div>
+        <div class="exp-role">Client Solutions Manager</div>
+        <div class="exp-co">Meta</div>
+        <p class="exp-desc">Enterprise advertising strategy, performance diagnosis, and cross-functional product collaboration across retail, health, and e-commerce accounts.</p>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-period">2016 — 2021<br>Taipei</div>
+      <div>
+        <div class="exp-role">Senior Media Planner</div>
+        <div class="exp-co">iProspect (Dentsu) &amp; Havas Media Group</div>
+        <p class="exp-desc">Integrated advertising and strategic consulting for enterprise brands across complex, multi-stakeholder ecosystems.</p>
+      </div>
+    </div>
+
+    <div class="edu-block">
+      <strong>Education —</strong> MSc Marketing, HEC Paris · BA Japanese Language, National Taiwan University (Exchange, Sophia University)
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-name">Wei-Chieh Hsu (Jill)</div>
+      <div class="footer-sub">Customer Enablement Manager</div>
+      
+    </div>
+    <div class="footer-links">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=wwcchsu@gmail.com" target="_blank" rel="noopener">wwcchsu@gmail.com</a>
+      <a href="https://www.linkedin.com/in/jill-h-ab445556/">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
