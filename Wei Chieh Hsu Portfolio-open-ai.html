@@ -1,476 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wei-Chieh Hsu — Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --canvas: #FAFAF8;
-    --canvas-alt: #F0F2F1;
-    --ink: #10121A;
-    --ink-soft: #43464F;
-    --ink-faint: #6B6E76;
-    --line: #DCDDD8;
-    --accent: #10A37F;      /* OpenAI teal-green — used as single confident accent */
-    --accent-soft: #E3F5EF;
-    --accent-ink: #0B7A5F;  /* darker teal for text-on-light, keeps strong contrast */
-    --white: #FFFFFF;
-    --display: 'Space Grotesk', sans-serif;
-    --body: 'Inter', sans-serif;
-    --mono: 'IBM Plex Mono', monospace;
-    --radius: 3px;
-  }
-  *{ box-sizing: border-box; margin:0; padding:0; }
-  html{ scroll-behavior: smooth; }
-  body{
-    background: var(--canvas);
-    color: var(--ink);
-    font-family: var(--body);
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-  a{ color: inherit; text-decoration: none; }
-  ::selection{ background: var(--accent); color: var(--white); }
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wei-Chieh Hsu | Ads Ecosystem & Partner GTM</title><style>*{box-sizing:border-box}body{margin:0;background:#f7f3eb;color:#171717;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6}.wrap{max-width:1160px;margin:auto;padding:0 30px}a{color:inherit}.top{padding:24px 0;border-bottom:1px solid #ddd5c8}.topin{display:flex;justify-content:space-between;align-items:center;gap:20px}.name{font:700 30px Georgia,serif}.contacts{display:flex;gap:10px;flex-wrap:wrap}.pill,.chip{border:1px solid #d9d0c2;border-radius:999px;padding:8px 12px;text-decoration:none;background:#fffdf8;font-size:13px}.hero{padding:72px 0 54px}.eyebrow{font-size:12px;letter-spacing:.15em;text-transform:uppercase;font-weight:800;color:#0f8f6f}.hero h1{font:700 clamp(34px,4.6vw,54px)/1.12 Georgia,serif;margin:12px 0 18px;max-width:920px}.hero h1 em{font-style:normal;color:#0f8f6f}.lead{font-size:19px;color:#625f59;max-width:850px}.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #ddd5c8;border-bottom:1px solid #ddd5c8;margin-top:34px}.stat{padding:25px 18px;border-right:1px solid #ddd5c8}.stat:last-child{border:0}.num{font:700 27px Georgia,serif;color:#0f8f6f}.label{font-size:13px;color:#6c6861}section{padding:64px 0;border-bottom:1px solid #ddd5c8}h2{font:700 32px Georgia,serif;margin:6px 0 12px}.sub{color:#69655f;max-width:820px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}.card{padding:22px;background:#fffdf8;border:1px solid #ddd5c8;border-radius:15px}.card h3{margin:4px 0 8px;font-size:18px}.card p{margin:0;color:#66615a;font-size:14px}.case{display:grid;grid-template-columns:180px 1fr;gap:30px;padding:30px 0;border-top:1px solid #ddd5c8}.case:first-of-type{border-top:0}.result{font:700 27px Georgia,serif;color:#0f8f6f}.case h3{margin:0 0 8px;font-size:23px}.case li{margin:6px 0}.case p b{color:#171717}.dark{background:#211f1d;color:#f7f3eb}.dark .card{background:#2b2926;border-color:#47423d}.dark .card p,.dark .sub{color:#c8c0b6}.dark .eyebrow{color:#4fe3bc}.footer{padding:45px 0}.footerin{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.letter{padding:40px 44px;background:#fffdf8;border:1px solid #ddd5c8;border-radius:15px;max-width:840px}.letter p{margin:0 0 18px;color:#3f3c37;font-size:15px;line-height:1.75}.letter p:last-child{margin-bottom:0}.truth{border-left:4px solid #171717;padding:18px 22px;background:#fffdf8;border-radius:0 12px 12px 0;margin-top:26px;max-width:840px;font-size:14px;color:#66615a}.truth b{color:#171717}.matrix{width:100%;border-collapse:collapse;margin-top:25px;background:#fffdf8;border:1px solid #ddd5c8;border-radius:15px;overflow:hidden}.matrix th,.matrix td{text-align:left;vertical-align:top;border-bottom:1px solid #ddd5c8;padding:15px}.matrix th{font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;background:#f0ece2;color:#69655f}.matrix td{font-size:14px;color:#3f3c37}.matrix tr:last-child td{border-bottom:0}nav.pagenav{display:flex;gap:22px}nav.pagenav a{font-size:13.5px;font-weight:600;color:#66615a;text-decoration:none}nav.pagenav a:hover{color:#171717}@media(max-width:800px){.stats{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}.case{grid-template-columns:1fr}.topin{align-items:flex-start;flex-direction:column}nav.pagenav{display:none}.matrix{font-size:13px}.matrix th,.matrix td{padding:10px}}</style></head><body>
+<div class="top"><div class="wrap topin"><div class="name">Wei-Chieh Hsu</div><nav class="pagenav"><a href="#motivation">Motivation</a><a href="#design">Ecosystem Design</a><a href="#evidence">Evidence</a><a href="#mapping">Role Mapping</a><a href="#feedback">Product Feedback</a></nav><div class="contacts"><a class="pill" href="mailto:wwcchsu@gmail.com">✉ wwcchsu@gmail.com</a><a class="pill" href="https://www.linkedin.com/in/jill-h-ab445556/" target="_blank">in LinkedIn</a></div></div></div>
 
-  .frame{
-    position: relative;
-    background: var(--white);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-  }
-  .frame::before, .frame::after{
-    content:'';
-    position:absolute;
-    width:9px; height:9px;
-    border: 1.5px solid var(--accent);
-    opacity: 0;
-    transition: opacity .25s ease, transform .25s ease;
-  }
-  .frame::before{ top:-1px; left:-1px; border-right:none; border-bottom:none; }
-  .frame::after{ bottom:-1px; right:-1px; border-left:none; border-top:none; }
-  .frame:hover::before, .frame:hover::after{ opacity:1; }
-  .frame:hover::before{ transform: translate(-2px,-2px); }
-  .frame:hover::after{ transform: translate(2px,2px); }
-
-  header{
-    position: sticky; top:0; z-index: 50;
-    background: rgba(250,250,248,0.9);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-inner{
-    max-width: 1120px; margin: 0 auto;
-    padding: 18px 32px;
-    display:flex; align-items:center; justify-content:space-between;
-    gap: 24px;
-  }
-  .brand{ font-family: var(--display); font-weight:600; font-size: 17px; letter-spacing: -0.01em; }
-  .brand span{ color: var(--accent); }
-  nav.links{ display:flex; gap: 28px; }
-  nav.links a{
-    font-size: 13.5px; color: var(--ink-soft); font-weight: 500;
-    transition: color .15s ease;
-  }
-  nav.links a:hover{ color: var(--ink); }
-  .nav-contact{ display:flex; gap:14px; align-items:center; font-size: 13px; }
-  .nav-contact a{
-    padding: 7px 14px; border: 1px solid var(--line); border-radius: 20px;
-    color: var(--ink-soft); font-weight:500; transition: all .15s ease;
-  }
-  .nav-contact a:hover{ border-color: var(--accent); color: var(--accent-ink); }
-  .nav-contact a.primary{ background: var(--ink); color: var(--white); border-color: var(--ink); }
-  .nav-contact a.primary:hover{ background: var(--accent); border-color: var(--accent); color: var(--white); }
-
-  @media (max-width: 760px){ nav.links{ display:none; } }
-
-  .hero{ max-width: 1120px; margin: 0 auto; padding: 88px 32px 64px; }
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family: var(--mono); font-size: 12px; color: var(--accent-ink);
-    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 22px;
-  }
-  .eyebrow::before{ content:''; width:6px; height:6px; background: var(--accent); border-radius:1px; }
-  h1{
-    font-family: var(--display); font-weight: 600;
-    font-size: clamp(32px, 4.4vw, 52px); line-height: 1.12; letter-spacing: -0.02em;
-    max-width: 900px; margin-bottom: 26px;
-  }
-  h1 em{ font-style: normal; color: var(--accent-ink); }
-  .hero-sub{ font-size: 17px; color: var(--ink-soft); max-width: 660px; margin-bottom: 34px; }
-  .tag-row{ display:flex; flex-wrap:wrap; gap:9px; margin-bottom: 48px; }
-  .tag{
-    font-family: var(--mono); font-size: 11.5px; color: var(--ink-soft);
-    border: 1px solid var(--line); border-radius: 20px; padding: 6px 13px; background: var(--white);
-  }
-
-  .hero-meta{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--line); }
-  .hero-meta div{ padding: 18px 20px 0; border-left: 1px solid var(--line); }
-  .hero-meta div:first-child{ border-left:none; padding-left:0; }
-  .hm-label{ font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); text-transform: uppercase; letter-spacing:0.06em; margin-bottom:6px; }
-  .hm-value{ font-size: 14px; font-weight: 500; color: var(--ink); }
-  @media (max-width: 700px){
-    .hero-meta{ grid-template-columns: repeat(2, 1fr); }
-    .hero-meta div{ border-left:none; border-top:1px solid var(--line); padding: 14px 0 0; }
-    .hero-meta div:nth-child(odd){ padding-right: 14px; }
-  }
-
-  .stat-strip{ background: var(--ink); color: var(--white); padding: 46px 32px; }
-  .stat-inner{ max-width: 1120px; margin:0 auto; display:grid; grid-template-columns: repeat(4,1fr); gap: 28px; }
-  .stat-num{ font-family: var(--display); font-size: clamp(26px,3vw,36px); font-weight:600; color: #4FE3BC; margin-bottom: 6px; letter-spacing:-0.01em; }
-  .stat-label{ font-size: 12.5px; color: #D4D4DA; line-height:1.5; max-width: 220px; }
-  @media (max-width: 700px){ .stat-inner{ grid-template-columns: repeat(2,1fr); row-gap: 30px; } }
-
-  section{ max-width: 1120px; margin: 0 auto; padding: 96px 32px; }
-  section.alt{ background: var(--canvas-alt); max-width: none; }
-  section.alt > .inner{ max-width: 1120px; margin: 0 auto; padding: 96px 32px; }
-  .sec-head{ margin-bottom: 52px; max-width: 720px; }
-  .sec-eyebrow{
-    font-family: var(--mono); font-size: 12px; color: var(--accent-ink);
-    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px;
-    display:flex; align-items:center; gap:10px;
-  }
-  .sec-eyebrow::after{ content:''; height:1px; width:36px; background: var(--line); }
-  h2{
-    font-family: var(--display); font-weight: 600; font-size: clamp(24px,3vw,34px);
-    letter-spacing:-0.015em; line-height:1.2; margin-bottom: 14px;
-  }
-  .sec-desc{ font-size: 15.5px; color: var(--ink-soft); max-width: 640px; }
-
-  .fit-note{
-    background: var(--white); border-left: 3px solid var(--accent);
-    padding: 20px 24px; margin-bottom: 44px; font-size: 14.5px; color: var(--ink-soft);
-    max-width: 780px; border-radius: 0 var(--radius) var(--radius) 0;
-  }
-  .fit-note strong{ color: var(--ink); }
-  .fit-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-  .fit-card{ padding: 26px 24px; }
-  .fit-mark{ font-family: var(--mono); font-size: 11px; color: var(--accent-ink); margin-bottom: 14px; font-weight:600; }
-  .fit-card h3{ font-family: var(--display); font-size: 16.5px; font-weight: 600; margin-bottom: 10px; letter-spacing:-0.01em; }
-  .fit-card p{ font-size: 13.5px; color: var(--ink-soft); line-height:1.55; }
-  @media (max-width: 860px){ .fit-grid{ grid-template-columns: repeat(2,1fr); } }
-  @media (max-width: 560px){ .fit-grid{ grid-template-columns: 1fr; } }
-
-  .case{ padding: 36px; margin-bottom: 20px; display:grid; grid-template-columns: 200px 1fr; gap: 36px; }
-  .case:last-child{ margin-bottom:0; }
-  .case-meta{ display:flex; flex-direction:column; gap:14px; }
-  .case-num{ font-family: var(--mono); font-size: 12px; color: var(--ink-faint); }
-  .case-metric{ font-family: var(--display); font-size: 30px; font-weight:600; color: var(--accent-ink); letter-spacing:-0.01em; line-height:1; }
-  .case-metric-label{ font-size: 11.5px; color: var(--ink-soft); margin-top:6px; line-height:1.4; }
-  .case-body h3{ font-family: var(--display); font-size: 20px; font-weight:600; margin-bottom:8px; letter-spacing:-0.01em; }
-  .case-context{ font-size: 13.5px; color: var(--ink-soft); margin-bottom: 18px; line-height:1.6; }
-  .case-context strong{ color:var(--ink); font-weight:600; }
-  .case-list{ list-style:none; margin-bottom:18px; }
-  .case-list li{ font-size: 13.5px; color: var(--ink-soft); padding-left: 16px; position:relative; margin-bottom:8px; line-height:1.55; }
-  .case-list li::before{ content:'—'; position:absolute; left:0; color: var(--ink-faint); }
-  .case-tag{
-    display:inline-block; font-family: var(--mono); font-size: 11px; color: var(--accent-ink);
-    background: var(--accent-soft); padding: 5px 11px; border-radius: 3px; font-weight:500;
-  }
-  @media (max-width: 760px){
-    .case{ grid-template-columns: 1fr; gap: 18px; }
-    .case-meta{ flex-direction:row; align-items:baseline; gap: 16px; }
-  }
-
-  .loop{ display:grid; grid-template-columns: repeat(4,1fr); gap: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow:hidden; }
-  .loop-step{ padding: 30px 26px; background: var(--white); border-left: 1px solid var(--line); }
-  .loop-step:first-child{ border-left:none; }
-  .loop-idx{ font-family: var(--mono); font-size: 11px; color: var(--accent-ink); margin-bottom: 16px; font-weight:600; }
-  .loop-step h3{ font-family: var(--display); font-size: 16px; font-weight:600; margin-bottom:8px; }
-  .loop-step p{ font-size: 13px; color: var(--ink-soft); line-height:1.55; }
-  @media (max-width: 860px){
-    .loop{ grid-template-columns: repeat(2,1fr); }
-    .loop-step{ border-left:none; border-top:1px solid var(--line); }
-    .loop-step:nth-child(odd){ border-right: 1px solid var(--line); }
-    .loop-step:nth-child(1), .loop-step:nth-child(2){ border-top:none; }
-  }
-  @media (max-width: 560px){
-    .loop{ grid-template-columns: 1fr; }
-    .loop-step{ border-right:none !important; }
-    .loop-step:nth-child(1){ border-top:none; }
-  }
-
-  .exp-row{ display:grid; grid-template-columns: 160px 1fr; gap: 28px; padding: 26px 0; border-top: 1px solid var(--line); }
-  .exp-row:last-of-type{ border-bottom: 1px solid var(--line); }
-  .exp-period{ font-family: var(--mono); font-size: 12.5px; color: var(--ink-faint); padding-top:2px; }
-  .exp-role{ font-family: var(--display); font-size: 16.5px; font-weight:600; margin-bottom:4px; }
-  .exp-co{ font-size: 13px; color: var(--accent-ink); font-weight:600; margin-bottom:10px; }
-  .exp-desc{ font-size: 13.5px; color: var(--ink-soft); line-height:1.6; max-width: 640px; }
-  @media (max-width: 620px){ .exp-row{ grid-template-columns: 1fr; gap:6px; } }
-  .edu-block{ margin-top: 8px; padding-top: 28px; font-size: 13.5px; color: var(--ink-soft); }
-  .edu-block strong{ color: var(--ink); font-weight:600; }
-
-  footer{ background: var(--ink); color: var(--white); padding: 56px 32px 40px; }
-  .footer-inner{ max-width: 1120px; margin:0 auto; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px; }
-  .footer-name{ font-family: var(--display); font-weight:600; font-size: 20px; margin-bottom:8px; }
-  .footer-sub{ font-size: 13px; color: #B8B8C0; }
-  .footer-links{ display:flex; gap:16px; }
-  .footer-links a{
-    font-size: 13px; padding: 9px 16px; border:1px solid #33333D; border-radius:20px;
-    color:#D8D8DC; transition: all .15s ease;
-  }
-  .footer-links a:hover{ border-color: var(--accent); color: #4FE3BC; }
-</style>
-</head>
-<body>
-
-<header>
-  <div class="nav-inner">
-    <div class="brand">Wei-Chieh Hsu <span>·</span> Jill</div>
-    <nav class="links">
-      <a href="#fit">Role Fit</a>
-      <a href="#cases">Case Studies</a>
-      <a href="#approach">Program Approach</a>
-      <a href="#experience">Experience</a>
-    </nav>
-    <div class="nav-contact">
-      <a href="https://www.linkedin.com/in/jill-h-ab445556/">LinkedIn</a>
-      <a class="primary" href="mailto:wwcchsu@gmail.com">Email</a>
-    </div>
-  </div>
-</header>
-
-<div class="hero">
-  <div class="eyebrow">Portfolio · GTM Strategy &amp; Operations Lead, Reseller &amp; Ecosystem Programs (APAC)</div>
-  <h1>10+ years designing partner programs <em>from zero to scaled</em> — across Japan's advertising and agency ecosystem.</h1>
-  <p class="hero-sub">AdTech partner and channel program leader across Amazon Japan, Meta, and global agencies. I've built enablement, certification, and governance frameworks from scratch — not just operated ones that already existed — and I measure success in whether the program still works after I've moved on to the next one.</p>
-  <div class="tag-row">
-    <span class="tag">Reseller &amp; Channel Programs</span>
-    <span class="tag">Partner Enablement</span>
-    <span class="tag">Program Governance</span>
-    <span class="tag">AdTech Ecosystem</span>
-    <span class="tag">Cross-functional Execution</span>
-    <span class="tag">Japan &amp; APAC</span>
-  </div>
-  <div class="hero-meta">
-    <div><div class="hm-label">Current</div><div class="hm-value">Amazon Ads Japan · Partner Sales Consultant</div></div>
-    <div><div class="hm-label">Markets</div><div class="hm-value">Japan · Taiwan · APAC</div></div>
-    <div><div class="hm-label">Languages</div><div class="hm-value">Japanese (N1) · Mandarin · English</div></div>
-    <div><div class="hm-label">Focus</div><div class="hm-value">Partner programs, enablement, governance</div></div>
-  </div>
+<section id="motivation" style="padding-top:56px"><div class="wrap"><div class="eyebrow">Motivation</div><h2>Building the ecosystem while the rules are still being written</h2>
+<div class="letter">
+<p>ChatGPT Ads creates a rare opportunity to design a partner model before it becomes institutionalized — before the coverage logic, the enablement rhythms, and the governance mechanics calcify into whatever gets built first. That's the specific moment I want to work in.</p>
+<p>My experience has taught me that scaled partner growth requires more than relationships: it requires clear coverage, repeatable workflows, credible proof points, enablement, governance, and metrics. At Amazon Ads Japan, that meant redesigning a fragmented coverage model into one that scaled from 5 pilot accounts to 35+ active ones, and building launch enablement that took three Tier-1 agencies from zero to fully trained in two weeks for a new product.</p>
+<p>I want to be direct about scope: I am not presenting myself as someone who has already run a formal reseller program. I am presenting evidence that I have built many of the operating mechanics a reseller program needs — selection logic, scaled coverage, governance rhythms, enablement, and adoption measurement — and done so inside a complex programmatic advertising ecosystem. I want to bring that operating blueprint to OpenAI, and extend it into the reseller economics and incentive mechanics that this role will build.</p>
 </div>
+</div></section>
 
-<div class="stat-strip">
-  <div class="stat-inner">
-    <div><div class="stat-num">8+</div><div class="stat-label">Agency &amp; reseller-style partners under active management</div></div>
-    <div><div class="stat-num">$17.5M+</div><div class="stat-label">Total managed partner portfolio revenue (2024)</div></div>
-    <div><div class="stat-num">0 → 1</div><div class="stat-label">Enablement curriculum built from scratch, no existing playbook</div></div>
-    <div><div class="stat-num">16×</div><div class="stat-label">Growth after structured remediation of an at-risk partnership</div></div>
-  </div>
-</div>
+<header class="hero"><div class="wrap"><div class="eyebrow">Portfolio · OpenAI Ads Reseller & Ecosystem Programs, APAC</div><h1>Designing partner operating systems that turn new advertising capabilities into <em>scalable adoption and growth</em>.</h1><p class="lead">10+ years across Amazon, Meta, and global agencies. My work has evolved from managing campaigns and accounts to designing the coverage models, enablement, governance, launch mechanisms, and feedback loops that help an advertising ecosystem scale.</p><div class="chips"><span class="chip">Programmatic Advertising</span><span class="chip">Agency Ecosystem Strategy</span><span class="chip">Partner GTM</span><span class="chip">Operating Models</span><span class="chip">Adoption & Revenue Growth</span><span class="chip">Japan & APAC</span></div>
+<div class="stats"><div class="stat"><div class="num">5 → 35+</div><div class="label">Accounts scaled through a new coverage model</div></div><div class="stat"><div class="num">Up to 80%</div><div class="label">Recommendation adoption vs. 14% global benchmark</div></div><div class="stat"><div class="num">277% YoY</div><div class="label">Growth across a strategic Tier-1 agency portfolio</div></div><div class="stat"><div class="num">3 Tier-1</div><div class="label">Agencies enabled before a new product launch</div></div></div>
+</div></header>
 
-<section id="fit">
-  <div class="sec-head">
-    <div class="sec-eyebrow">01 · Role Fit</div>
-    <h2>What I'd bring to building the ChatGPT Ads reseller program</h2>
-    <p class="sec-desc">My direct background is in advertising DSP and agency partnerships rather than a formal reseller program at a platform company. The transferable strength is a repeated pattern: design the partner model from first principles, build the enablement that makes it work, govern performance honestly, and adjust based on what the data actually shows.</p>
-  </div>
+<section id="design"><div class="wrap"><div class="eyebrow">01 · Ecosystem Design</div><h2>From "managed agencies" to designed ecosystem mechanics</h2><p class="sub">The strongest overlap with this OpenAI role is not simply agency relationship management. It is the operating architecture I have built around partner selection, scaled coverage, enablement, governance, adoption measurement, and product feedback.</p><div class="grid">
+<div class="card"><h3>Selection & segmentation logic</h3><p>Defined revenue-prioritized account selection and pilot criteria to focus limited specialist capacity on the highest-impact opportunities.</p></div>
+<div class="card"><h3>Scaled coverage model</h3><p>Built a flexible support model using confirmed and pre-approved backup accounts, reducing gatekeeping and allowing partner support to scale.</p></div>
+<div class="card"><h3>Governance rhythms</h3><p>Established cross-team syncs, monthly business reviews, office hours, quality reviews, and escalation loops to improve consistency and accountability.</p></div>
+<div class="card"><h3>Partner enablement</h3><p>Designed role-specific onboarding, playbooks, launch training, and capability-building programs tied to real advertiser use cases.</p></div>
+<div class="card"><h3>Adoption measurement</h3><p>Tracked recommendation adoption, campaign outcomes, product adoption, and revenue signals to determine where programs should expand or improve.</p></div>
+<div class="card"><h3>Voice of ecosystem</h3><p>Consolidated agency questions and product feedback and built durable working mechanisms with Product and Data Science teams.</p></div>
+</div></div></section>
 
-  <div class="fit-note">
-    <strong>On the gap, directly:</strong> I haven't built a reseller program with formal tiering, commercial terms, and eligibility criteria at platform scale. What I bring instead is direct experience designing a partner enablement and onboarding framework from zero — for a team with no existing playbook — and operating governance and performance management across a real, live multi-partner portfolio worth $17.5M+.
-  </div>
+<section id="evidence" class="dark"><div class="wrap"><div class="eyebrow">02 · Selected Evidence</div><h2>Programs built from ambiguity</h2>
 
-  <div class="fit-grid">
-    <div class="frame fit-card">
-      <div class="fit-mark">01 — PROGRAM DESIGN</div>
-      <h3>Built from zero, not inherited</h3>
-      <p>Designed a full onboarding and enablement curriculum from scratch for a newly formed team with no existing framework — later reused as the reference model elsewhere.</p>
-    </div>
-    <div class="frame fit-card">
-      <div class="fit-mark">02 — PARTNER ENABLEMENT</div>
-      <h3>Calibrated, not generic</h3>
-      <p>Built enablement programs tailored to each partner's specific maturity level across multiple Tier-1 agencies — the difference between a program partners use and one they ignore.</p>
-    </div>
-    <div class="frame fit-card">
-      <div class="fit-mark">03 — PERFORMANCE GOVERNANCE</div>
-      <h3>Risk caught early</h3>
-      <p>Diagnosed a fully paused, at-risk partnership before it became a lost one, and separately protected $0.9M in revenue-at-risk through direct negotiation.</p>
-    </div>
-    <div class="frame fit-card">
-      <div class="fit-mark">04 — AGENCY DYNAMICS</div>
-      <h3>Fluent in agency economics</h3>
-      <p>A decade inside Japan's agency ecosystem — how incentives, billing expectations, and measurement actually shape whether a partner program gets adopted or ignored.</p>
-    </div>
-    <div class="frame fit-card">
-      <div class="fit-mark">05 — CROSS-FUNCTIONAL</div>
-      <h3>Built for matrixed execution</h3>
-      <p>Coordinated directly with data science and product teams to turn technical findings into partner-facing solutions — practiced at the handoffs a reseller program runs through daily.</p>
-    </div>
-    <div class="frame fit-card">
-      <div class="fit-mark">06 — DATA-DRIVEN</div>
-      <h3>Portfolio-level analysis</h3>
-      <p>Built an AI-guided framework to analyze which products succeeded with which partner types — the same instinct behind good partner segmentation and coverage modeling.</p>
-    </div>
-  </div>
-</section>
+<div class="case"><div><div class="eyebrow">Scaled Coverage</div><div class="result">5 → 35+</div></div><div><h3>Japan specialist-partner operating model</h3><ul><li>Identified gaps in a fragmented global model and created clear account-selection logic.</li><li>Introduced a more flexible coverage mechanism, direct partner engagement, business reviews, and office hours.</li><li>Scaled from five pilot accounts to more than 35 active accounts while materially outperforming the global adoption benchmark.</li></ul></div></div>
 
-<section class="alt" id="cases">
-  <div class="inner">
-    <div class="sec-head">
-      <div class="sec-eyebrow">02 · Selected Case Studies</div>
-      <h2>Evidence of program building, not just program operating</h2>
-      <p class="sec-desc">Framed around what this role actually measures: programs designed from first principles, partner performance governed honestly, and frameworks that scale past the person who built them.</p>
-    </div>
+<div class="case"><div><div class="eyebrow">Agency Growth</div><div class="result">277% YoY</div></div><div><h3>Tier-1 agency ecosystem growth</h3><ul><li>Used advertiser potential, performance, product gaps, and agency readiness to prioritize growth motions.</li><li>Applied a "prove with one, scale to many" model for new-product adoption.</li><li>Turned successful pilots into proof points that increased confidence and expanded adoption across the broader agency portfolio.</li></ul></div></div>
 
-    <div class="frame case">
-      <div class="case-meta">
-        <div class="case-num">CASE 01</div>
-        <div class="case-metric">0&nbsp;→&nbsp;1</div>
-        <div class="case-metric-label">Enablement framework built from scratch, later reused as reference model</div>
-      </div>
-      <div class="case-body">
-        <h3>Building a partner enablement program with no existing playbook</h3>
-        <p class="case-context"><strong>Context:</strong> A newly formed international PSC team had no onboarding framework at all. At the same time, 8+ agency partners each needed enablement tailored to very different starting points.</p>
-        <ul class="case-list">
-          <li>Designed a structured onboarding curriculum from scratch — certification approach, training sequence, and operating cadence</li>
-          <li>Built partner-specific enablement programs in Japan calibrated to each partner's actual maturity level</li>
-          <li>Iterated based on real onboarding outcomes rather than treating it as a one-time deliverable</li>
-        </ul>
-        <span class="case-tag">Program relevance: early-stage design, exactly where this role starts</span>
-      </div>
-    </div>
+<div class="case"><div><div class="eyebrow">Launch Readiness</div><div class="result">3 Tier-1</div></div><div><h3>Deal Builder partner launch program</h3><ul><li>Co-owned Japan UAT, local issue identification, playbook creation, and agency training within two weeks.</li><li>Enabled all three Tier-1 agencies before launch.</li><li>The playbook became the Ads team's standard onboarding reference, scaling beyond direct coverage.</li></ul></div></div>
 
-    <div class="frame case">
-      <div class="case-meta">
-        <div class="case-num">CASE 02</div>
-        <div class="case-metric">16×</div>
-        <div class="case-metric-label">Partnership growth after structured remediation</div>
-      </div>
-      <div class="case-body">
-        <h3>Governing partner performance before it becomes a lost relationship</h3>
-        <p class="case-context"><strong>Challenge:</strong> A major partnership had gone fully paused. The partner's own narrative was that the platform wasn't delivering — the relationship had stalled with no clear path forward.</p>
-        <ul class="case-list">
-          <li>Ran a structured diagnostic instead of accepting the partner's framing at face value</li>
-          <li>Found the real issue was measurement and execution misalignment — not platform performance</li>
-          <li>Rebuilt the strategy and guided the partner to accurate reporting, restoring trust in the numbers</li>
-        </ul>
-        <span class="case-tag">Program relevance: the risk-monitoring instinct behind good governance</span>
-      </div>
-    </div>
+<div class="case"><div><div class="eyebrow">Capability</div><div class="result">7 traders</div></div><div><h3>Enablement designed for operational independence</h3><ul><li>Built a three-session curriculum around the agency's actual execution gaps and growth priorities.</li><li>Seven new traders became able to independently set up and QA campaigns with 100% accuracy and zero setup errors.</li><li>Senior traders could shift capacity from basic execution toward planning and optimization.</li></ul></div></div>
 
-    <div class="frame case">
-      <div class="case-meta">
-        <div class="case-num">CASE 03</div>
-        <div class="case-metric">110%</div>
-        <div class="case-metric-label">ROAS improvement via cross-functional technical solutioning</div>
-      </div>
-      <div class="case-body">
-        <h3>Turning technical complexity into a partner-facing solution</h3>
-        <p class="case-context"><strong>Challenge:</strong> Several major partner accounts were underperforming for reasons standard account review couldn't diagnose — the issue needed data science-level analysis.</p>
-        <ul class="case-list">
-          <li>Partnered directly with the data science team on a technical deep-dive</li>
-          <li>Acted as the bridge between technical analysis and partner-facing business context</li>
-          <li>Converted findings into a structured, repeatable optimization playbook — later adopted company-wide</li>
-        </ul>
-        <span class="case-tag">Program relevance: cross-functional execution across Sales, Product, and Ops</span>
-      </div>
-    </div>
+</div></section>
 
-    <div class="frame case">
-      <div class="case-meta">
-        <div class="case-num">CASE 04</div>
-        <div class="case-metric">$17.5M+</div>
-        <div class="case-metric-label">Multi-partner portfolio under active governance</div>
-      </div>
-      <div class="case-body">
-        <h3>Operating a real, live multi-partner ecosystem at scale</h3>
-        <p class="case-context">Own end-to-end program management across 8+ agency and direct enterprise partners spanning entertainment, media, and retail — balancing enablement, performance governance, and growth simultaneously.</p>
-        <ul class="case-list">
-          <li>Built individual strategic plans calibrated to each partner's specific business context</li>
-          <li>Used AI-guided analysis to identify which products succeeded with which partner types, informing prioritization</li>
-        </ul>
-        <span class="case-tag">Program relevance: portfolio-level segmentation and coverage thinking</span>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="mapping"><div class="wrap"><div class="eyebrow">03 · Role Mapping</div><h2>Where my experience is direct — and where it is adjacent</h2>
+<table class="matrix">
+<tr><th>OpenAI program mechanic</th><th>Evidence I have built</th><th>How I would position it</th></tr>
+<tr><td>Partner eligibility / segmentation</td><td>Revenue-prioritized account-selection and pilot criteria.</td><td>Strong adjacent experience; I would not claim formal reseller contracting criteria.</td></tr>
+<tr><td>Scaled coverage model</td><td>5 → 35+ account model, backup coverage, direct specialist-to-agency engagement.</td><td>Directly relevant.</td></tr>
+<tr><td>Scorecard / governance</td><td>MBRs, office hours, quality reviews, adoption tracking, escalation mechanisms.</td><td>Direct governance experience; not a contract-linked reseller scorecard.</td></tr>
+<tr><td>Partner enablement / launch readiness</td><td>UAT, playbooks, Tier-1 agency training, onboarding and role-specific capability building.</td><td>Directly relevant.</td></tr>
+<tr><td>ROI / incrementality</td><td>Revenue, adoption, performance and partner-capability measurement used to prioritize and scale programs.</td><td>Strong analytical foundation; no claim of formal reseller P&L ownership.</td></tr>
+<tr><td>Incentive structure / partner economics</td><td>No direct ownership of formal reseller incentive design.</td><td>Explicit development area; transferable understanding of agency dynamics and growth trade-offs.</td></tr>
+</table>
+<div class="truth"><b>Positioning principle:</b> I am not presenting myself as someone who has already run a formal reseller program. I am presenting evidence that I have built many of the operating mechanics a reseller program needs — and done so inside a complex programmatic advertising ecosystem.</div>
+</div></section>
 
-<section id="approach">
-  <div class="sec-head">
-    <div class="sec-eyebrow">03 · Program Approach</div>
-    <h2>How I design a partner program that outlives me</h2>
-    <p class="sec-desc">A practical loop for building programs from zero — not a framework for its own sake, but the sequence that determines whether a program becomes a durable playbook or a one-off effort.</p>
-  </div>
-  <div class="loop">
-    <div class="loop-step">
-      <div class="loop-idx">01 — DESIGN</div>
-      <h3>Start from first principles</h3>
-      <p>Define who the partner is, what they own, and what "good" looks like — before building any material or process around it.</p>
-    </div>
-    <div class="loop-step">
-      <div class="loop-idx">02 — ENABLE</div>
-      <h3>Calibrate, don't template</h3>
-      <p>Build onboarding and certification matched to where each partner actually is — not a single deck for every partner type.</p>
-    </div>
-    <div class="loop-step">
-      <div class="loop-idx">03 — GOVERN</div>
-      <h3>Watch performance honestly</h3>
-      <p>Track partner health against real outcomes. Surface risk early, before it becomes an escalation or a lost relationship.</p>
-    </div>
-    <div class="loop-step">
-      <div class="loop-idx">04 — SCALE</div>
-      <h3>Make it travel</h3>
-      <p>Turn what worked into a reusable framework — documented well enough that someone else can run it without me in the room.</p>
-    </div>
-  </div>
-</section>
+<section id="feedback" class="dark"><div class="wrap"><div class="eyebrow">04 · Product & Ecosystem Feedback</div><h2>Connecting partner reality to product decisions</h2><div class="grid">
+<div class="card"><h3>Data Science collaboration</h3><p>Turned agency performance concerns into structured questions, expert analyses, actionable recommendations, and reusable optimization guidance.</p></div>
+<div class="card"><h3>Product launch ownership</h3><p>Ran Japan UAT, surfaced local product gaps, created launch playbooks, trained agencies, and maintained post-launch feedback loops.</p></div>
+<div class="card"><h3>AI-assisted opportunity analysis</h3><p>Designed an analytical framework and used AI tools to process large agency campaign histories, reducing days of manual work to hours and surfacing targeted adoption opportunities.</p></div>
+</div></div></section>
 
-<section class="alt" id="experience">
-  <div class="inner">
-    <div class="sec-head">
-      <div class="sec-eyebrow">04 · Experience</div>
-      <h2>Career foundation</h2>
-    </div>
+<section><div class="wrap"><div class="eyebrow">05 · Experience</div><h2>Amazon · Meta · Global Agencies</h2><p class="sub"><b>Amazon Ads Japan — Partner Sales Consultant, DSP Advertising:</b> designed the coverage model, enablement, governance, and launch mechanics for a specialist-partner ecosystem spanning 35+ accounts.<br><br><b>Meta — Client Solutions Manager:</b> measurement, experimentation, product adoption, customer strategy, and Data Science collaboration.<br><br><b>iProspect / Havas — Senior Media Planner & Marketing Consultant:</b> integrated media strategy, analytics, customer journeys, and cross-market client leadership.</p></div></section>
 
-    <div class="exp-row">
-      <div class="exp-period">2022 — Present<br>Tokyo</div>
-      <div>
-        <div class="exp-role">Partner Sales Consultant, DSP Advertising</div>
-        <div class="exp-co">Amazon Ads Japan</div>
-        <p class="exp-desc">Own a $17.5M+ portfolio across 8+ agency and enterprise partners. Design and operate partner enablement programs, govern performance and risk, and coordinate cross-functionally with data science and product teams to translate technical findings into partner-facing solutions.</p>
-      </div>
-    </div>
+<section><div class="wrap"><div class="eyebrow">06 · Education & Languages</div><div class="grid"><div class="card"><h3>HEC Paris</h3><p>MSc in Marketing</p></div><div class="card"><h3>Sophia University</h3><p>Exchange Student Program</p></div><div class="card"><h3>National Taiwan University</h3><p>BA in Japanese Language</p></div></div><p class="sub" style="margin-top:24px">Japanese — Native-level (JLPT N1) · Mandarin Chinese — Native · English — Professional Fluency (TOEFL 108)</p></div></section>
 
-    <div class="exp-row">
-      <div class="exp-period">2021<br>Taipei</div>
-      <div>
-        <div class="exp-role">Client Solutions Manager</div>
-        <div class="exp-co">Meta</div>
-        <p class="exp-desc">Enterprise and agency partnership strategy, performance diagnosis, and cross-functional product collaboration across retail, health, and e-commerce accounts.</p>
-      </div>
-    </div>
-
-    <div class="exp-row">
-      <div class="exp-period">2016 — 2021<br>Taipei</div>
-      <div>
-        <div class="exp-role">Senior Marketing Consultant</div>
-        <div class="exp-co">iProspect / Havas</div>
-        <p class="exp-desc">Multi-agency and vendor partnership management for enterprise brands across complex, multi-stakeholder ecosystems.</p>
-      </div>
-    </div>
-
-    <div class="edu-block">
-      <strong>Education —</strong> MSc Marketing, HEC Paris · BA Japanese Language, National Taiwan University (Exchange, Sophia University)
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-name">Wei-Chieh Hsu (Jill)</div>
-      <div class="footer-sub">Portfolio prepared for OpenAI — GTM Strategy &amp; Operations Lead, Reseller &amp; Ecosystem Programs (APAC)</div>
-    </div>
-    <div class="footer-links">
-      <a href="mailto:wwcchsu@gmail.com">wwcchsu@gmail.com</a>
-      <a href="https://www.linkedin.com/in/jill-h-ab445556/">LinkedIn</a>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
+<footer class="footer"><div class="wrap footerin"><div><div class="name">Wei-Chieh Hsu</div><div style="color:#8a857b">Tokyo · Japan & APAC advertising ecosystem experience</div></div><div class="contacts"><a class="pill" href="mailto:wwcchsu@gmail.com">✉ wwcchsu@gmail.com</a><a class="pill" href="https://www.linkedin.com/in/jill-h-ab445556/" target="_blank">in LinkedIn</a></div></div></footer></body></html>
