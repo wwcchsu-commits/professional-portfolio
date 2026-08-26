@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wei-Chieh Hsu — Adobe Customer Success Manager, Creative Cloud & Document Cloud</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --canvas:#FAFAF8;
+    --canvas-alt:#F1F0EC;
+    --ink:#14141C;
+    --ink-soft:#55555F;
+    --ink-faint:#686872;
+    --line:#DEDDD6;
+    --accent:#FA0F00;
+    --accent-text:#C20D00;
+    --accent-soft:#FFF0EE;
+    --white:#FFFFFF;
+    --display:Georgia,'Times New Roman',serif;
+    --body:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --mono:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--canvas);color:var(--ink);font-family:var(--body);
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:var(--white)}
+
+  /* Frame-mark signature — same visual language as the Figma portfolio */
+  .frame{
+    position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--radius)
+  }
+  .frame::before,.frame::after{
+    content:'';position:absolute;width:9px;height:9px;border:1.5px solid var(--accent);
+    opacity:0;transition:opacity .25s ease,transform .25s ease
+  }
+  .frame::before{top:-1px;left:-1px;border-right:none;border-bottom:none}
+  .frame::after{bottom:-1px;right:-1px;border-left:none;border-top:none}
+  .frame:hover::before,.frame:hover::after{opacity:1}
+  .frame:hover::before{transform:translate(-2px,-2px)}
+  .frame:hover::after{transform:translate(2px,2px)}
+
+  header{
+    position:sticky;top:0;z-index:50;background:rgba(250,250,248,.9);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)
+  }
+  .nav-inner{
+    max-width:1120px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;
+    justify-content:space-between;gap:24px
+  }
+  .brand{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.01em}
+  .brand span{color:var(--accent-text)}
+  .brand-role{
+    color:var(--ink-soft)!important;font-family:var(--body);font-size:12.5px;font-weight:500;
+    margin-left:10px;letter-spacing:0;white-space:nowrap
+  }
+  nav.links{display:flex;gap:26px}
+  nav.links a{font-size:13.5px;color:var(--ink-soft);font-weight:500;transition:color .15s}
+  nav.links a:hover{color:var(--ink)}
+  .nav-contact{display:flex;gap:14px;align-items:center;font-size:13px}
+  .nav-contact a{
+    padding:7px 14px;border:1px solid var(--line);border-radius:20px;color:var(--ink-soft);
+    font-weight:500;transition:all .15s
+  }
+  .nav-contact a:hover{border-color:var(--accent-text);color:var(--accent-text)}
+  .nav-contact a.primary{background:var(--ink);color:var(--white);border-color:var(--ink)}
+  .nav-contact a.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--white)}
+  @media(max-width:850px){nav.links{display:none}}
+
+  .hero{max-width:1120px;margin:0 auto;padding:88px 32px 64px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;
+    color:var(--accent-text);text-transform:uppercase;letter-spacing:.08em;margin-bottom:22px
+  }
+  .eyebrow::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:1px}
+  h1{
+    font-family:var(--display);font-weight:700;font-size:clamp(34px,4.6vw,56px);
+    line-height:1.12;letter-spacing:-.02em;max-width:900px;margin-bottom:26px
+  }
+  h1 em{font-style:normal;color:var(--accent-text)}
+  .hero-sub{font-size:17px;color:var(--ink-soft);max-width:700px;margin-bottom:34px}
+  .tag-row{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:48px}
+  .tag{
+    font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);border:1px solid var(--line);
+    border-radius:20px;padding:6px 13px;background:var(--white)
+  }
+  .hero-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+  .hero-meta>div{padding:18px 20px 0;border-left:1px solid var(--line)}
+  .hero-meta>div:first-child{border-left:none;padding-left:0}
+  .hm-label{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);text-transform:uppercase;
+    letter-spacing:.06em;margin-bottom:6px
+  }
+  .hm-value{font-size:14px;font-weight:500}
+  @media(max-width:700px){
+    .hero-meta{grid-template-columns:repeat(2,1fr)}
+    .hero-meta>div{border-left:none;border-top:1px solid var(--line);padding:14px 0 0}
+  }
+
+  .stat-strip{background:var(--ink);color:var(--white);padding:46px 32px}
+  .stat-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+  .stat-num{
+    font-family:var(--display);font-size:clamp(29px,3vw,39px);font-weight:700;
+    color:#FF6A5C;margin-bottom:6px;letter-spacing:-.01em
+  }
+  .stat-label{font-size:12.5px;color:#B8B8C0;line-height:1.5;max-width:220px}
+  @media(max-width:700px){.stat-inner{grid-template-columns:repeat(2,1fr);row-gap:30px}}
+
+  section{max-width:1120px;margin:0 auto;padding:96px 32px}
+  section.alt{background:var(--canvas-alt);max-width:none}
+  section.alt>.inner{max-width:1120px;margin:0 auto;padding:96px 32px}
+  .sec-head{margin-bottom:52px;max-width:760px}
+  .sec-eyebrow{
+    font-family:var(--mono);font-size:12px;color:var(--accent-text);text-transform:uppercase;
+    letter-spacing:.08em;margin-bottom:14px;display:flex;align-items:center;gap:10px
+  }
+  .sec-eyebrow::after{content:'';height:1px;width:36px;background:var(--line)}
+  h2{
+    font-family:var(--display);font-weight:700;font-size:clamp(25px,3vw,35px);
+    letter-spacing:-.015em;line-height:1.2;margin-bottom:14px
+  }
+  .sec-desc{font-size:15.5px;color:var(--ink-soft);max-width:680px}
+
+  .fit-note{
+    background:var(--white);border-left:3px solid var(--accent);padding:20px 24px;
+    margin-bottom:44px;font-size:14.5px;color:var(--ink-soft);max-width:820px;
+    border-radius:0 var(--radius) var(--radius) 0
+  }
+  .fit-note strong{color:var(--ink)}
+  .fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .fit-card{padding:26px 24px}
+  .fit-mark{font-family:var(--mono);font-size:11px;color:var(--accent-text);margin-bottom:14px}
+  .fit-card h3{font-family:var(--display);font-size:16.5px;font-weight:600;margin-bottom:10px;letter-spacing:-.01em}
+  .fit-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.55}
+  @media(max-width:860px){.fit-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.fit-grid{grid-template-columns:1fr}}
+
+  .case{
+    padding:36px;margin-bottom:20px;display:grid;grid-template-columns:200px 1fr;
+    gap:36px
+  }
+  .case:last-child{margin-bottom:0}
+  .case-meta{display:flex;flex-direction:column;gap:14px}
+  .case-num{font-family:var(--mono);font-size:12px;color:var(--ink-faint)}
+  .case-metric{
+    font-family:var(--display);font-size:30px;font-weight:700;color:var(--accent-text);
+    letter-spacing:-.01em;line-height:1
+  }
+  .case-metric-label{font-size:11.5px;color:var(--ink-soft);margin-top:6px;line-height:1.4}
+  .case-body h3{font-family:var(--display);font-size:20px;font-weight:600;margin-bottom:8px;letter-spacing:-.01em}
+  .case-context{font-size:13.5px;color:var(--ink-soft);margin-bottom:18px;line-height:1.6}
+  .case-context strong{color:var(--ink);font-weight:600}
+  .case-list{list-style:none;margin-bottom:18px}
+  .case-list li{
+    font-size:13.5px;color:var(--ink-soft);padding-left:16px;position:relative;
+    margin-bottom:8px;line-height:1.55
+  }
+  .case-list li::before{content:'—';position:absolute;left:0;color:var(--ink-faint)}
+  .case-tag{
+    display:inline-block;font-family:var(--mono);font-size:11px;color:var(--accent-text);
+    background:var(--accent-soft);padding:5px 11px;border-radius:3px
+  }
+  @media(max-width:760px){
+    .case{grid-template-columns:1fr;gap:18px}
+    .case-meta{flex-direction:row;align-items:baseline;gap:16px;flex-wrap:wrap}
+  }
+
+  .loop{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);
+    border-radius:var(--radius);overflow:hidden
+  }
+  .loop-step{padding:30px 26px;background:var(--white);border-left:1px solid var(--line)}
+  .loop-step:first-child{border-left:none}
+  .loop-idx{font-family:var(--mono);font-size:11px;color:var(--accent-text);margin-bottom:16px}
+  .loop-step h3{font-family:var(--display);font-size:16px;font-weight:600;margin-bottom:8px}
+  .loop-step p{font-size:13px;color:var(--ink-soft);line-height:1.55}
+  @media(max-width:860px){
+    .loop{grid-template-columns:repeat(2,1fr)}
+    .loop-step{border-left:none;border-top:1px solid var(--line)}
+    .loop-step:nth-child(odd){border-right:1px solid var(--line)}
+    .loop-step:nth-child(1),.loop-step:nth-child(2){border-top:none}
+  }
+  @media(max-width:560px){
+    .loop{grid-template-columns:1fr}
+    .loop-step{border-right:none!important}
+  }
+
+  .why-card{padding:34px 36px;max-width:880px}
+  .why-card p{font-size:15px;color:var(--ink-soft);margin-bottom:14px}
+  .why-card p:last-child{margin-bottom:0}
+
+  .exp-row{
+    display:grid;grid-template-columns:160px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line)
+  }
+  .exp-row:last-of-type{border-bottom:1px solid var(--line)}
+  .exp-period{font-family:var(--mono);font-size:12.5px;color:var(--ink-faint);padding-top:2px}
+  .exp-role{font-family:var(--display);font-size:16.5px;font-weight:600;margin-bottom:4px}
+  .exp-co{font-size:13px;color:var(--accent-text);font-weight:500;margin-bottom:10px}
+  .exp-desc{font-size:13.5px;color:var(--ink-soft);line-height:1.6;max-width:700px}
+  .edu-block{margin-top:8px;padding-top:28px;font-size:13.5px;color:var(--ink-soft)}
+  .edu-block strong{color:var(--ink);font-weight:600}
+  @media(max-width:620px){.exp-row{grid-template-columns:1fr;gap:6px}}
+
+  footer{background:var(--ink);color:var(--white);padding:56px 32px 40px}
+  .footer-inner{
+    max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;
+    align-items:flex-end;flex-wrap:wrap;gap:24px
+  }
+  .footer-name{font-family:var(--display);font-weight:600;font-size:20px;margin-bottom:8px}
+  .footer-sub{font-size:13px;color:#9A9AA2}
+  .footer-links{display:flex;gap:16px}
+  .footer-links a{
+    font-size:13px;padding:9px 16px;border:1px solid #33333D;border-radius:20px;
+    color:#D8D8DC;transition:all .15s
+  }
+  .footer-links a:hover{border-color:#FF6A5C;color:#FF6A5C}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="brand">Wei-Chieh Hsu (Jill)<span class="brand-role">Adobe · Customer Success Manager, Creative Cloud & Document Cloud</span></div>
+    <nav class="links">
+      <a href="#fit">Role Fit</a>
+      <a href="#cases">Case Studies</a>
+      <a href="#approach">CS Approach</a>
+      <a href="#experience">Experience</a>
+    </nav>
+    <div class="nav-contact">
+      <a href="https://www.linkedin.com/in/jill-h-ab445556/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="primary" href="mailto:wwcchsu@gmail.com">Email</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">Portfolio · Customer Success Manager · Creative Cloud & Document Cloud · Tokyo</div>
+  <h1>Turning <em>product capability into value customers actually adopt</em> — then making that value repeatable.</h1>
+  <p class="hero-sub">10+ years across Amazon Japan, Meta, and global agencies — combining enterprise account strategy, customer enablement, adoption programs, measurement, and cross-functional orchestration across Japan & APAC.</p>
+
+  <div class="tag-row">
+    <span class="tag">Customer Success Strategy</span>
+    <span class="tag">Enterprise Account Planning</span>
+    <span class="tag">Adoption & Value Realization</span>
+    <span class="tag">Workshop Facilitation</span>
+    <span class="tag">GenAI Enablement</span>
+    <span class="tag">Japan Enterprise</span>
+  </div>
+
+  <div class="hero-meta">
+    <div><div class="hm-label">Current</div><div class="hm-value">Amazon Japan · Programmatic Solutions Consultant / Growth Lead</div></div>
+    <div><div class="hm-label">Markets</div><div class="hm-value">Japan · Taiwan · APAC</div></div>
+    <div><div class="hm-label">Languages</div><div class="hm-value">Mandarin · Japanese (JLPT N1) · English</div></div>
+    <div><div class="hm-label">Focus</div><div class="hm-value">Account health · adoption · value realization</div></div>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="stat-inner">
+    <div><div class="stat-num">$17.5M+</div><div class="stat-label">Managed portfolio across 8+ strategic agency and enterprise partners</div></div>
+    <div><div class="stat-num">5 → 35+</div><div class="stat-label">Accounts scaled through a redesigned support and adoption model</div></div>
+    <div><div class="stat-num">44%</div><div class="stat-label">Cost-per-purchase improvement through structured experimentation</div></div>
+    <div><div class="stat-num">3 Tier-1</div><div class="stat-label">Agencies enabled for a new-product launch in two weeks</div></div>
+  </div>
+</div>
+
+<section id="fit">
+  <div class="sec-head">
+    <div class="sec-eyebrow">01 · Role Fit</div>
+    <h2>What I'd bring to Adobe's Customer Strategy & Success team</h2>
+    <p class="sec-desc">Adobe needs a post-sale owner who can connect customer objectives to adoption, value realization, workshops, GenAI use cases, and a living Customer Success Plan. That operating motion is already central to how I manage enterprise relationships today.</p>
+  </div>
+
+  <div class="fit-note">
+    <strong>On the product gap, directly:</strong> I have not worked inside Adobe's product suite and do not yet have hands-on experience with Firefly, Acrobat AI, or Creative Cloud workflows. What I bring instead is deep experience with the underlying Customer Success motion — account strategy, workshop facilitation, adoption planning, stakeholder orchestration, risk diagnosis, and turning usage and performance data into next actions. The Adobe-specific product layer is the part I would ramp quickly.
+  </div>
+
+  <div class="fit-grid">
+    <div class="frame fit-card">
+      <div class="fit-mark">01 — ACCOUNT STRATEGY</div>
+      <h3>Portfolio planning tied to business outcomes</h3>
+      <p>Own account health, adoption, and growth across a $17.5M+ portfolio, translating customer objectives into prioritized actions, business reviews, and measurable outcomes.</p>
+    </div>
+    <div class="frame fit-card">
+      <div class="fit-mark">02 — CUSTOMER ENABLEMENT</div>
+      <h3>Workshops that change behavior</h3>
+      <p>Design onboarding and enablement around the customer's actual maturity, workflow, and execution gaps rather than delivering a generic product deck.</p>
+    </div>
+    <div class="frame fit-card">
+      <div class="fit-mark">03 — RISK & VALUE</div>
+      <h3>Diagnose before disengagement becomes churn</h3>
+      <p>Rebuilt a fully paused enterprise relationship by finding the real measurement and execution issue, restoring trust and driving roughly 16× growth.</p>
+    </div>
+    <div class="frame fit-card">
+      <div class="fit-mark">04 — EXECUTIVE RELATIONSHIPS</div>
+      <h3>Multi-layered stakeholder engagement</h3>
+      <p>Build and present strategic recommendations to senior stakeholders, while coordinating agency, technical, product, analytics, and account teams around shared outcomes.</p>
+    </div>
+    <div class="frame fit-card">
+      <div class="fit-mark">05 — ADOPTION SYSTEMS</div>
+      <h3>Scale beyond one-to-one support</h3>
+      <p>Redesigned a support model from 5 pilot accounts to 35+ active accounts using clearer prioritization, operating cadence, office hours, and quality controls.</p>
+    </div>
+    <div class="frame fit-card">
+      <div class="fit-mark">06 — JAPAN CONTEXT</div>
+      <h3>Local trust and enterprise consensus</h3>
+      <p>Years of customer-facing work in Japan, fluent Japanese (JLPT N1), and practical experience navigating the stakeholder alignment required for enterprise adoption.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="cases">
+  <div class="inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">02 · Case Studies</div>
+      <h2>Evidence of account strategy, adoption, recovery, enablement, and scale</h2>
+      <p class="sec-desc">The cases below are reframed around what this Adobe role measures: customer value, sustained adoption, workshop impact, account health, and repeatable Customer Success motions.</p>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 01</div>
+        <div>
+          <div class="case-metric">$17.5M+</div>
+          <div class="case-metric-label">Portfolio across 8+ strategic agency and enterprise partners</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <h3>Owning account health, adoption, and growth at portfolio scale</h3>
+        <p class="case-context"><strong>Context:</strong> Multiple strategic partners required differentiated plans, recurring governance, and clear prioritization rather than one uniform account motion.</p>
+        <ul class="case-list">
+          <li>Built account strategies calibrated to each customer's business context, adoption maturity, and growth opportunity</li>
+          <li>Used recurring business reviews, performance signals, product usage, and stakeholder feedback to update the plan continuously</li>
+          <li>Acted as the connective layer across customer, agency, Sales, Product, Data Science, and technical stakeholders</li>
+        </ul>
+        <span class="case-tag">Adobe relevance: account strategy, CSP discipline, value realization, cross-functional orchestration</span>
+      </div>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 02</div>
+        <div>
+          <div class="case-metric">16×</div>
+          <div class="case-metric-label">Growth after rebuilding an at-risk streaming & entertainment account</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <h3>Diagnosing an at-risk account before it became a lost one</h3>
+        <p class="case-context"><strong>Challenge:</strong> A major customer had fully paused investment after concluding that the platform was not delivering value.</p>
+        <ul class="case-list">
+          <li>Ran a structured diagnostic rather than accepting the initial narrative at face value</li>
+          <li>Identified measurement and execution misalignment as a core source of the perceived problem</li>
+          <li>Reset success criteria and rebuilt the strategy, restoring trust and producing substantial renewed growth</li>
+        </ul>
+        <span class="case-tag">Adobe relevance: health diagnosis, value realization, renewal-risk reduction, executive trust</span>
+      </div>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 03</div>
+        <div>
+          <div class="case-metric">0 → 1</div>
+          <div class="case-metric-label">Onboarding and enablement curriculum built from scratch</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <h3>Turning expert knowledge into a repeatable enablement model</h3>
+        <p class="case-context"><strong>Challenge:</strong> A newly formed regional team had no established onboarding framework and needed to become independently effective quickly.</p>
+        <ul class="case-list">
+          <li>Designed a structured curriculum around real operating gaps rather than adapting generic material</li>
+          <li>Combined live cases, product fundamentals, optimization, best practices, and escalation judgment</li>
+          <li>Turned repeated coaching into reusable material that became a reference for broader onboarding</li>
+        </ul>
+        <span class="case-tag">Adobe relevance: enablement design, workshops, AI-first culture building, scalable adoption</span>
+      </div>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 04</div>
+        <div>
+          <div class="case-metric">5 → 35+</div>
+          <div class="case-metric-label">Accounts scaled through a redesigned support model</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <h3>Scaling customer support without losing quality</h3>
+        <p class="case-context"><strong>Challenge:</strong> A fragmented support model created unclear ownership and inconsistent customer engagement.</p>
+        <ul class="case-list">
+          <li>Introduced clearer account selection, stakeholder ownership, direct engagement, office hours, and recurring quality reviews</li>
+          <li>Built a cadence that made support more proactive and reduced dependency on ad hoc escalation</li>
+          <li>Scaled from five pilot accounts to more than 35 active accounts</li>
+        </ul>
+        <span class="case-tag">Adobe relevance: portfolio governance, prioritization, scalable CSM operating rhythm</span>
+      </div>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 05</div>
+        <div>
+          <div class="case-metric">3 Tier-1</div>
+          <div class="case-metric-label">Agencies enabled for a new product launch within two weeks</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <h3>From product readiness to customer readiness</h3>
+        <p class="case-context"><strong>Challenge:</strong> A new product needed local UAT, customer-ready guidance, and partner training before launch.</p>
+        <ul class="case-list">
+          <li>Co-owned Japan UAT and surfaced local workflow and product issues</li>
+          <li>Created the Japan playbook and delivered direct enablement to Tier-1 partners</li>
+          <li>All three partners were launch-ready; the playbook became a broader onboarding reference</li>
+        </ul>
+        <span class="case-tag">Adobe relevance: new-feature adoption, customer workshops, enablement assets, feedback loop</span>
+      </div>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 06</div>
+        <div>
+          <div class="case-metric">44%</div>
+          <div class="case-metric-label">Cost-per-purchase improvement through structured experimentation</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <h3>Using experimentation to prove customer value</h3>
+        <p class="case-context"><strong>Context:</strong> At Meta, customer decisions needed evidence that connected product or strategy changes to measurable business outcomes.</p>
+        <ul class="case-list">
+          <li>Used structured conversion-lift testing to evaluate customer strategy hypotheses</li>
+          <li>Translated methodology and results into business recommendations rather than reporting test outputs in isolation</li>
+          <li>Used the evidence to guide customer decisions on optimization and investment</li>
+        </ul>
+        <span class="case-tag">Adobe relevance: value realization, data-driven CSP updates, measurable adoption outcomes</span>
+      </div>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 07</div>
+        <div>
+          <div class="case-metric">Senior stakeholders</div>
+          <div class="case-metric-label">360° strategies across Taiwan and France</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <h3>Building executive-level alignment around a customer strategy</h3>
+        <p class="case-context"><strong>Context:</strong> Enterprise programs across markets required the account team to connect channel execution to a broader business story that senior decision-makers could act on.</p>
+        <ul class="case-list">
+          <li>Built integrated multi-platform strategies tied to customer objectives</li>
+          <li>Presented recommendations to senior client stakeholders and aligned multiple agency/vendor teams</li>
+          <li>Managed the handoff from strategic direction into day-to-day execution and measurement</li>
+        </ul>
+        <span class="case-tag">Adobe relevance: multi-layered relationships, stakeholder mediation, strategic account planning</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="approach">
+  <div class="sec-head">
+    <div class="sec-eyebrow">03 · Customer Success Approach</div>
+    <h2>How I turn adoption into a repeatable Customer Success motion</h2>
+    <p class="sec-desc">A practical loop aligned with Adobe's CSP model: understand the real customer objective, design the right enablement, inspect adoption and value, and update the plan based on what the evidence says.</p>
+  </div>
+
+  <div class="loop">
+    <div class="loop-step">
+      <div class="loop-idx">01 — DIAGNOSE</div>
+      <h3>Start with the customer's workflow</h3>
+      <p>Understand the business objective, process, stakeholder map, adoption level, and blocker before recommending a feature or use case.</p>
+    </div>
+    <div class="loop-step">
+      <div class="loop-idx">02 — ENABLE</div>
+      <h3>Design the right intervention</h3>
+      <p>Choose the right audience, workshop, champion model, content, and timing so enablement changes behavior rather than becoming another presentation.</p>
+    </div>
+    <div class="loop-step">
+      <div class="loop-idx">03 — GOVERN</div>
+      <h3>Make value visible</h3>
+      <p>Track adoption and business outcomes, surface disengagement or risk early, and use evidence to decide what the account needs next.</p>
+    </div>
+    <div class="loop-step">
+      <div class="loop-idx">04 — UPDATE & SCALE</div>
+      <h3>Keep the success plan alive</h3>
+      <p>Feed learning back into the plan, turn successful use cases into reusable playbooks, and expand what works across more teams and workflows.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="why">
+  <div class="inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">04 · Why Adobe, Why Now</div>
+      <h2>Helping enterprise customers turn GenAI capability into working habits</h2>
+    </div>
+    <div class="frame why-card">
+      <p>Adobe's Customer Strategy & Success team is operating at a particularly interesting point: Creative Cloud, Document Cloud, Firefly, and Acrobat AI are creating new capability faster than many enterprise workflows can absorb it.</p>
+      <p>That adoption gap is where I have spent most of my career. The products have been advertising platforms rather than creative and document tools, but the operating challenge is familiar: understand what the customer is trying to achieve, translate product depth into a practical use case, design the enablement that closes the gap, prove value, and make the successful pattern repeatable.</p>
+      <p>I want to bring that combination of account strategy, Japan enterprise relationship management, enablement design, and data-driven value realization to help Adobe customers move GenAI from awareness into daily creative and document workflows.</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="sec-head">
+    <div class="sec-eyebrow">05 · Experience</div>
+    <h2>Career Experience</h2>
+  </div>
+
+  <div class="exp-row">
+    <div class="exp-period">2022 — Present<br>Tokyo</div>
+    <div>
+      <div class="exp-role">Senior Programmatic Solutions Consultant / Growth Lead, Amazon Ads</div>
+      <div class="exp-co">Amazon Japan</div>
+      <p class="exp-desc">Own a $17.5M+ portfolio across 8+ strategic agency and enterprise partners; account strategy, adoption, executive business reviews, risk diagnosis, workshop and enablement design, product UAT, Data Science collaboration, and scalable support-model design.</p>
+    </div>
+  </div>
+
+  <div class="exp-row">
+    <div class="exp-period">2021<br>Taipei</div>
+    <div>
+      <div class="exp-role">Client Solutions Manager</div>
+      <div class="exp-co">Meta</div>
+      <p class="exp-desc">Strategic advertiser and agency relationships, platform adoption, structured experimentation, performance diagnosis, and Product/Data Science collaboration.</p>
+    </div>
+  </div>
+
+  <div class="exp-row">
+    <div class="exp-period">2016 — 2021<br>Taipei / Paris</div>
+    <div>
+      <div class="exp-role">Senior Media Planner</div>
+      <div class="exp-co">iProspect (Dentsu) & Havas Media Group</div>
+      <p class="exp-desc">Enterprise customer strategy, multi-agency/vendor coordination, executive-level stakeholder relationships, and cross-market program delivery across Taiwan and France.</p>
+    </div>
+  </div>
+
+  <div class="edu-block">
+    <strong>Education —</strong> MSc Marketing, HEC Paris · Exchange Student Program, Sophia University · BA Japanese Language, National Taiwan University<br><br>
+    <strong>Languages —</strong> Mandarin: Native · Japanese: Fluent (JLPT N1) · English: Fluent (TOEFL 108)
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-name">Wei-Chieh Hsu (Jill)</div>
+      <div class="footer-sub">Customer Success & Account Strategy · Tokyo, Japan</div>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:wwcchsu@gmail.com">wwcchsu@gmail.com</a>
+      <a href="https://www.linkedin.com/in/jill-h-ab445556/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
