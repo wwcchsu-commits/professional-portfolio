@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wei-Chieh Hsu — Apple Ads Client Strategist Manager, APAC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --canvas:#FAFAF8;
+    --canvas-alt:#F1F0EC;
+    --ink:#14141C;
+    --ink-soft:#55555F;
+    --ink-faint:#686872;
+    --line:#DEDDD6;
+    --accent:#0071E3;
+    --accent-text:#0058B0;
+    --accent-soft:#E8F3FF;
+    --white:#FFFFFF;
+    --display:Georgia,'Times New Roman',serif;
+    --body:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --mono:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--canvas);color:var(--ink);font-family:var(--body);
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:var(--white)}
+
+  /* Frame-mark signature — same visual language as the Figma portfolio */
+  .frame{
+    position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--radius)
+  }
+  .frame::before,.frame::after{
+    content:'';position:absolute;width:9px;height:9px;border:1.5px solid var(--accent);
+    opacity:0;transition:opacity .25s ease,transform .25s ease
+  }
+  .frame::before{top:-1px;left:-1px;border-right:none;border-bottom:none}
+  .frame::after{bottom:-1px;right:-1px;border-left:none;border-top:none}
+  .frame:hover::before,.frame:hover::after{opacity:1}
+  .frame:hover::before{transform:translate(-2px,-2px)}
+  .frame:hover::after{transform:translate(2px,2px)}
+
+  header{
+    position:sticky;top:0;z-index:50;background:rgba(250,250,248,.9);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)
+  }
+  .nav-inner{
+    max-width:1120px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;
+    justify-content:space-between;gap:24px
+  }
+  .brand{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.01em}
+  .brand span{color:var(--accent-text)}
+  .brand-role{
+    color:var(--ink-soft)!important;font-family:var(--body);font-size:12.5px;font-weight:500;
+    margin-left:10px;letter-spacing:0;white-space:nowrap
+  }
+  nav.links{display:flex;gap:26px}
+  nav.links a{font-size:13.5px;color:var(--ink-soft);font-weight:500;transition:color .15s}
+  nav.links a:hover{color:var(--ink)}
+  .nav-contact{display:flex;gap:14px;align-items:center;font-size:13px}
+  .nav-contact a{
+    padding:7px 14px;border:1px solid var(--line);border-radius:20px;color:var(--ink-soft);
+    font-weight:500;transition:all .15s
+  }
+  .nav-contact a:hover{border-color:var(--accent-text);color:var(--accent-text)}
+  .nav-contact a.primary{background:var(--ink);color:var(--white);border-color:var(--ink)}
+  .nav-contact a.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--white)}
+  @media(max-width:850px){nav.links{display:none}}
+
+  .hero{max-width:1120px;margin:0 auto;padding:88px 32px 64px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;
+    color:var(--accent-text);text-transform:uppercase;letter-spacing:.08em;margin-bottom:22px
+  }
+  .eyebrow::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:1px}
+  h1{
+    font-family:var(--display);font-weight:700;font-size:clamp(34px,4.6vw,56px);
+    line-height:1.12;letter-spacing:-.02em;max-width:900px;margin-bottom:26px
+  }
+  h1 em{font-style:normal;color:var(--accent-text)}
+  .hero-sub{font-size:17px;color:var(--ink-soft);max-width:700px;margin-bottom:34px}
+  .tag-row{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:48px}
+  .tag{
+    font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);border:1px solid var(--line);
+    border-radius:20px;padding:6px 13px;background:var(--white)
+  }
+  .hero-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+  .hero-meta>div{padding:18px 20px 0;border-left:1px solid var(--line)}
+  .hero-meta>div:first-child{border-left:none;padding-left:0}
+  .hm-label{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);text-transform:uppercase;
+    letter-spacing:.06em;margin-bottom:6px
+  }
+  .hm-value{font-size:14px;font-weight:500}
+  @media(max-width:700px){
+    .hero-meta{grid-template-columns:repeat(2,1fr)}
+    .hero-meta>div{border-left:none;border-top:1px solid var(--line);padding:14px 0 0}
+  }
+
+  .stat-strip{background:var(--ink);color:var(--white);padding:46px 32px}
+  .stat-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+  .stat-num{
+    font-family:var(--display);font-size:clamp(29px,3vw,39px);font-weight:700;
+    color:#4DA3FF;margin-bottom:6px;letter-spacing:-.01em
+  }
+  .stat-label{font-size:12.5px;color:#B8B8C0;line-height:1.5;max-width:220px}
+  @media(max-width:700px){.stat-inner{grid-template-columns:repeat(2,1fr);row-gap:30px}}
+
+  section{max-width:1120px;margin:0 auto;padding:96px 32px}
+  section.alt{background:var(--canvas-alt);max-width:none}
+  section.alt>.inner{max-width:1120px;margin:0 auto;padding:96px 32px}
+  .sec-head{margin-bottom:52px;max-width:760px}
+  .sec-eyebrow{
+    font-family:var(--mono);font-size:12px;color:var(--accent-text);text-transform:uppercase;
+    letter-spacing:.08em;margin-bottom:14px;display:flex;align-items:center;gap:10px
+  }
+  .sec-eyebrow::after{content:'';height:1px;width:36px;background:var(--line)}
+  h2{
+    font-family:var(--display);font-weight:700;font-size:clamp(25px,3vw,35px);
+    letter-spacing:-.015em;line-height:1.2;margin-bottom:14px
+  }
+  .sec-desc{font-size:15.5px;color:var(--ink-soft);max-width:680px}
+
+  .fit-note{
+    background:var(--white);border-left:3px solid var(--accent);padding:20px 24px;
+    margin-bottom:44px;font-size:14.5px;color:var(--ink-soft);max-width:820px;
+    border-radius:0 var(--radius) var(--radius) 0
+  }
+  .fit-note strong{color:var(--ink)}
+  .fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .fit-card{padding:26px 24px}
+  .fit-mark{font-family:var(--mono);font-size:11px;color:var(--accent-text);margin-bottom:14px}
+  .fit-card h3{font-family:var(--display);font-size:16.5px;font-weight:600;margin-bottom:10px;letter-spacing:-.01em}
+  .fit-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.55}
+  @media(max-width:860px){.fit-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.fit-grid{grid-template-columns:1fr}}
+
+  .case{
+    padding:36px;margin-bottom:20px;display:grid;grid-template-columns:200px 1fr;
+    gap:36px
+  }
+  .case:last-child{margin-bottom:0}
+  .case-meta{display:flex;flex-direction:column;gap:14px}
+  .case-num{font-family:var(--mono);font-size:12px;color:var(--ink-faint)}
+  .case-metric{
+    font-family:var(--display);font-size:30px;font-weight:700;color:var(--accent-text);
+    letter-spacing:-.01em;line-height:1
+  }
+  .case-metric-label{font-size:11.5px;color:var(--ink-soft);margin-top:6px;line-height:1.4}
+  .case-body h3{font-family:var(--display);font-size:20px;font-weight:600;margin-bottom:8px;letter-spacing:-.01em}
+  .case-context{font-size:13.5px;color:var(--ink-soft);margin-bottom:18px;line-height:1.6}
+  .case-context strong{color:var(--ink);font-weight:600}
+  .case-list{list-style:none;margin-bottom:18px}
+  .case-list li{
+    font-size:13.5px;color:var(--ink-soft);padding-left:16px;position:relative;
+    margin-bottom:8px;line-height:1.55
+  }
+  .case-list li::before{content:'—';position:absolute;left:0;color:var(--ink-faint)}
+  .case-tag{
+    display:inline-block;font-family:var(--mono);font-size:11px;color:var(--accent-text);
+    background:var(--accent-soft);padding:5px 11px;border-radius:3px
+  }
+  @media(max-width:760px){
+    .case{grid-template-columns:1fr;gap:18px}
+    .case-meta{flex-direction:row;align-items:baseline;gap:16px;flex-wrap:wrap}
+  }
+
+  .loop{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);
+    border-radius:var(--radius);overflow:hidden
+  }
+  .loop-step{padding:30px 26px;background:var(--white);border-left:1px solid var(--line)}
+  .loop-step:first-child{border-left:none}
+  .loop-idx{font-family:var(--mono);font-size:11px;color:var(--accent-text);margin-bottom:16px}
+  .loop-step h3{font-family:var(--display);font-size:16px;font-weight:600;margin-bottom:8px}
+  .loop-step p{font-size:13px;color:var(--ink-soft);line-height:1.55}
+  @media(max-width:860px){
+    .loop{grid-template-columns:repeat(2,1fr)}
+    .loop-step{border-left:none;border-top:1px solid var(--line)}
+    .loop-step:nth-child(odd){border-right:1px solid var(--line)}
+    .loop-step:nth-child(1),.loop-step:nth-child(2){border-top:none}
+  }
+  @media(max-width:560px){
+    .loop{grid-template-columns:1fr}
+    .loop-step{border-right:none!important}
+  }
+
+  .why-card{padding:34px 36px;max-width:880px}
+  .why-card p{font-size:15px;color:var(--ink-soft);margin-bottom:14px}
+  .why-card p:last-child{margin-bottom:0}
+
+  .exp-row{
+    display:grid;grid-template-columns:160px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line)
+  }
+  .exp-row:last-of-type{border-bottom:1px solid var(--line)}
+  .exp-period{font-family:var(--mono);font-size:12.5px;color:var(--ink-faint);padding-top:2px}
+  .exp-role{font-family:var(--display);font-size:16.5px;font-weight:600;margin-bottom:4px}
+  .exp-co{font-size:13px;color:var(--accent-text);font-weight:500;margin-bottom:10px}
+  .exp-desc{font-size:13.5px;color:var(--ink-soft);line-height:1.6;max-width:700px}
+  .edu-block{margin-top:8px;padding-top:28px;font-size:13.5px;color:var(--ink-soft)}
+  .edu-block strong{color:var(--ink);font-weight:600}
+  @media(max-width:620px){.exp-row{grid-template-columns:1fr;gap:6px}}
+
+  footer{background:var(--ink);color:var(--white);padding:56px 32px 40px}
+  .footer-inner{
+    max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;
+    align-items:flex-end;flex-wrap:wrap;gap:24px
+  }
+  .footer-name{font-family:var(--display);font-weight:600;font-size:20px;margin-bottom:8px}
+  .footer-sub{font-size:13px;color:#9A9AA2}
+  .footer-links{display:flex;gap:16px}
+  .footer-links a{
+    font-size:13px;padding:9px 16px;border:1px solid #33333D;border-radius:20px;
+    color:#D8D8DC;transition:all .15s
+  }
+  .footer-links a:hover{border-color:#4DA3FF;color:#4DA3FF}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="brand">Wei-Chieh Hsu (Jill)<span class="brand-role">Apple Ads · Client Strategist Manager, APAC</span></div>
+    <nav class="links">
+      <a href="#fit">Role Fit</a>
+      <a href="#cases">Case Studies</a>
+      <a href="#approach">Management Approach</a>
+      <a href="#experience">Experience</a>
+    </nav>
+    <div class="nav-contact">
+      <a href="https://www.linkedin.com/in/jill-h-ab445556/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="primary" href="mailto:wwcchsu@gmail.com">Email</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">Portfolio · Apple Ads Client Strategist Manager, APAC</div>
+  <h1>Scaling <em>people, systems, and advertiser growth</em> across Japan's performance media ecosystem.</h1>
+  <p class="hero-sub">10+ years across Amazon Japan, Meta, and global agencies — combining self-serve performance advertising, strategic account growth, functional leadership, team enablement, and operating systems that make good sales behavior repeatable.</p>
+
+  <div class="tag-row">
+    <span class="tag">Japan Growth Strategy</span>
+    <span class="tag">Performance Advertising</span>
+    <span class="tag">Functional Leadership</span>
+    <span class="tag">Team Enablement</span>
+    <span class="tag">Client Strategy</span>
+    <span class="tag">Operating Systems</span>
+  </div>
+
+  <div class="hero-meta">
+    <div><div class="hm-label">Current</div><div class="hm-value">Amazon Japan · Programmatic Solutions Consultant / Growth Lead</div></div>
+    <div><div class="hm-label">Markets</div><div class="hm-value">Japan · Taiwan · APAC</div></div>
+    <div><div class="hm-label">Languages</div><div class="hm-value">Mandarin · Japanese (JLPT N1) · English</div></div>
+    <div><div class="hm-label">Target</div><div class="hm-value">Growth Accounts leadership · Japan</div></div>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="stat-inner">
+    <div><div class="stat-num">$17.5M+</div><div class="stat-label">Managed portfolio across strategic agency and enterprise partners</div></div>
+    <div><div class="stat-num">277%</div><div class="stat-label">YoY growth across a strategic Tier-1 agency portfolio</div></div>
+    <div><div class="stat-num">5 → 35+</div><div class="stat-label">Accounts scaled through a redesigned specialist operating model</div></div>
+    <div><div class="stat-num">7 traders</div><div class="stat-label">Enabled to independent setup & QA with 100% accuracy</div></div>
+  </div>
+</div>
+
+<section id="fit">
+  <div class="sec-head">
+    <div class="sec-eyebrow">01 · Role Fit</div>
+    <h2>Why Apple Ads — and what I'd bring to the Growth Accounts team</h2>
+    <p class="sec-desc">Apple's role combines the two parts of my work I want to bring together formally: stay close enough to key clients to model excellent performance-sales behavior, while building the coaching, operating cadence, and systems that help a wider team scale.</p>
+  </div>
+
+  <div class="fit-note">
+    <strong>On the leadership scope, directly:</strong> I have not held a formal people-manager title with direct reports and team-quota accountability. What I have done repeatedly is lead through functional ownership — mentoring regional teams, building onboarding from zero, redesigning operating models, coaching new hires and traders, and creating mechanisms that raise the performance of people beyond my own accounts.
+  </div>
+
+  <div class="fit-grid">
+    <div class="frame fit-card">
+      <div class="fit-mark">01 — PERFORMANCE MEDIA</div>
+      <h3>Self-serve platform depth</h3>
+      <p>10+ years in performance advertising across Amazon DSP, Meta Ads Manager, and agency environments — grounded in how performance advertisers define success and decide where to scale.</p>
+    </div>
+    <div class="frame fit-card">
+      <div class="fit-mark">02 — CLIENT GROWTH</div>
+      <h3>Strategic portfolio ownership</h3>
+      <p>Own growth strategy across major advertisers and Tier-1 agencies, using measurement, product adoption, account prioritization, and recurring business reviews to turn opportunity into revenue.</p>
+    </div>
+    <div class="frame fit-card">
+      <div class="fit-mark">03 — PEOPLE DEVELOPMENT</div>
+      <h3>Coach through real work</h3>
+      <p>Mentored a newly formed regional team and built practical onboarding around live DSP cases, customer scenarios, optimization, and escalation judgment — not only product slides.</p>
+    </div>
+    <div class="frame fit-card">
+      <div class="fit-mark">04 — SYSTEMS & PROCESS</div>
+      <h3>Build the mechanism</h3>
+      <p>Redesigned a fragmented specialist-support model into a prioritized, governed operating system that scaled from 5 pilot accounts to 35+ active accounts.</p>
+    </div>
+    <div class="frame fit-card">
+      <div class="fit-mark">05 — ANALYTICAL LEADERSHIP</div>
+      <h3>Turn data into action</h3>
+      <p>Use internal and external performance signals, experimentation, measurement, product-adoption data, and Data Science output to focus account and partner decisions.</p>
+    </div>
+    <div class="frame fit-card">
+      <div class="fit-mark">06 — JAPAN CONTEXT</div>
+      <h3>Local trust, language, and market fluency</h3>
+      <p>Years of customer-facing work in Japan, fluent Japanese (JLPT N1), and deep familiarity with agency decision-making, stakeholder alignment, and the proof required to move performance advertisers.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="cases">
+  <div class="inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">02 · Case Studies</div>
+      <h2>All relevant evidence — people, commercial growth, performance, product adoption, and scale</h2>
+      <p class="sec-desc">Rather than reduce the story to four selected examples, this version includes the full set of cases that demonstrate how I lead, diagnose, coach, build systems, and create growth in performance-media environments.</p>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 01</div>
+        <div>
+          <div class="case-metric">~2 months</div>
+          <div class="case-metric-label">Newly formed regional team ramped toward independent advertiser support</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <h3>Building capability for a newly formed China PSC team</h3>
+        <p class="case-context"><strong>Challenge:</strong> A new team entered DSP support without an experienced local PSC bench or an established onboarding model.</p>
+        <ul class="case-list">
+          <li>Mentored one L6 manager and four L5 PSCs through weekly coaching, real DSP cases, optimization walkthroughs, and client-facing scenarios</li>
+          <li>Converted recurring knowledge gaps into a reusable curriculum covering optimization, product fundamentals, best practices, and escalation standards</li>
+          <li>Helped the team move toward independently supporting advertisers in approximately two months</li>
+        </ul>
+        <span class="case-tag">Manager relevance: coaching, team development, judgment-building, repeatable onboarding</span>
+      </div>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 02</div>
+        <div>
+          <div class="case-metric">7 traders</div>
+          <div class="case-metric-label">Independent setup & QA · 100% accuracy · zero setup errors</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <h3>Moving a Tier-1 agency from dependency to independence</h3>
+        <p class="case-context"><strong>Challenge:</strong> New traders needed to become independently productive without keeping senior traders trapped in basic execution support.</p>
+        <ul class="case-list">
+          <li>Designed a three-session curriculum around the agency's real execution gaps and growth priorities</li>
+          <li>Used practical scenarios and QA discipline rather than generic training content</li>
+          <li>Seven new traders became independently capable of setup and QA; three senior traders could redirect capacity toward planning, optimization, and leadership</li>
+        </ul>
+        <span class="case-tag">Manager relevance: capability building that changes team capacity</span>
+      </div>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 03</div>
+        <div>
+          <div class="case-metric">5 → 35+</div>
+          <div class="case-metric-label">Scaled coverage · 60% monthly adoption vs. 14% global benchmark</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <h3>Scaling specialist support while raising quality</h3>
+        <p class="case-context"><strong>Challenge:</strong> A fragmented support model had unclear prioritization, inconsistent ownership, and too much friction between specialists and account teams.</p>
+        <ul class="case-list">
+          <li>Defined clearer revenue-prioritized account selection and stakeholder ownership</li>
+          <li>Introduced direct specialist-to-agency engagement, office hours, recurring business reviews, and monthly quality controls</li>
+          <li>Scaled from five pilots to more than 35 accounts while materially outperforming the global recommendation-adoption benchmark</li>
+        </ul>
+        <span class="case-tag">Manager relevance: systems, prioritization, inspection cadence, scalable execution</span>
+      </div>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 04</div>
+        <div>
+          <div class="case-metric">277%</div>
+          <div class="case-metric-label">YoY growth across a strategic Tier-1 agency portfolio</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <h3>Turning partner strategy into portfolio growth</h3>
+        <p class="case-context"><strong>Challenge:</strong> Growth required more than relationship management — the agency needed clear advertiser prioritization, credible proof points, product depth, and a repeatable expansion motion.</p>
+        <ul class="case-list">
+          <li>Used advertiser potential, performance, product gaps, and agency readiness to prioritize growth motions</li>
+          <li>Combined business reviews, product adoption, measurement, and a “prove with one, scale to many” model</li>
+          <li>Turned successful advertiser pilots into broader agency confidence and adoption</li>
+        </ul>
+        <span class="case-tag">Manager relevance: commercial strategy, portfolio prioritization, performance-account growth</span>
+      </div>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 05</div>
+        <div>
+          <div class="case-metric">16×</div>
+          <div class="case-metric-label">Growth after rebuilding an at-risk streaming & entertainment account</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <h3>Diagnosing an at-risk account before it became a lost one</h3>
+        <p class="case-context"><strong>Challenge:</strong> A major streaming & entertainment advertiser had paused DSP investment after concluding the platform was underperforming.</p>
+        <ul class="case-list">
+          <li>Ran a structured diagnostic rather than accepting the initial account narrative at face value</li>
+          <li>Identified measurement and execution misalignment, including incomplete attribution, as a core source of the perceived problem</li>
+          <li>Reset success criteria and rebuilt the audience, supply, optimization, and measurement strategy, restoring confidence and substantial growth</li>
+        </ul>
+        <span class="case-tag">Manager relevance: model strong client diagnosis, protect revenue, rebuild trust with evidence</span>
+      </div>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 06</div>
+        <div>
+          <div class="case-metric">3 Tier-1</div>
+          <div class="case-metric-label">Agencies launch-ready in a two-week enablement window</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <h3>Launching a new advertising capability in Japan</h3>
+        <p class="case-context"><strong>Challenge:</strong> A new product required Japan-specific UAT, local issue resolution, a practical agency playbook, and rapid partner readiness before launch.</p>
+        <ul class="case-list">
+          <li>Co-owned Japan UAT and surfaced local workflow and product issues before launch</li>
+          <li>Built the Japan playbook and delivered direct partner training</li>
+          <li>All three Tier-1 agencies were ready by launch; the playbook became a broader Ads onboarding reference</li>
+        </ul>
+        <span class="case-tag">Manager relevance: product fluency, launch leadership, field enablement, reusable assets</span>
+      </div>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 07</div>
+        <div>
+          <div class="case-metric">+110%</div>
+          <div class="case-metric-label">ROAS improvement across adopted Data Science recommendations</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <h3>Turning technical analysis into commercial action</h3>
+        <p class="case-context"><strong>Challenge:</strong> Persistent performance concerns required deeper analysis than standard campaign optimization could provide.</p>
+        <ul class="case-list">
+          <li>Partnered with a cross-region Data Science team to structure the business and technical questions</li>
+          <li>Translated algorithmic findings into practical trader-facing guidance and facilitated expert Q&A</li>
+          <li>Four major advertisers adopted the recommendations; the resulting guidance was scaled into a reusable playbook</li>
+        </ul>
+        <span class="case-tag">Manager relevance: analytical leadership, technical translation, evidence-led coaching</span>
+      </div>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 08</div>
+        <div>
+          <div class="case-metric">41% / 44%</div>
+          <div class="case-metric-label">Media-cost reduction / cost-per-purchase improvement through structured testing</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <h3>Using experimentation to move performance metrics that matter</h3>
+        <p class="case-context"><strong>Context:</strong> At Meta, performance strategy required separating opinion from evidence and showing advertisers which changes materially improved efficiency.</p>
+        <ul class="case-list">
+          <li>Used structured A/B and conversion-lift testing to evaluate media and customer-strategy hypotheses</li>
+          <li>Connected experimentation methodology to concrete business outcomes rather than reporting test results in isolation</li>
+          <li>Used findings to guide advertiser decisions on investment and optimization</li>
+        </ul>
+        <span class="case-tag">Manager relevance: performance measurement, analytical selling, teachable decision discipline</span>
+      </div>
+    </div>
+
+    <div class="frame case">
+      <div class="case-meta">
+        <div class="case-num">CASE 09</div>
+        <div>
+          <div class="case-metric">Beta → GA</div>
+          <div class="case-metric-label">Product adoption from early pilot to broader market readiness</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <h3>Taking a new product from pilot to repeatable adoption</h3>
+        <p class="case-context"><strong>Challenge:</strong> A new ad product needed credible early adopters, practical enablement, and feedback loops before it could move from beta toward broader usage.</p>
+        <ul class="case-list">
+          <li>Recruited suitable early advertisers and built use cases around the conditions most likely to prove value</li>
+          <li>Created onboarding and analysis materials that translated product capability into advertiser action</li>
+          <li>Fed field learning back to Product/PM stakeholders and shared a repeatable approach with internal teams</li>
+        </ul>
+        <span class="case-tag">Manager relevance: product adoption, field feedback, scaling new capability through teams</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="approach">
+  <div class="sec-head">
+    <div class="sec-eyebrow">03 · Management Approach</div>
+    <h2>How I would raise a Growth Accounts team's success rate</h2>
+    <p class="sec-desc">The common thread across these cases is a practical leadership loop: focus the team on the right opportunities, develop judgment through real work, inspect the business with data, and institutionalize what works.</p>
+  </div>
+  <div class="loop">
+    <div class="loop-step">
+      <div class="loop-idx">01 — PRIORITIZE</div>
+      <h3>Make the portfolio strategy explicit</h3>
+      <p>Clarify where growth exists, where risk sits, which clients require leadership attention, and where team time creates the most leverage.</p>
+    </div>
+    <div class="loop-step">
+      <div class="loop-idx">02 — DEVELOP</div>
+      <h3>Coach judgment in context</h3>
+      <p>Develop discovery, analytical thinking, performance fluency, product depth, and commercial discipline through real account work and structured feedback.</p>
+    </div>
+    <div class="loop-step">
+      <div class="loop-idx">03 — INSPECT</div>
+      <h3>Turn data into a team decision</h3>
+      <p>Use pipeline, account, performance, adoption, and customer signals to identify gaps early and focus coaching or resources where they matter most.</p>
+    </div>
+    <div class="loop-step">
+      <div class="loop-idx">04 — SCALE</div>
+      <h3>Make strong behavior reusable</h3>
+      <p>Turn successful account motions into playbooks, operating cadence, onboarding, review mechanisms, and examples that others can run without me in the room.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="why">
+  <div class="inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">04 · Why Apple, Why Now</div>
+      <h2>A natural next step from functional leadership to formal team ownership</h2>
+    </div>
+    <div class="frame why-card">
+      <p>Apple Ads' Growth Accounts team sits at an attractive inflection point: a performance advertising business with strong customer trust that now needs to scale its people, portfolio strategy, and operating discipline without losing the quality of client partnership.</p>
+      <p>That is the transition I want to help lead. My last decade has been spent inside self-serve performance platforms and the agencies and advertisers who depend on them. More recently, my work has expanded from my own accounts into the systems around them — mentoring teams, building onboarding, redesigning coverage, launching products, and creating repeatable models that improve the performance of others.</p>
+      <p>I want to bring that combination of hands-on client credibility, Japan-market fluency, analytical discipline, and functional leadership into formal ownership of a Client Strategist team's growth and development.</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="sec-head">
+    <div class="sec-eyebrow">05 · Experience</div>
+    <h2>Career Experience</h2>
+  </div>
+
+  <div class="exp-row">
+    <div class="exp-period">2022 — Present<br>Tokyo</div>
+    <div>
+      <div class="exp-role">Programmatic Solutions Consultant / Growth Lead, Amazon Ads</div>
+      <div class="exp-co">Amazon Japan</div>
+      <p class="exp-desc">Strategic growth across major advertisers and Tier-1 agencies; $17.5M+ managed portfolio; performance diagnosis, measurement, product adoption, executive business reviews, product launches/UAT, partner enablement, operating-model design, Data Science collaboration, and regional mentoring.</p>
+    </div>
+  </div>
+
+  <div class="exp-row">
+    <div class="exp-period">2021<br>Taipei</div>
+    <div>
+      <div class="exp-role">Client Solutions Manager</div>
+      <div class="exp-co">Meta</div>
+      <p class="exp-desc">Performance advertising and client strategy on a self-serve platform; experimentation, measurement, agency relationships, product adoption, and cross-functional Product/Data Science collaboration.</p>
+    </div>
+  </div>
+
+  <div class="exp-row">
+    <div class="exp-period">2016 — 2021<br>Taipei / Paris</div>
+    <div>
+      <div class="exp-role">Senior Media Planner / Marketing Consultant</div>
+      <div class="exp-co">iProspect (Dentsu) & Havas Media Group</div>
+      <p class="exp-desc">Integrated digital and performance strategy for enterprise clients; multi-agency/vendor coordination, cross-market stakeholder leadership, and day-to-day guidance and review of junior-team execution.</p>
+    </div>
+  </div>
+
+  <div class="edu-block">
+    <strong>Education —</strong> MSc Marketing, HEC Paris · Exchange Student Program, Sophia University · BA Japanese Language, National Taiwan University<br><br>
+    <strong>Languages —</strong> Mandarin: Native · Japanese: Fluent (JLPT N1) · English: Fluent (TOEFL 108)
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-name">Wei-Chieh Hsu (Jill)</div>
+      <div class="footer-sub">Apple Ads · Client Strategist Manager, APAC · Tokyo → Singapore</div>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:wwcchsu@gmail.com">wwcchsu@gmail.com</a>
+      <a href="https://www.linkedin.com/in/jill-h-ab445556/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
