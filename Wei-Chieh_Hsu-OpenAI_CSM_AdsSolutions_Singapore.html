@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wei-Chieh Hsu — OpenAI Customer Success Manager, Ads Solutions | Singapore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#F7F3EB;--canvas-alt:#EFE9DE;--ink:#171717;--ink-soft:#625F59;--ink-faint:#716D66;
+  --line:#DDD5C8;--accent:#0F8F6F;--accent-text:#0B745B;--accent-soft:#E6F6F1;--white:#FFFDF8;
+  --display:Georgia,'Times New Roman',serif;--body:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--radius:3px
+}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.frame{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
+.frame::before,.frame::after{content:'';position:absolute;width:9px;height:9px;border:1.5px solid var(--accent);opacity:0;transition:.25s}
+.frame::before{top:-1px;left:-1px;border-right:none;border-bottom:none}.frame::after{bottom:-1px;right:-1px;border-left:none;border-top:none}
+.frame:hover::before,.frame:hover::after{opacity:1}
+header{position:sticky;top:0;z-index:50;background:rgba(247,243,235,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1120px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-family:var(--display);font-weight:700;font-size:19px}.brand-role{color:var(--ink-soft);font-family:var(--body);font-size:12.5px;font-weight:500;margin-left:10px;white-space:nowrap}
+nav.links{display:flex;gap:26px}nav.links a{font-size:13.5px;color:var(--ink-soft);font-weight:600}
+.nav-contact{display:flex;gap:14px}.nav-contact a{padding:7px 14px;border:1px solid var(--line);border-radius:20px;color:var(--ink-soft);font-size:13px;font-weight:500;background:var(--white)}
+.nav-contact a.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+@media(max-width:850px){nav.links{display:none}}
+.hero{max-width:1120px;margin:0 auto;padding:88px 32px 64px}.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--accent-text);margin-bottom:20px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(25px,3vw,35px);line-height:1.16;max-width:860px;margin-bottom:22px}
+h1 em{font-style:normal;color:var(--accent-text)}.hero-sub{font-size:15.5px;color:var(--ink-soft);max-width:720px;margin-bottom:30px}
+.tag-row{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:46px}.tag{font-size:11.5px;color:var(--ink-soft);border:1px solid var(--line);border-radius:20px;padding:6px 13px;background:var(--white)}
+.hero-meta{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}.hero-meta>div{padding:18px 20px 0;border-left:1px solid var(--line)}
+.hero-meta>div:first-child{border-left:none;padding-left:0}.hm-label{font-size:10.5px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}.hm-value{font-size:14px;font-weight:500}
+@media(max-width:700px){.hero-meta{grid-template-columns:repeat(2,1fr)}.hero-meta>div{border-left:none;border-top:1px solid var(--line);padding:14px 0 0}}
+.stat-strip{background:#211F1D;color:#fff;padding:46px 32px}.stat-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.stat-num{font-family:var(--display);font-size:clamp(29px,3vw,39px);font-weight:700;color:#4FE3BC;margin-bottom:6px}.stat-label{font-size:12.5px;color:#C8C0B6;line-height:1.5}
+@media(max-width:700px){.stat-inner{grid-template-columns:repeat(2,1fr)}}
+section{max-width:1120px;margin:0 auto;padding:96px 32px}section.alt{background:var(--canvas-alt);max-width:none}section.alt>.inner{max-width:1120px;margin:0 auto;padding:96px 32px}
+.sec-head{margin-bottom:52px;max-width:760px}.sec-eyebrow{font-size:12px;color:var(--accent-text);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.sec-eyebrow::after{content:'';display:inline-block;height:1px;width:36px;background:var(--line);margin-left:10px;vertical-align:middle}
+h2{font-family:var(--display);font-size:clamp(25px,3vw,35px);margin-bottom:14px}.sec-desc{font-size:15.5px;color:var(--ink-soft);max-width:720px}
+.fit-note{background:var(--white);border-left:3px solid var(--accent);padding:20px 24px;margin-bottom:44px;font-size:14.5px;color:var(--ink-soft);max-width:850px}.fit-note strong{color:var(--ink)}
+.fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.fit-card{padding:26px 24px}.fit-mark{font-size:11px;color:var(--accent-text);margin-bottom:14px}
+.fit-card h3{font-family:var(--display);font-size:16.5px;margin-bottom:10px}.fit-card p{font-size:13.5px;color:var(--ink-soft)}
+@media(max-width:860px){.fit-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.fit-grid{grid-template-columns:1fr}}
+.case{padding:36px;margin-bottom:20px;display:grid;grid-template-columns:200px 1fr;gap:36px}.case-num{font-size:12px;color:var(--ink-faint)}
+.case-metric{font-family:var(--display);font-size:30px;font-weight:700;color:var(--accent-text);margin-top:14px}.case-metric-label{font-size:11.5px;color:var(--ink-soft);margin-top:6px}
+.case-body h3{font-family:var(--display);font-size:20px;margin-bottom:8px}.case-context{font-size:13.5px;color:var(--ink-soft);margin-bottom:18px}
+.case-list{list-style:none;margin-bottom:18px}.case-list li{font-size:13.5px;color:var(--ink-soft);padding-left:16px;position:relative;margin-bottom:8px}.case-list li::before{content:'—';position:absolute;left:0}
+.case-tag{display:inline-block;font-size:11px;color:var(--accent-text);background:var(--accent-soft);padding:5px 11px;border-radius:3px}
+@media(max-width:760px){.case{grid-template-columns:1fr}}
+.loop{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line)}.loop-step{padding:30px 26px;background:var(--white);border-left:1px solid var(--line)}.loop-step:first-child{border-left:none}
+.loop-idx{font-size:11px;color:var(--accent-text);margin-bottom:16px}.loop-step h3{font-family:var(--display);font-size:16px;margin-bottom:8px}.loop-step p{font-size:13px;color:var(--ink-soft)}
+@media(max-width:860px){.loop{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.loop{grid-template-columns:1fr}}
+.why-card{padding:34px 36px;max-width:900px}.why-card p{font-size:15px;color:var(--ink-soft);margin-bottom:14px}
+.exp-row{display:grid;grid-template-columns:160px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line)}.exp-row:last-of-type{border-bottom:1px solid var(--line)}
+.exp-period{font-size:12.5px;color:var(--ink-faint)}.exp-role{font-family:var(--display);font-size:16.5px;font-weight:700;margin-bottom:4px}.exp-co{font-size:13px;color:var(--accent-text);font-weight:600;margin-bottom:10px}.exp-desc{font-size:13.5px;color:var(--ink-soft);max-width:720px}.edu-block{margin-top:8px;padding-top:28px;font-size:13.5px;color:var(--ink-soft)}
+footer{background:#211F1D;color:#fff;padding:56px 32px}.footer-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.footer-name{font-family:var(--display);font-size:20px;font-weight:700;margin-bottom:8px}.footer-sub{font-size:13px;color:#C8C0B6}.footer-links{display:flex;gap:16px}.footer-links a{font-size:13px;padding:9px 16px;border:1px solid #4A4540;border-radius:20px;color:#E6DED5}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="brand">Wei-Chieh Hsu (Jill)<span class="brand-role">OpenAI · Customer Success Manager, Ads Solutions · Singapore</span></div>
+    <nav class="links"><a href="#why">Why OpenAI</a><a href="#fit">What I Bring</a><a href="#cases">Case Studies</a><a href="#approach">CS Framework</a><a href="#experience">Experience</a></nav>
+    <div class="nav-contact"><a href="https://www.linkedin.com/in/jill-h-ab445556/" target="_blank">LinkedIn</a><a class="primary" href="mailto:wwcchsu@gmail.com">Email</a></div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">Portfolio · Customer Success Manager, Ads Solutions · Singapore</div>
+  <h1>Helping advertisers turn <em>new platform capability into measurable, responsible growth</em> across APAC.</h1>
+  <p class="hero-sub">10+ years across Amazon Japan, Meta, and global agencies — combining advertiser strategy, campaign performance, product adoption, launch enablement, and scalable Customer Success systems.</p>
+
+  <div class="tag-row">
+    <span class="tag">Customer Success</span>
+    <span class="tag">Programmatic Advertising</span>
+    <span class="tag">Advertiser Growth</span>
+    <span class="tag">Product Adoption</span>
+    <span class="tag">Campaign Performance</span>
+    <span class="tag">APAC Advertiser Ecosystem</span>
+  </div>
+
+  <div class="hero-meta">
+    <div><div class="hm-label">Current</div><div class="hm-value">Amazon Japan · Senior Programmatic Solutions Consultant / Growth Lead</div></div>
+    <div><div class="hm-label">Markets</div><div class="hm-value">Japan · Taiwan · APAC</div></div>
+    <div><div class="hm-label">Languages</div><div class="hm-value">Japanese (JLPT N1) · English · Mandarin</div></div>
+    <div><div class="hm-label">Mobility</div><div class="hm-value">Tokyo based · Open to Singapore relocation</div></div>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="stat-inner">
+    <div><div class="stat-num">16×</div><div class="stat-label">Growth after rebuilding a fully paused strategic advertiser</div></div>
+    <div><div class="stat-num">277%</div><div class="stat-label">YoY growth across a strategic Tier-1 agency portfolio</div></div>
+    <div><div class="stat-num">+110%</div><div class="stat-label">ROAS improvement from adopted Data Science recommendations</div></div>
+    <div><div class="stat-num">5 → 35+</div><div class="stat-label">Accounts scaled through a redesigned Customer Success operating model</div></div>
+  </div>
+</div>
+
+
+<section class="alt" id="why">
+<div class="inner">
+  <div class="sec-head">
+    <div class="sec-eyebrow">01 · Why OpenAI Ads Solutions</div>
+    <h2>Why I want to help shape the advertiser experience in APAC</h2>
+    <p class="sec-desc">The opportunity sits at the intersection of customer success, advertising performance, product adoption, and platform building — the part of advertising I have increasingly gravitated toward throughout my career.</p>
+  </div>
+
+  <div class="frame why-card">
+    <p>My work has evolved from campaign and media strategy into helping advertisers and agencies adopt new platform capabilities. At Amazon Ads, I work across Sales, Product, GTM, Data Science, and technical teams to turn measurement, product capabilities, and advertiser feedback into growth strategies, launch playbooks, and scalable Customer Success mechanisms.</p>
+
+    <p>What I enjoy most is not simply optimizing an individual campaign. It is diagnosing why adoption or performance is stalled, helping the advertiser realize value, and then turning what worked into a repeatable operating model that other customers and teams can use.</p>
+
+    <p>OpenAI Ads Solutions is especially compelling because the advertiser experience is still being shaped. That creates an opportunity for Customer Success to influence not only account outcomes, but also onboarding standards, best practices, product feedback loops, and how responsible advertiser growth develops across the platform.</p>
+
+    <p><strong>Tokyo → Singapore.</strong> I would bring deep Japan-market expertise together with experience in Taiwan and regional collaboration, and I am open to relocating to Singapore to support a broader APAC advertiser portfolio.</p>
+  </div>
+</div>
+</section>
+
+
+<section id="fit">
+  <div class="sec-head">
+    <div class="sec-eyebrow">02 · What I Bring</div>
+    <h2>What I bring to OpenAI Ads Customer Success</h2>
+    <p class="sec-desc">A practical operating profile for an early-stage ads CSM: earn advertiser trust, make performance understandable, drive adoption, coordinate the right internal experts, and turn recurring customer needs into scalable practices.</p>
+  </div>
+
+  <div class="fit-note">
+    <strong>How I operate:</strong> strategic enough for executive advertiser conversations, hands-on enough to diagnose performance and launch issues, and systematic enough to turn recurring customer problems into playbooks, enablement, and operating mechanisms that scale.
+  </div>
+
+  <div class="fit-grid">
+    <div class="frame fit-card"><div class="fit-mark">01 — ADVERTISER SUCCESS</div><h3>Own the advertiser relationship end to end</h3><p>Guide strategic advertisers and Tier-1 agencies across account planning, performance, measurement, product adoption, business reviews, and growth priorities.</p></div>
+    <div class="frame fit-card"><div class="fit-mark">02 — PERFORMANCE & MEASUREMENT</div><h3>Make performance understandable and actionable</h3><p>Diagnose campaign and measurement issues, structure the right analytical questions, and translate complex findings into recommendations advertisers can act on.</p></div>
+    <div class="frame fit-card"><div class="fit-mark">03 — PRODUCT LAUNCH & ADOPTION</div><h3>Move new capabilities from launch to repeat usage</h3><p>Support launches through UAT, localized playbooks, onboarding, enablement, and issue resolution — then use proof points and follow-up to deepen adoption.</p></div>
+    <div class="frame fit-card"><div class="fit-mark">04 — VOICE OF ADVERTISER</div><h3>Bring advertiser insight back to the product</h3><p>Surface workflow friction, objections, product gaps, and adoption barriers through structured collaboration with Product, GTM, Analytics, Policy, and Operations.</p></div>
+    <div class="frame fit-card"><div class="fit-mark">05 — GROWTH & EXPANSION</div><h3>Connect customer value to incremental growth</h3><p>Use advertiser potential, performance, adoption signals, and credible proof points to prioritize expansion opportunities and build confidence for incremental investment.</p></div>
+    <div class="frame fit-card"><div class="fit-mark">06 — CROSS-FUNCTIONAL SCALE</div><h3>Turn one-off solutions into a better operating system</h3><p>Create prioritization logic, business-review cadences, office hours, enablement, quality mechanisms, and playbooks that improve the experience beyond one account.</p></div>
+  </div>
+</section>
+
+<section class="alt" id="cases">
+<div class="inner">
+  <div class="sec-head">
+    <div class="sec-eyebrow">03 · Case Studies</div>
+    <h2>Selected evidence: from advertiser problem to scalable outcome</h2>
+    <p class="sec-desc">The cases below show the same recurring motion from different angles: diagnose the real advertiser problem, coordinate the right expertise, prove value with evidence, and turn the learning into something repeatable.</p>
+  </div>
+
+  <div class="frame case"><div><div class="case-num">CASE 01</div><div class="case-metric">16×</div><div class="case-metric-label">Growth after a paused advertiser was rebuilt</div></div><div class="case-body">
+    <h3>Rebuilding a strategic advertiser through better diagnosis</h3>
+    <p class="case-context"><strong>Challenge:</strong> A major streaming & entertainment advertiser had fully paused after concluding the platform was not delivering value.</p>
+    <ul class="case-list"><li>Ran a structured diagnostic instead of accepting the initial account narrative at face value</li><li>Identified measurement and execution misalignment as a core source of the perceived performance issue</li><li>Reset success criteria and rebuilt the strategy, restoring trust and substantial growth</li></ul>
+    <span class="case-tag">OpenAI relevance: performance analysis · trusted advisor · partner retention and expansion</span>
+  </div></div>
+
+  <div class="frame case"><div><div class="case-num">CASE 02</div><div class="case-metric">277%</div><div class="case-metric-label">YoY growth across a strategic Tier-1 agency portfolio</div></div><div class="case-body">
+    <h3>Turning advertiser proof points into broader agency growth</h3>
+    <p class="case-context"><strong>Challenge:</strong> Growth required choosing where to invest time and giving agency stakeholders enough evidence to expand adoption.</p>
+    <ul class="case-list"><li>Prioritized advertiser opportunities using business potential, performance, product gaps, and agency readiness</li><li>Combined business reviews, measurement, product adoption, and a “prove with one, scale to many” motion</li><li>Used successful advertiser cases to build broader confidence and incremental investment</li></ul>
+    <span class="case-tag">OpenAI relevance: expansion · product adoption · incremental investment</span>
+  </div></div>
+
+  <div class="frame case"><div><div class="case-num">CASE 03</div><div class="case-metric">+110%</div><div class="case-metric-label">ROAS improvement from Data Science recommendations</div></div><div class="case-body">
+    <h3>Turning technical analysis into advertiser action</h3>
+    <p class="case-context"><strong>Challenge:</strong> Persistent performance concerns required deeper analysis than standard campaign optimization could provide.</p>
+    <ul class="case-list"><li>Partnered with a cross-region Data Science team to frame the business and technical questions</li><li>Translated complex findings into practical guidance and facilitated expert Q&A</li><li>Four major advertisers adopted the recommendations; the learning became reusable guidance for broader teams</li></ul>
+    <span class="case-tag">OpenAI relevance: Analytics partnership · performance insights · technical-to-business translation</span>
+  </div></div>
+
+  <div class="frame case"><div><div class="case-num">CASE 04</div><div class="case-metric">5 → 35+</div><div class="case-metric-label">Accounts scaled through a redesigned operating model</div></div><div class="case-body">
+    <h3>Scaling Customer Success without losing quality</h3>
+    <p class="case-context"><strong>Challenge:</strong> A fragmented specialist-support model created unclear prioritization and inconsistent engagement.</p>
+    <ul class="case-list"><li>Introduced clearer account-selection logic, ownership, direct engagement, office hours, and recurring business reviews</li><li>Created quality and adoption inspection mechanisms</li><li>Scaled coverage from five pilot accounts to more than 35 active accounts</li></ul>
+    <span class="case-tag">OpenAI relevance: scalable process design · prioritization · ecosystem growth</span>
+  </div></div>
+
+  <div class="frame case"><div><div class="case-num">CASE 05</div><div class="case-metric">3 Tier-1</div><div class="case-metric-label">Agencies prepared for a new-product launch</div></div><div class="case-body">
+    <h3>From product readiness to advertiser readiness</h3>
+    <p class="case-context"><strong>Challenge:</strong> A new product required Japan-specific UAT, local issue resolution, a practical launch playbook, and rapid agency enablement.</p>
+    <ul class="case-list"><li>Co-owned Japan UAT and surfaced local workflow and product issues</li><li>Built the local playbook and delivered direct partner training</li><li>Prepared three Tier-1 agencies for launch and turned the playbook into a broader onboarding reference</li></ul>
+    <span class="case-tag">OpenAI relevance: onboarding · launch · issue resolution · product feedback</span>
+  </div></div>
+
+  <div class="frame case"><div><div class="case-num">CASE 06</div><div class="case-metric">Beta → GA</div><div class="case-metric-label">Adoption from pilot to broader market readiness</div></div><div class="case-body">
+    <h3>Helping a new advertising capability earn adoption</h3>
+    <p class="case-context"><strong>Challenge:</strong> A new ad product needed credible early adopters, practical enablement, and field feedback before broader rollout.</p>
+    <ul class="case-list"><li>Selected early advertisers most likely to prove value and supported onboarding</li><li>Built analysis and enablement materials that converted product capability into advertiser action</li><li>Fed field learning back to Product and shared a repeatable internal approach</li></ul>
+    <span class="case-tag">OpenAI relevance: product adoption · advertiser insight · product improvement</span>
+  </div></div>
+
+  <div class="frame case"><div><div class="case-num">CASE 07</div><div class="case-metric">7 traders</div><div class="case-metric-label">Independent setup & QA with 100% accuracy</div></div><div class="case-body">
+    <h3>Turning enablement into independent execution</h3>
+    <p class="case-context"><strong>Challenge:</strong> A Tier-1 agency's new traders needed practical platform fluency without relying indefinitely on senior specialists.</p>
+    <ul class="case-list"><li>Designed a three-session program around actual execution gaps and growth priorities</li><li>Used real scenarios and QA discipline rather than generic training</li><li>Seven traders reached independent setup and QA capability with zero setup errors</li></ul>
+    <span class="case-tag">OpenAI relevance: onboarding · best practices · scalable advertiser enablement</span>
+  </div></div>
+
+  <div class="frame case"><div><div class="case-num">CASE 08</div><div class="case-metric">44%</div><div class="case-metric-label">Cost-per-purchase improvement through structured testing</div></div><div class="case-body">
+    <h3>Using experimentation to make recommendations credible</h3>
+    <p class="case-context"><strong>Context:</strong> At Meta, advertiser decisions required evidence that connected strategy changes to measurable business outcomes.</p>
+    <ul class="case-list"><li>Used structured conversion-lift testing to evaluate advertiser hypotheses</li><li>Translated methodology and results into clear business recommendations</li><li>Used evidence to guide optimization and investment decisions</li></ul>
+    <span class="case-tag">OpenAI relevance: campaign performance · measurement · actionable recommendations</span>
+  </div></div>
+</div>
+</section>
+
+<section id="approach">
+  <div class="sec-head">
+    <div class="sec-eyebrow">04 · APAC Advertiser Success Framework</div>
+    <h2>How I work across the advertiser-to-platform feedback loop</h2>
+    <p class="sec-desc">The goal is not simply to launch campaigns. It is to align on the customer objective, create a credible first experience, learn from performance and adoption, expand value, and feed the market signal back into the platform.</p>
+  </div>
+  <div class="loop">
+    <div class="loop-step"><div class="loop-idx">01 — CUSTOMER OBJECTIVE</div><h3>Understand the advertiser and success criteria</h3><p>Clarify the advertiser's goals, measurement approach, stakeholder map, platform readiness, and what a strong first outcome should look like.</p></div>
+    <div class="loop-step"><div class="loop-idx">02 — ONBOARD & LAUNCH</div><h3>Create a credible first experience</h3><p>Guide onboarding, campaign setup, product use, and issue resolution so the advertiser's first experience creates a credible foundation for growth.</p></div>
+    <div class="loop-step"><div class="loop-idx">03 — PERFORMANCE & ADOPTION</div><h3>Turn evidence into the next decision</h3><p>Analyze outcomes, diagnose the real constraint, bring in the right internal experts, and translate data into actionable recommendations.</p></div>
+    <div class="loop-step"><div class="loop-idx">04 — EXPAND & FEEDBACK</div><h3>Scale value and improve the platform</h3><p>Identify adoption and investment opportunities, surface feedback to Product and Policy, and turn successful account patterns into scalable practices.</p></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="sec-head"><div class="sec-eyebrow">05 · Experience</div><h2>Career Experience</h2></div>
+
+  <div class="exp-row"><div class="exp-period">2022 — Present<br>Tokyo</div><div>
+    <div class="exp-role">Senior Programmatic Solutions Consultant / Growth Lead, Amazon Ads</div>
+    <div class="exp-co">Amazon Japan</div>
+    <p class="exp-desc">Strategic advertiser and agency relationships, campaign performance, measurement, product adoption, business reviews, launches/UAT, advertiser enablement, Data Science collaboration, product feedback, and scalable Customer Success operating-model design.</p>
+  </div></div>
+
+  <div class="exp-row"><div class="exp-period">2021<br>Taipei</div><div>
+    <div class="exp-role">Client Solutions Manager</div>
+    <div class="exp-co">Meta</div>
+    <p class="exp-desc">Advertiser and agency strategy, campaign performance, experimentation, product adoption, and cross-functional Product/Data Science collaboration.</p>
+  </div></div>
+
+  <div class="exp-row"><div class="exp-period">2016 — 2021<br>Taipei / Paris</div><div>
+    <div class="exp-role">Senior Media Planner</div>
+    <div class="exp-co">iProspect (Dentsu) & Havas Media Group</div>
+    <p class="exp-desc">Enterprise digital and performance strategy, senior-client presentations, multi-agency coordination, and cross-market execution.</p>
+  </div></div>
+
+  <div class="edu-block"><strong>Education —</strong> MSc Marketing, HEC Paris · Exchange Student Program, Sophia University · BA Japanese Language, National Taiwan University<br><br><strong>Languages —</strong> Mandarin: Native · Japanese: Fluent (JLPT N1) · English: Fluent (TOEFL 108)</div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div><div class="footer-name">Wei-Chieh Hsu (Jill)</div><div class="footer-sub">Customer Success · Advertiser Growth · APAC · Open to Singapore relocation</div></div>
+    <div class="footer-links"><a href="mailto:wwcchsu@gmail.com">wwcchsu@gmail.com</a><a href="https://www.linkedin.com/in/jill-h-ab445556/" target="_blank">LinkedIn</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
