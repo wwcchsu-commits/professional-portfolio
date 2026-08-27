@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wei-Chieh Hsu — Uber Customer Success Manager II, Tokyo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#FAFAF8;--canvas-alt:#F1F0EC;--ink:#14141C;--ink-soft:#55555F;--ink-faint:#686872;
+  --line:#DEDDD6;--accent:#276EF1;--accent-text:#1855C8;--accent-soft:#EAF1FF;--white:#FFFFFF;
+  --display:Georgia,'Times New Roman',serif;--body:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --mono:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--radius:3px
+}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}::selection{background:var(--accent);color:var(--white)}
+.frame{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
+.frame::before,.frame::after{content:'';position:absolute;width:9px;height:9px;border:1.5px solid var(--accent);opacity:0;transition:opacity .25s ease,transform .25s ease}
+.frame::before{top:-1px;left:-1px;border-right:none;border-bottom:none}.frame::after{bottom:-1px;right:-1px;border-left:none;border-top:none}
+.frame:hover::before,.frame:hover::after{opacity:1}.frame:hover::before{transform:translate(-2px,-2px)}.frame:hover::after{transform:translate(2px,2px)}
+header{position:sticky;top:0;z-index:50;background:rgba(250,250,248,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1120px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.01em}.brand-role{color:var(--ink-soft);font-family:var(--body);font-size:12.5px;font-weight:500;margin-left:10px;white-space:nowrap}
+nav.links{display:flex;gap:26px}nav.links a{font-size:13.5px;color:var(--ink-soft);font-weight:500}.nav-contact{display:flex;gap:14px}
+.nav-contact a{padding:7px 14px;border:1px solid var(--line);border-radius:20px;color:var(--ink-soft);font-size:13px;font-weight:500}
+.nav-contact a.primary{background:var(--ink);color:var(--white);border-color:var(--ink)}
+@media(max-width:850px){nav.links{display:none}}
+.hero{max-width:1120px;margin:0 auto;padding:88px 32px 64px}.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--accent-text);text-transform:uppercase;letter-spacing:.08em;margin-bottom:22px}
+.eyebrow::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:1px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,4.6vw,56px);line-height:1.12;letter-spacing:-.02em;max-width:930px;margin-bottom:26px}
+h1 em{font-style:normal;color:var(--accent-text)}.hero-sub{font-size:17px;color:var(--ink-soft);max-width:720px;margin-bottom:34px}
+.tag-row{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:48px}.tag{font-size:11.5px;color:var(--ink-soft);border:1px solid var(--line);border-radius:20px;padding:6px 13px;background:var(--white)}
+.hero-meta{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}.hero-meta>div{padding:18px 20px 0;border-left:1px solid var(--line)}.hero-meta>div:first-child{border-left:none;padding-left:0}
+.hm-label{font-size:10.5px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}.hm-value{font-size:14px;font-weight:500}
+@media(max-width:700px){.hero-meta{grid-template-columns:repeat(2,1fr)}.hero-meta>div{border-left:none;border-top:1px solid var(--line);padding:14px 0 0}}
+.stat-strip{background:var(--ink);color:var(--white);padding:46px 32px}.stat-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.stat-num{font-family:var(--display);font-size:clamp(29px,3vw,39px);font-weight:700;color:#7EA8FF;margin-bottom:6px}.stat-label{font-size:12.5px;color:#B8B8C0;line-height:1.5}
+@media(max-width:700px){.stat-inner{grid-template-columns:repeat(2,1fr);row-gap:30px}}
+section{max-width:1120px;margin:0 auto;padding:96px 32px}section.alt{background:var(--canvas-alt);max-width:none}section.alt>.inner{max-width:1120px;margin:0 auto;padding:96px 32px}
+.sec-head{margin-bottom:52px;max-width:760px}.sec-eyebrow{font-size:12px;color:var(--accent-text);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;display:flex;align-items:center;gap:10px}.sec-eyebrow::after{content:'';height:1px;width:36px;background:var(--line)}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(25px,3vw,35px);letter-spacing:-.015em;line-height:1.2;margin-bottom:14px}.sec-desc{font-size:15.5px;color:var(--ink-soft);max-width:680px}
+.fit-note{background:var(--white);border-left:3px solid var(--accent);padding:20px 24px;margin-bottom:44px;font-size:14.5px;color:var(--ink-soft);max-width:820px}
+.fit-note strong{color:var(--ink)}.fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.fit-card{padding:26px 24px}.fit-mark{font-size:11px;color:var(--accent-text);margin-bottom:14px}
+.fit-card h3{font-family:var(--display);font-size:16.5px;font-weight:600;margin-bottom:10px}.fit-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.55}
+@media(max-width:860px){.fit-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.fit-grid{grid-template-columns:1fr}}
+.case{padding:36px;margin-bottom:20px;display:grid;grid-template-columns:200px 1fr;gap:36px}.case-meta{display:flex;flex-direction:column;gap:14px}.case-num{font-size:12px;color:var(--ink-faint)}
+.case-metric{font-family:var(--display);font-size:30px;font-weight:700;color:var(--accent-text);line-height:1}.case-metric-label{font-size:11.5px;color:var(--ink-soft);margin-top:6px;line-height:1.4}
+.case-body h3{font-family:var(--display);font-size:20px;font-weight:600;margin-bottom:8px}.case-context{font-size:13.5px;color:var(--ink-soft);margin-bottom:18px}.case-context strong{color:var(--ink)}
+.case-list{list-style:none;margin-bottom:18px}.case-list li{font-size:13.5px;color:var(--ink-soft);padding-left:16px;position:relative;margin-bottom:8px}.case-list li::before{content:'—';position:absolute;left:0;color:var(--ink-faint)}
+.case-tag{display:inline-block;font-size:11px;color:var(--accent-text);background:var(--accent-soft);padding:5px 11px;border-radius:3px}
+@media(max-width:760px){.case{grid-template-columns:1fr;gap:18px}.case-meta{flex-direction:row;align-items:baseline;gap:16px;flex-wrap:wrap}}
+.loop{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);overflow:hidden}.loop-step{padding:30px 26px;background:var(--white);border-left:1px solid var(--line)}.loop-step:first-child{border-left:none}
+.loop-idx{font-size:11px;color:var(--accent-text);margin-bottom:16px}.loop-step h3{font-family:var(--display);font-size:16px;font-weight:600;margin-bottom:8px}.loop-step p{font-size:13px;color:var(--ink-soft)}
+@media(max-width:860px){.loop{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.loop{grid-template-columns:1fr}}
+.why-card{padding:34px 36px;max-width:880px}.why-card p{font-size:15px;color:var(--ink-soft);margin-bottom:14px}.exp-row{display:grid;grid-template-columns:160px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line)}.exp-row:last-of-type{border-bottom:1px solid var(--line)}
+.exp-period{font-size:12.5px;color:var(--ink-faint)}.exp-role{font-family:var(--display);font-size:16.5px;font-weight:600;margin-bottom:4px}.exp-co{font-size:13px;color:var(--accent-text);font-weight:500;margin-bottom:10px}.exp-desc{font-size:13.5px;color:var(--ink-soft);max-width:700px}
+.edu-block{margin-top:8px;padding-top:28px;font-size:13.5px;color:var(--ink-soft)}.edu-block strong{color:var(--ink)}
+footer{background:var(--ink);color:var(--white);padding:56px 32px 40px}.footer-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}.footer-name{font-family:var(--display);font-weight:600;font-size:20px;margin-bottom:8px}.footer-sub{font-size:13px;color:#9A9AA2}.footer-links{display:flex;gap:16px}.footer-links a{font-size:13px;padding:9px 16px;border:1px solid #33333D;border-radius:20px;color:#D8D8DC}
+</style>
+</head>
+<body>
+<header><div class="nav-inner">
+<div class="brand">Wei-Chieh Hsu (Jill)<span class="brand-role">Uber Eats · Customer Success Manager II · Japan</span></div>
+<nav class="links"><a href="#fit">Role Fit</a><a href="#cases">Case Studies</a><a href="#approach">CS Approach</a><a href="#experience">Experience</a></nav>
+<div class="nav-contact"><a href="https://www.linkedin.com/in/jill-h-ab445556/" target="_blank">LinkedIn</a><a class="primary" href="mailto:wwcchsu@gmail.com">Email</a></div>
+</div></header>
+
+<div class="hero">
+<div class="eyebrow">Portfolio · Customer Success Manager II · Uber Eats Japan</div>
+<h1>Turning <em>complex customer data into clear growth strategies</em> — and making those strategies executable.</h1>
+<p class="hero-sub">10+ years across Amazon Japan, Meta, and global agencies — combining enterprise customer success, growth strategy, product adoption, measurement, and cross-functional leadership in fast-moving technology environments.</p>
+<div class="tag-row"><span class="tag">Enterprise Customer Success</span><span class="tag">Growth Strategy</span><span class="tag">Product Adoption</span><span class="tag">Data-Driven Insights</span><span class="tag">Executive Stakeholders</span><span class="tag">Japan Market</span></div>
+<div class="hero-meta">
+<div><div class="hm-label">Current</div><div class="hm-value">Amazon Japan · Senior Programmatic Solutions Consultant / Growth Lead</div></div>
+<div><div class="hm-label">Markets</div><div class="hm-value">Japan · Taiwan · APAC</div></div>
+<div><div class="hm-label">Languages</div><div class="hm-value">Japanese (JLPT N1) · English · Mandarin</div></div>
+<div><div class="hm-label">Focus</div><div class="hm-value">Customer growth · adoption · data-led strategy</div></div>
+</div></div>
+
+<div class="stat-strip"><div class="stat-inner">
+<div><div class="stat-num">16×</div><div class="stat-label">Growth after rebuilding an at-risk enterprise relationship</div></div>
+<div><div class="stat-num">277%</div><div class="stat-label">YoY growth across a strategic Tier-1 partner portfolio</div></div>
+<div><div class="stat-num">5 → 35+</div><div class="stat-label">Accounts scaled through a redesigned customer-support model</div></div>
+<div><div class="stat-num">+110%</div><div class="stat-label">ROAS improvement from Data Science recommendations</div></div>
+</div></div>
+
+<section id="fit">
+<div class="sec-head"><div class="sec-eyebrow">01 · Role Fit</div><h2>What I'd bring to Uber Eats' Global & Enterprise merchant team</h2>
+<p class="sec-desc">The role asks for a CSM who can understand a major merchant's strategic objectives, find growth opportunities in complex data, increase product adoption, influence stakeholders, and translate analysis into a compelling plan. That is the core operating motion I use today.</p></div>
+<div class="fit-note"><strong>On the industry gap, directly:</strong> my enterprise experience is in advertising technology rather than food delivery or restaurant operations. I would not present those sectors as interchangeable. What transfers directly is the Customer Success discipline: strategic account planning, commercial judgment, stakeholder influence, product adoption, data-led growth, negotiation, and cross-functional execution in Japan.</div>
+
+<div class="fit-grid">
+<div class="frame fit-card"><div class="fit-mark">01 — STRATEGIC ACCOUNTS</div><h3>Enterprise relationships with clear growth plans</h3><p>Own complex customer and agency relationships, align multiple stakeholder groups, and translate business objectives into prioritized account strategies.</p></div>
+<div class="frame fit-card"><div class="fit-mark">02 — DATA TO NARRATIVE</div><h3>Make complex analysis actionable</h3><p>Turn performance, measurement, product-adoption, and Data Science outputs into a clear customer story: what happened, why it matters, and what to do next.</p></div>
+<div class="frame fit-card"><div class="fit-mark">03 — PRODUCT ADOPTION</div><h3>Move from feature exposure to repeat usage</h3><p>Use enablement, proof points, customer feedback, and structured follow-up to increase adoption of new or underused product capabilities.</p></div>
+<div class="frame fit-card"><div class="fit-mark">04 — COMMERCIAL JUDGMENT</div><h3>Balance growth, risk, and customer value</h3><p>Prioritize opportunities based on business potential, performance, adoption, and relationship health rather than treating every account action equally.</p></div>
+<div class="frame fit-card"><div class="fit-mark">05 — XFN LEADERSHIP</div><h3>Operate through influence</h3><p>Coordinate Sales, Product, GTM, Data Science, technical teams, agencies, and customers around shared decisions without relying on direct authority.</p></div>
+<div class="frame fit-card"><div class="fit-mark">06 — JAPAN CONTEXT</div><h3>Local trust and stakeholder alignment</h3><p>Years of customer-facing experience in Japan, fluent Japanese, and practical understanding of consensus-building and evidence-based decision-making.</p></div>
+</div></section>
+
+<section class="alt" id="cases"><div class="inner">
+<div class="sec-head"><div class="sec-eyebrow">02 · Case Studies</div><h2>Evidence of customer growth, recovery, adoption, and scale</h2>
+<p class="sec-desc">Selected examples mapped to Uber's CSM motion: diagnose the business, identify the opportunity, build stakeholder confidence, execute cross-functionally, and make the result measurable.</p></div>
+
+<div class="frame case"><div class="case-meta"><div class="case-num">CASE 01</div><div><div class="case-metric">16×</div><div class="case-metric-label">Growth after an at-risk account was rebuilt</div></div></div><div class="case-body">
+<h3>Rebuilding a paused enterprise relationship</h3><p class="case-context"><strong>Challenge:</strong> A major streaming & entertainment customer had fully paused investment after concluding the platform was not delivering.</p>
+<ul class="case-list"><li>Ran a structured diagnostic across measurement, execution, and customer success criteria</li><li>Identified that the perceived performance problem was driven in part by measurement and execution misalignment</li><li>Reset the growth strategy and restored customer confidence through evidence and a clearer operating plan</li></ul>
+<span class="case-tag">Uber relevance: account health, root-cause analysis, stakeholder trust, growth recovery</span></div></div>
+
+<div class="frame case"><div class="case-meta"><div class="case-num">CASE 02</div><div><div class="case-metric">277%</div><div class="case-metric-label">YoY growth across a strategic Tier-1 agency portfolio</div></div></div><div class="case-body">
+<h3>Growing a portfolio through prioritization and repeatable proof</h3><p class="case-context"><strong>Challenge:</strong> Growth required deciding where the biggest opportunities were and building a motion that could scale beyond one successful customer.</p>
+<ul class="case-list"><li>Prioritized opportunities using customer potential, performance, adoption gaps, and partner readiness</li><li>Combined business reviews, product adoption, measurement, and a “prove with one, scale to many” approach</li><li>Converted successful cases into broader customer confidence and expansion</li></ul>
+<span class="case-tag">Uber relevance: portfolio growth, merchant prioritization, commercial strategy</span></div></div>
+
+<div class="frame case"><div class="case-meta"><div class="case-num">CASE 03</div><div><div class="case-metric">5 → 35+</div><div class="case-metric-label">Accounts scaled through a redesigned operating model</div></div></div><div class="case-body">
+<h3>Scaling customer success without losing quality</h3><p class="case-context"><strong>Challenge:</strong> A fragmented support model created unclear prioritization, inconsistent engagement, and too much ad hoc work.</p>
+<ul class="case-list"><li>Introduced clearer account selection, ownership, direct engagement, office hours, and recurring business reviews</li><li>Created mechanisms to inspect recommendation quality and adoption</li><li>Scaled coverage from five pilots to more than 35 active accounts</li></ul>
+<span class="case-tag">Uber relevance: CSM operating cadence, prioritization, scalability, organizational impact</span></div></div>
+
+<div class="frame case"><div class="case-meta"><div class="case-num">CASE 04</div><div><div class="case-metric">+110%</div><div class="case-metric-label">ROAS improvement from adopted Data Science recommendations</div></div></div><div class="case-body">
+<h3>Turning technical analysis into a customer growth story</h3><p class="case-context"><strong>Challenge:</strong> Persistent performance questions required deeper analytical support than standard optimization could provide.</p>
+<ul class="case-list"><li>Partnered with a cross-region Data Science team to structure the right questions</li><li>Translated technical findings into clear customer-facing recommendations and facilitated expert Q&A</li><li>Four major advertisers adopted the recommendations, producing up to +110% ROAS improvement</li></ul>
+<span class="case-tag">Uber relevance: data fluency, analytical storytelling, cross-functional execution</span></div></div>
+
+<div class="frame case"><div class="case-meta"><div class="case-num">CASE 05</div><div><div class="case-metric">44%</div><div class="case-metric-label">Cost-per-purchase improvement through structured testing</div></div></div><div class="case-body">
+<h3>Using experimentation to prove which strategy actually works</h3><p class="case-context"><strong>Context:</strong> At Meta, customer decisions required more than intuition — they needed measurable evidence.</p>
+<ul class="case-list"><li>Used structured conversion-lift testing to evaluate strategy hypotheses</li><li>Connected the methodology to business outcomes, not just campaign metrics</li><li>Used the findings to guide customer optimization and investment decisions</li></ul>
+<span class="case-tag">Uber relevance: data-driven decision making, test-and-learn growth strategy</span></div></div>
+
+<div class="frame case"><div class="case-meta"><div class="case-num">CASE 06</div><div><div class="case-metric">3 Tier-1</div><div class="case-metric-label">Partners enabled for a new-product launch</div></div></div><div class="case-body">
+<h3>Driving adoption of a new product capability</h3><p class="case-context"><strong>Challenge:</strong> A new product needed Japan-specific readiness, practical enablement, and customer confidence before launch.</p>
+<ul class="case-list"><li>Co-owned local UAT and surfaced Japan-specific product and workflow issues</li><li>Built the playbook and delivered direct partner enablement</li><li>Helped all three Tier-1 partners become launch-ready and fed field learning back into the product organization</li></ul>
+<span class="case-tag">Uber relevance: merchant-tool adoption, launch execution, product feedback</span></div></div>
+</div></section>
+
+<section id="approach"><div class="sec-head"><div class="sec-eyebrow">03 · Customer Success Approach</div><h2>How I turn a merchant objective into a growth plan</h2>
+<p class="sec-desc">A practical loop aligned with the role's mix of long-term strategy and day-to-day execution.</p></div>
+<div class="loop">
+<div class="loop-step"><div class="loop-idx">01 — UNDERSTAND</div><h3>Start with the merchant's goal</h3><p>Clarify business priorities, stakeholder expectations, economics, customer experience, and what success needs to look like.</p></div>
+<div class="loop-step"><div class="loop-idx">02 — DIAGNOSE</div><h3>Find the real growth lever</h3><p>Use product, performance, customer, and operational data to identify the constraint or opportunity that matters most.</p></div>
+<div class="loop-step"><div class="loop-idx">03 — ALIGN & EXECUTE</div><h3>Build a plan people can act on</h3><p>Turn analysis into a compelling narrative, align internal and external stakeholders, and drive the required product or operating actions.</p></div>
+<div class="loop-step"><div class="loop-idx">04 — MEASURE & SCALE</div><h3>Make the outcome visible</h3><p>Inspect results, update the account strategy, surface new opportunities, and scale successful patterns across more customers or use cases.</p></div>
+</div></section>
+
+<section class="alt" id="why"><div class="inner">
+<div class="sec-head"><div class="sec-eyebrow">04 · Why Uber, Why Now</div><h2>Moving from advertising growth into broader platform and merchant strategy</h2></div>
+<div class="frame why-card">
+<p>Uber Eats is compelling because the CSM role sits at the intersection of customer strategy, data, product adoption, and real-world commercial growth. The customer problem is broader than optimizing a single advertising channel: it is helping major merchants decide how to use the platform to grow efficiently in Japan.</p>
+<p>That is a natural next step from my current work. I have spent years translating complex platform capabilities and data into customer growth strategies. I now want to apply that discipline to a broader marketplace business, where the impact is visible in merchant performance, customer demand, product usage, and long-term partnership value.</p>
+</div></div></section>
+
+<section id="experience"><div class="sec-head"><div class="sec-eyebrow">05 · Experience</div><h2>Career Experience</h2></div>
+<div class="exp-row"><div class="exp-period">2022 — Present<br>Tokyo</div><div><div class="exp-role">Senior Programmatic Solutions Consultant / Growth Lead, Amazon Ads</div><div class="exp-co">Amazon Japan</div><p class="exp-desc">Enterprise customer growth, account strategy, business reviews, performance diagnosis, product adoption, measurement, executive stakeholder management, launch/UAT, Data Science collaboration, and scalable operating-model design.</p></div></div>
+<div class="exp-row"><div class="exp-period">2021<br>Taipei</div><div><div class="exp-role">Client Solutions Manager</div><div class="exp-co">Meta</div><p class="exp-desc">Strategic advertiser and agency relationships, data-driven growth, experimentation, product adoption, and cross-functional Product/Data Science collaboration.</p></div></div>
+<div class="exp-row"><div class="exp-period">2016 — 2021<br>Taipei / Paris</div><div><div class="exp-role">Senior Media Planner</div><div class="exp-co">iProspect (Dentsu) & Havas Media Group</div><p class="exp-desc">Enterprise digital strategy, multi-stakeholder program leadership, senior client presentations, and cross-market execution across Taiwan and France.</p></div></div>
+<div class="edu-block"><strong>Education —</strong> MSc Marketing, HEC Paris · Exchange Student Program, Sophia University · BA Japanese Language, National Taiwan University<br><br><strong>Languages —</strong> Mandarin: Native · Japanese: Fluent (JLPT N1) · English: Fluent (TOEFL 108)</div>
+</section>
+
+<footer><div class="footer-inner"><div><div class="footer-name">Wei-Chieh Hsu (Jill)</div><div class="footer-sub">Enterprise Customer Success · Growth Strategy · Tokyo, Japan</div></div>
+<div class="footer-links"><a href="mailto:wwcchsu@gmail.com">wwcchsu@gmail.com</a><a href="https://www.linkedin.com/in/jill-h-ab445556/" target="_blank">LinkedIn</a></div></div></footer>
+</body></html>
