@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wei-Chieh Hsu | Anthropic Japan Partner Enablement</title>
+<style>
+:root{--ink:#171717;--muted:#66645f;--paper:#f7f3eb;--card:#fffdf8;--accent:#c65d3b;--line:#ded7ca;--dark:#22211f;--soft:#eee7db}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+a{color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 32px}.nav{position:sticky;top:0;z-index:20;background:rgba(247,243,235,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.navin{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:-.02em}.links{display:flex;gap:22px;font-size:14px}.links a{text-decoration:none;color:var(--muted)}.links a:hover{color:var(--accent)}
+.hero{padding:92px 0 64px}.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:800;color:var(--accent)}h1{font-family:Georgia,serif;font-size:64px;line-height:1.02;letter-spacing:-.04em;max-width:950px;margin:16px 0 24px}.lead{font-size:21px;color:var(--muted);max-width:850px}.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:42px;align-items:end}.meta{border-left:1px solid var(--line);padding-left:28px}.meta b{display:block;margin-top:14px}.meta span{color:var(--muted);font-size:14px}.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.chip{border:1px solid var(--line);border-radius:999px;padding:8px 13px;background:var(--card);font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{padding:30px 20px;border-right:1px solid var(--line)}.stat:last-child{border:0}.num{font-family:Georgia,serif;font-size:38px}.label{font-size:13px;color:var(--muted)}
+section{padding:78px 0;border-bottom:1px solid var(--line)}h2{font-family:Georgia,serif;font-size:40px;letter-spacing:-.03em;margin:0 0 12px}.sub{color:var(--muted);max-width:760px;margin-bottom:34px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:25px}.card h3{margin:4px 0 9px;font-size:19px}.card p{margin:0;color:var(--muted);font-size:14px}.kicker{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:800}
+.case{display:grid;grid-template-columns:.42fr 1.58fr;gap:34px;padding:35px 0;border-top:1px solid var(--line)}.case:first-of-type{border-top:0}.case h3{font-size:25px;margin:0 0 8px}.case ul{margin:12px 0 0;padding-left:20px}.case li{margin:7px 0}.result{font-family:Georgia,serif;font-size:28px;color:var(--accent)}
+.dark{background:var(--dark);color:#f7f3eb}.dark .sub,.dark p{color:#bbb5ab}.dark .card{background:#2b2926;border-color:#45413b}.dark .card p{color:#c9c2b8}.dark .kicker{color:#e98a68}
+.timeline{display:grid;grid-template-columns:190px 1fr;gap:24px;padding:24px 0;border-top:1px solid var(--line)}.timeline:first-of-type{border-top:0}.when{font-size:13px;color:var(--muted)}.role{font-weight:800;font-size:18px}.company{color:var(--accent);font-weight:700}.timeline p{margin:7px 0;color:var(--muted)}
+.quote{font-family:Georgia,serif;font-size:32px;line-height:1.35;max-width:950px;margin:0}.why{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px}.why p{font-size:17px;color:var(--muted)}
+.footer{padding:48px 0 70px}.footgrid{display:flex;justify-content:space-between;gap:30px}.small{font-size:12px;color:var(--muted)}
+@media(max-width:800px){.links{display:none}.hero-grid,.why,.case{grid-template-columns:1fr}.meta{border-left:0;border-top:1px solid var(--line);padding:20px 0 0}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.grid3{grid-template-columns:1fr}.timeline{grid-template-columns:1fr}h1{font-size:45px}.wrap{padding:0 20px}}
+
+.contact-footer {
+  padding: 56px 0 48px;
+  border-top: 1px solid rgba(127,127,127,.18);
+}
+.contact-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.contact-name {
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.contact-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 15px;
+  border: 1px solid rgba(127,127,127,.24);
+  border-radius: 999px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+.contact-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(127,127,127,.5);
+  background: rgba(127,127,127,.07);
+}
+.contact-icon {
+  width: 19px;
+  height: 19px;
+  display: inline-block;
+  flex: 0 0 19px;
+}
+@media (max-width: 680px) {
+  .contact-inner { align-items: flex-start; flex-direction: column; }
+  .contact-links { width: 100%; }
+}
+
+
+.header-contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+.header-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border: 1px solid rgba(127,127,127,.22);
+  border-radius: 999px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+.header-contact-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(127,127,127,.48);
+  background: rgba(127,127,127,.07);
+}
+.header-contact-icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+}
+@media (max-width: 820px) {
+  .header-contact-link span { display: none; }
+  .header-contact-link { padding: 8px; }
+}
+
+
+.hero-contact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+.hero-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  border: 1px solid rgba(127,127,127,.24);
+  border-radius: 999px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+.hero-contact-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(127,127,127,.5);
+  background: rgba(127,127,127,.07);
+}
+.hero-contact-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
+
+
+.hero-name {
+  font-size: clamp(52px, 7vw, 92px) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.045em !important;
+  font-weight: 750 !important;
+}
+@media (max-width: 680px) {
+  .hero-name {
+    font-size: clamp(44px, 13vw, 66px) !important;
+  }
+}
+
+
+/* Portfolio refinement */
+.hero-word {
+  font-size: clamp(72px, 11vw, 148px);
+  line-height: .88;
+  letter-spacing: -0.065em;
+  font-weight: 760;
+  margin: 0 0 18px;
+}
+.hero-positioning {
+  max-width: 820px;
+  font-size: clamp(18px, 2vw, 25px);
+  line-height: 1.45;
+  color: var(--muted, #666);
+  margin-bottom: 22px;
+}
+.impact-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 14px;
+  margin-top: 34px;
+}
+.impact-card {
+  padding: 20px 18px;
+  border: 1px solid rgba(127,127,127,.18);
+  border-radius: 18px;
+  background: rgba(127,127,127,.035);
+}
+.impact-num {
+  font-size: clamp(27px,3.2vw,42px);
+  font-weight: 720;
+  letter-spacing: -.04em;
+}
+.impact-label {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--muted, #777);
+  line-height: 1.4;
+}
+.case-tags {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.case-tag {
+  display: inline-flex;
+  padding: 5px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(127,127,127,.18);
+  font-size: 11px;
+  letter-spacing: .01em;
+  color: var(--muted, #737373);
+}
+.case-structure {
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+}
+.case-row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+.case-row b {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted, #777);
+}
+.case-row span {
+  line-height: 1.55;
+}
+.approach-grid-compact {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 14px;
+}
+.career-compact .timeline p {
+  margin-top: 6px;
+  font-size: 14px;
+}
+@media (max-width: 900px){
+  .impact-strip,.approach-grid-compact{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width: 620px){
+  .impact-strip,.approach-grid-compact{grid-template-columns:1fr;}
+  .case-row{grid-template-columns:1fr;gap:4px;}
+}
+
+
+.hero-career-line {
+  max-width: 820px;
+  margin: -6px 0 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted, #777);
+}
+
+
+/* Education — resume-style hierarchy */
+.education-school {
+  font-size: 18px !important;
+  line-height: 1.35 !important;
+  font-weight: 650 !important;
+  letter-spacing: -0.015em !important;
+  margin: 0 0 6px !important;
+}
+#education .education-school,
+section .education-school {
+  font-size: 18px !important;
+}
+
+
+/* Refined heading scale */
+.hero-word {
+  font-size: clamp(54px, 8vw, 104px) !important;
+  line-height: .92 !important;
+}
+section h2 {
+  font-size: clamp(32px, 4.5vw, 54px) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.035em !important;
+}
+@media (max-width: 680px) {
+  .hero-word {
+    font-size: clamp(46px, 12vw, 68px) !important;
+  }
+  section h2 {
+    font-size: clamp(29px, 8vw, 40px) !important;
+  }
+}
+
+
+/* Further reduced heading scale */
+.hero-word {
+  font-size: clamp(42px, 6vw, 72px) !important;
+  line-height: .98 !important;
+}
+section h2 {
+  font-size: clamp(26px, 3.2vw, 38px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.025em !important;
+}
+@media (max-width: 680px) {
+  .hero-word {
+    font-size: clamp(38px, 9vw, 52px) !important;
+  }
+  section h2 {
+    font-size: clamp(25px, 6.5vw, 32px) !important;
+  }
+}
+
+
+/* Final hero typography refinement */
+.hero-name {
+  font-size: clamp(36px, 4.8vw, 58px) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.035em !important;
+}
+.hero-word {
+  font-size: clamp(34px, 4.6vw, 54px) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.035em !important;
+}
+@media (max-width: 680px) {
+  .hero-name {
+    font-size: clamp(32px, 8vw, 44px) !important;
+  }
+  .hero-word {
+    font-size: clamp(30px, 7.5vw, 40px) !important;
+  }
+}
+
+
+/* Smaller hero positioning statement */
+.hero-positioning {
+  font-size: clamp(15px, 1.45vw, 19px) !important;
+  line-height: 1.5 !important;
+  max-width: 800px !important;
+}
+@media (max-width: 680px) {
+  .hero-positioning {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+
+/* Match the two primary section heading sizes */
+.matched-section-heading {
+  font-size: clamp(26px, 3.2vw, 38px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.025em !important;
+}
+@media (max-width: 680px) {
+  .matched-section-heading {
+    font-size: clamp(25px, 6.5vw, 32px) !important;
+  }
+}
+
+
+/* Refine hero supporting statement */
+.hero-positioning {
+  font-size: clamp(13px, 1.15vw, 16px) !important;
+  line-height: 1.55 !important;
+  max-width: 780px !important;
+}
+@media (max-width: 680px) {
+  .hero-positioning {
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+  }
+}
+
+
+/* Hero positioning — compact subtitle */
+.hero-positioning {
+  font-size: 12px !important;
+  line-height: 1.55 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  max-width: 760px !important;
+}
+@media (max-width: 680px) {
+  .hero-positioning {
+    font-size: 12px !important;
+  }
+}
+
+
+/* Exact hero subtitle override */
+.hero-small-subtitle {
+  display: block !important;
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  max-width: 760px !important;
+  margin: 12px 0 16px !important;
+}
+@media (max-width: 680px) {
+  .hero-small-subtitle {
+    font-size: 13px !important;
+  }
+}
+
+
+/* Hero subtitle size adjustment */
+.hero-small-subtitle {
+  font-size: 20px !important;
+  line-height: 1.5 !important;
+}
+@media (max-width: 680px) {
+  .hero-small-subtitle {
+    font-size: 17px !important;
+  }
+}
+
+
+/* Hero subtitle — 30px test */
+.hero-small-subtitle {
+  font-size: 30px !important;
+  line-height: 1.35 !important;
+}
+@media (max-width: 680px) {
+  .hero-small-subtitle {
+    font-size: 22px !important;
+    line-height: 1.4 !important;
+  }
+}
+
+
+/* Hero subtitle exactly matches "What I bring to Anthropic Customer Success" */
+.hero-small-subtitle {
+  font-size: clamp(26px, 3.2vw, 38px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.025em !important;
+  font-weight: inherit !important;
+}
+@media (max-width: 680px) {
+  .hero-small-subtitle {
+    font-size: clamp(25px, 6.5vw, 32px) !important;
+  }
+}
+
+
+.hero-matched-heading {
+  margin: 14px 0 18px !important;
+  max-width: 900px !important;
+}
+
+</style>
+</head>
+<body><div class="wrap"><div class="hero-contact">
+<a class="hero-contact-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=wwcchsu@gmail.com" rel="noopener" target="_blank"><svg aria-hidden="true" class="hero-contact-icon" fill="none" viewbox="0 0 24 24"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.8"></path><path d="m4.5 6 7.5 6 7.5-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg><span>wwcchsu@gmail.com</span></a>
+<a class="hero-contact-link" href="https://www.linkedin.com/in/jill-h-ab445556/" rel="noopener" target="_blank"><svg aria-hidden="true" class="hero-contact-icon" fill="none" viewbox="0 0 24 24"><rect height="18" rx="3" stroke="currentColor" stroke-width="1.8" width="18" x="3" y="3"></rect><path d="M8 10v7M8 7.5v.01M12 17v-4.1c0-1.7 1-2.9 2.5-2.9s2.5 1 2.5 3v4M12 10v7" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path></svg><span>LinkedIn</span></a>
+</div></div>
+<nav class="nav"><div class="wrap navin"><div class="brand"><span class="hero-name">Wei-Chieh Hsu</span></div><div class="links"><a href="#fit">Role Fit</a><a href="#cases">Case Studies</a><a href="#approach">Readiness Approach</a><a href="#experience">Experience</a></div></div></nav>
+<header class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Portfolio · Partnerships Enablement Specialist, Japan · Tokyo</div><h2 class="matched-section-heading hero-matched-heading">Make readiness practical, repeatable, and visible in what people can do.</h2><p class="lead">Japan-market technology adoption and enablement professional with 10+ years across Amazon Japan, Meta, and global agencies. Currently L6 at Amazon Japan. Experienced in turning product capabilities into local guidance, reusable training, case-sharing, and repeatable operating programs. Builds prioritization rules, review mechanisms, and feedback loops that connect learning with practical adoption. Collaborates with sales, product teams, agencies, and global specialists. Native Mandarin speaker with professional Japanese and English proficiency.</p><div class="chips"><span class="chip">Repeatable Enablement</span><span class="chip">Japan-Market Readiness</span><span class="chip">Training Coordination</span><span class="chip">Role-Based Guidance</span><span class="chip">Adoption Reviews</span><span class="chip">Cross-functional Programs</span></div></div><div class="meta"><b>Current</b><span>Amazon Japan · L6 · Programmatic Solutions Consultant &amp; Growth Lead</span><b>Markets</b><span>Japan · Taiwan · APAC collaboration</span><b>Languages</b><span>Mandarin · Japanese (JLPT N1) · English</span><b>Focus</b><span>Local readiness, reusable guidance, and measurable execution</span></div></div></header>
+<div class="wrap stats"><div class="stat"><div class="num">L6</div><div class="label">Current Amazon level</div></div><div class="stat"><div class="num">35</div><div class="label">Active accounts in the Japan program at the documented stage</div></div><div class="stat"><div class="num">80%</div><div class="label">Average monthly recommendation adoption in that program</div></div><div class="stat"><div class="num">3 months</div><div class="label">Time for a new China team to begin serving advertisers</div></div></div>
+<section id="fit"><div class="wrap"><div class="eyebrow">01 · Role Fit</div><h2 class="matched-section-heading">Relevant strengths for Japan partner readiness</h2><p class="sub">Evidence in AdTech and agency enablement, not Japanese SI practice leadership or hyperscaler certification operations. Japanese proficiency is JLPT N1 and professional working proficiency, not claimed as native. Programs below are prior examples, not a proposal to replace centrally owned Anthropic curriculum.</p><div class="grid3"><div class="card"><div class="kicker">Localization</div><div class="education-school">Make global programs usable</div><p>Build local cases, onboarding guidance, training, and product feedback around real practitioner needs.</p></div><div class="card"><div class="kicker">Systems</div><div class="education-school">Create repeatable support</div><p>Use prioritization, reviews, office hours, and quality feedback rather than relying only on one-off sessions.</p></div><div class="card"><div class="kicker">Role Fit</div><div class="education-school">Adapt guidance to the audience</div><p>Differentiate trader, sales, and new-team needs when explaining product value and execution.</p></div><div class="card"><div class="kicker">Outcomes</div><div class="education-school">Look beyond attendance</div><p>Review recommendation adoption and practical execution, while recognizing that skill assessment needs its own criteria.</p></div><div class="card"><div class="kicker">Collaboration</div><div class="education-school">Respect commercial ownership</div><p>Work alongside sales counterparts and specialists; readiness work does not imply owning partner contracts or pipeline.</p></div><div class="card"><div class="kicker">Feedback</div><div class="education-school">Close the local learning loop</div><p>Share recurring customer and practitioner barriers with product teams and turn learning into reusable guidance.</p></div></div></div></section>
+<section id="impact"><div class="wrap">
+<div class="eyebrow">Selected Impact</div>
+<div class="impact-strip">
+<div class="impact-card"><div class="impact-num">L6</div><div class="impact-label">Current Amazon level</div></div>
+<div class="impact-card"><div class="impact-num">35</div><div class="impact-label">Active accounts in the Japan program at the documented stage</div></div>
+<div class="impact-card"><div class="impact-num">80%</div><div class="impact-label">Average monthly recommendation adoption in that program</div></div>
+<div class="impact-card"><div class="impact-num">3 months</div><div class="impact-label">Time for a new China team to begin serving advertisers</div></div>
+</div>
+</div></section>
+<section id="cases"><div class="wrap"><div class="eyebrow">02 · Selected Case Studies</div><h2 class="matched-section-heading">Evidence of local activation and repeatable enablement</h2><p class="sub">Selected Amazon Ads programs. Recommendation adoption and onboarding time are operational indicators, not certification pass rates, demonstrated Claude skills, or proof of SI delivery readiness.</p>
+<div class="case"><div><div class="kicker">Case 01</div><div class="result">Beta → Readiness</div></div><div><h3>Supporting Performance+ in Japan</h3><p>A new capability needed practical local guidance from beta through general availability.</p><ul><li>Recruited adopters and supported launches.</li><li>Built local cases, guides, training, and product feedback.</li><li>Coached colleagues on analyses and partnered with sales on case-sharing.</li></ul><p>Relevance: local activation and feedback. This was not Claude training, SI certification, or ownership of a global curriculum.</p></div></div>
+<div class="case"><div><div class="kicker">Case 02</div><div class="result">Pilot → 35</div></div><div><h3>Creating a repeatable support model</h3><p>A Japan program needed clearer selection, coverage, and quality standards.</p><ul><li>Defined account criteria and a flexible primary/backup model.</li><li>Established reviews, office hours, and feedback loops.</li><li>Coverage grew from five to 35 active accounts; recommendation adoption averaged 80% at the documented stage.</li></ul><p>Relevance: prioritization and repeatable operations. This was account coverage, not a demonstrated 3–5 SI partner readiness portfolio.</p></div></div>
+<div class="case"><div><div class="kicker">Case 03</div><div class="result">3 months</div></div><div><h3>Making onboarding reusable</h3><p>A newly formed China customer-success team needed structured support.</p><ul><li>Mentored an L6 manager and four L5 specialists.</li><li>Developed reusable product, optimization, and escalation training.</li><li>Team members began serving advertisers within three months.</li></ul><p>Relevance: practical readiness and tailored coaching. For Anthropic, core curriculum remains centrally owned; this prior example is not a proposal to rebuild it.</p></div></div>
+<div class="case"><div><div class="kicker">Case 04</div><div class="result">$66K test</div></div><div><h3>Reaching the right practitioner roles</h3><p>Agency training had limited reach and adoption.</p><ul><li>Expanded the audience from traders to agency sales teams.</li><li>Focused on customer value and execution simplicity.</li><li>Shared recordings for reuse; a consumer goods advertiser confirmed a $66K test campaign.</li></ul><p>Relevance: role-aware enablement and observable follow-through. Commercial uptake is not itself proof of practitioner competence.</p></div></div>
+</div></section>
+<section class="dark" id="approach"><div class="wrap">
+<div class="eyebrow">03 · Illustrative Japan Partner Readiness Approach</div>
+<h2>Activate global programs locally; measure demonstrated readiness</h2>
+<p class="sub">Proposed framework, not prior SI or Claude delivery. PAMs retain commercial ownership; central teams own curriculum and certification; training partners deliver sessions. Assessment design must align with the global competency framework.</p>
+<div class="approach-grid-compact">
+<div class="card"><div class="kicker">01 · Align</div><h3>Map roles and priorities</h3><p>Work with Japan PAMs and SI practice, alliance, and L&amp;D leaders to identify priority partners, practitioner roles, and readiness gaps.</p></div>
+<div class="card"><div class="kicker">02 · Plan</div><h3>Tier coverage responsibly</h3><p>Build readiness plans for 3–5 leadership-prioritized partners and scalable paths for the rest, using central competency definitions adapted to local staffing.</p></div>
+<div class="card"><div class="kicker">03 · Activate</div><h3>Coordinate the existing portfolio</h3><p>Work with central training teams and localized delivery partners to activate appropriate programs, support participation, and gather practical barriers.</p></div>
+<div class="card"><div class="kicker">04 · Validate</div><h3>Measure capability, not attendance</h3><p>Agree on role-relevant evidence of skill with central owners; track assessed readiness, application, and recurring gaps separately from completions and commercial results.</p></div>
+</div></div></section>
+<section class="career-compact" id="experience"><div class="wrap"><div class="eyebrow">04 · Experience</div><h2>Career foundation</h2><div class="timeline"><div class="when">2022 — Present · Tokyo</div><div><div class="role">Programmatic Solutions Consultant &amp; Growth Lead</div><div class="company">Amazon Japan · Current level: L6</div><p>Enterprise growth, AdTech product adoption, partner enablement, and scalable customer-success operating models.</p></div></div><div class="timeline"><div class="when">2021 · Taipei</div><div><div class="role">Client Solutions Manager</div><div class="company">Meta</div><p>Enterprise advertising strategy, measurement, growth, and cross-functional product collaboration.</p></div></div><div class="timeline"><div class="when">2016 — 2021 · Taipei</div><div><div class="role">Senior Marketing Consultant</div><div class="company">iProspect / Havas</div><p>Integrated advertising and strategic consulting for enterprise brands across complex stakeholder ecosystems.</p></div></div><div class="timeline"><div class="when">Education</div><div><div class="role">MSc Marketing · HEC Paris</div><div class="company">BA Japanese · National Taiwan University · Exchange, Sophia University</div><p>Cross-cultural foundation spanning Europe, Taiwan, and Japan.</p></div></div></div></section>
+<footer class="contact-footer">
+<div class="wrap contact-inner">
+<div class="contact-name">Wei-Chieh Hsu</div>
+<div class="contact-links">
+<a class="contact-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=wwcchsu@gmail.com" rel="noopener" target="_blank"><svg aria-hidden="true" class="contact-icon" fill="none" viewbox="0 0 24 24">
+<path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.8"></path>
+<path d="m4.5 6 7.5 6 7.5-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg><span>wwcchsu@gmail.com</span></a>
+<a class="contact-link" href="https://www.linkedin.com/in/jill-h-ab445556/" rel="noopener" target="_blank"><svg aria-hidden="true" class="contact-icon" fill="none" viewbox="0 0 24 24">
+<rect height="18" rx="3" stroke="currentColor" stroke-width="1.8" width="18" x="3" y="3"></rect>
+<path d="M8 10v7M8 7.5v.01M12 17v-4.1c0-1.7 1-2.9 2.5-2.9s2.5 1 2.5 3v4M12 10v7" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+</svg><span>LinkedIn</span></a>
+</div>
+</div>
+</footer>
+</body></html>
